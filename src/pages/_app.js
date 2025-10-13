@@ -20,15 +20,6 @@ const queryClient = new QueryClient();
 const queryCache = new QueryCache();
  
 
-// export const metadata={
-//   title:"Climax Properties Consult Limited",
-//   description:"We are Nigeria's leading real estate brand that specializes in selling residential, commercial, and luxury properties, offering expert consultancy and personalized services.",
-//   icons:{
-//     icon:["favicon.ico?v=4"],
-//     apple:["/apple-touch-icon.png?v=4"],
-//     shortcut:["/apple-touch-icon.png"]
-//   }
-// }
 
 export default function App({ Component, pageProps }) {
   
