@@ -20,10 +20,10 @@ export default function RichTextEditor({value, onChange, className}) {
   // const ReactQuill = useMemo(() => dynamic(() => import('react-quill'), { ssr: false }),[]);
   // const [value, setValue] = useState('ddd');
   return null
-  return(
-    <ReactQuill theme="snow" value={value} 
-      onChange={(e)=>onChange(e)} className={className}/>
-  )
+  // return(
+  //   <ReactQuill theme="snow" value={value} 
+  //     onChange={(e)=>onChange(e)} className={className}/>
+  // )
 }
 // function RichTextEditor3({value, onChange, className}) {
 //   return(
