@@ -21,7 +21,7 @@
 }
 
 html, body {
-  font-family: 'Montserrat', ui-sans-serif;
+  /* font-family: 'Montserrat', ui-sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -35,7 +35,7 @@ html, body {
 *{
   scroll-behavior: smooth !important;
   /* transition-duration: 5s; */
-  font-family: 'Montserrat', ui-sans-serif;
+  /* font-family: 'Montserrat', ui-sans-serif; */
 
 }
 html, body {
