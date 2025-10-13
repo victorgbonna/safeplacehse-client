@@ -36,7 +36,7 @@ export default function MainLayout({ children, isLoggedIn}) {
     setActiveNav(router?.pathname)
   }, [router?.pathname])
   return (
-      <div className={monte.className+"max-w-full text-black bg-lightgreen w-screen relative bg-[#f8faed]"}> 
+      <div className={monte.className+" overflow-x-hidden max-w-full text-black bg-lightgreen w-screen relative bg-[#f8faed]"}> 
         <Nav activeNav={activeNav} 
           scrolledPast={scrolledPast} 
           scrolledPastMobile={scrolledPastMobile}/>
