@@ -68,10 +68,14 @@ function PhoneNav({nav_list, scrolledPast, activeNav}){
                         src={'/window.svg'} className={'w-[40px] h-[40px]'} alt='safeplace logo'/>
                     <p className="text-xl font-semibold">SafePlaceHSE</p>
                 </Link>
+                
             </div>
+            <button onClick={()=>setShowNav(!showNav)}>
+                <img src="/svg/barcode.svg" alt="barcode" className='w-8 h-8'/>
+            </button>
         </div>
         {showNav && 
-        <div className='navboi z-[10] bg-white border-b absolute min-h-fit bg-transparent py-7 px-6 top-full w-full space-y-6'>
+        <div className='navboi z-[10] bg-lightgreen border-b absolute min-h-fit py-7 px-6 top-full w-full space-y-6'>
             {nav_list.filter(({type})=>type!=="contact").map(({label,to},ind)=>
                 <Link className="hover_class_green flex items-center gap-x-2" style={activeNav===to?{color:"05C202"}:{}} href={to || '/'} onClick={()=>setShowNav(false)}
                     key={ind}>

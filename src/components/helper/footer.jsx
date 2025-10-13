@@ -40,7 +40,7 @@ const [email, setEmail]= useState('')
         })
     
     return (    
-        <footer className="px-[70px] tablet:px-10 tablet:py-20 tablet:mt-10 mt-[80px] py-[40px] text-white pb-10 bg-[url('/images/services.png')] bg-cover bg-no-repeat bg-bottom">     
+        <footer className="px-[70px] tablet:px-10 tablet:py-10 tablet:mt-10 mt-[80px] py-[40px] ta text-white pb-10 bg-[url('/images/services.png')] bg-cover bg-no-repeat bg-bottom">     
             <div className="gap-x-[150px] tablet:gap-x-10 flex tablet:flex-col tablet:gap-y-10">
                 <div className="max-w-[350px]">
                     {/* <h2 className="text-xl text-green font-semibold">Gogota Farm</h2> */}

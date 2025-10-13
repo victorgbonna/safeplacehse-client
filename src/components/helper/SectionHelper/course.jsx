@@ -52,23 +52,23 @@ export default function CourseHelper({}){
 
 
     return (
-    <section className='flex flex-col items-center w-screen h-fit bg-cover bg-top px-[100px]'>
+    <section className='flex flex-col items-center w-screen h-fit bg-cover bg-top px-[100px] tablet:px-5'>
         <div className='w-fit flex flex-col justify-center items-center mb-10'>
-            <h4 className='text-3xl mb-2 px-3 font-semibold'>OUR COURSES</h4>
+            <h4 className='text-3xl mb-2 px-3 font-semibold tablet:text-2xl'>OUR COURSES</h4>
             <span className='w-[30%] border-green h-[1px] border'></span>
         </div>
         <div className="space-y-8">
             {courses.map(({img, title, desc, price, views, audience, duration, status="Active"},ind)=>
-                <div key={ind} className={`bg-white relative shadow-xl  rounded-2xl flex gap-x-10 items-start tablet:flex-col`}>
+                <div key={ind} className={`tablet:bg-lightgreen tablet:px-3 bg-white relative shadow-xl  rounded-2xl flex gap-x-10 items-start tablet:flex-col`}>
                     <div className="flex gap-x-6 tablet:gap-y-4 tablet:flex-col">
                         <ImageContainer src={'/images/couse.png'} className='w-[300px] shadow-xl h-[300px] object-cover tablet:w-full tablet:h-[200px]'/>
                         <div className="pt-5 max-w-[400px] tablet:max-w-full">
-                            <p className="text-2xl font-semibold mb-4">{title}</p>
-                            <p className="text-[#626262] text-[15px]">{desc}</p>
+                            <p className="text-2xl font-semibold mb-4 tablet:text-xl">{title}</p>
+                            <p className="text-[#626262] text-[15px] tablet:text-sm">{desc}</p>
                         </div>
                     </div>
-                    <div className="min-w-fit w-fit text-sm pt-4 pb-7 flex flex-col h-[300px] justify-between">
-                       <div className="space-y-2 pr-5">
+                    <div className="min-w-fit w-fit text-sm pt-4 pb-7 flex flex-col h-[300px] tablet:h-fit justify-between">
+                       <div className="space-y-2 pr-5 tablet:mb-8">
                             <p>
                                 <span className="font-bold">Course Duration:</span>{' '}
                                 <span className="text-[#414141]">{duration}</span>
@@ -94,7 +94,7 @@ export default function CourseHelper({}){
                                 <span className="text-[#414141]">{status}</span>
                             </p>
                         </div>
-                        <div className="mt-6 flex gap-x-3">
+                        <div className="mt-6 tablet:mt-0 flex gap-x-3">
                             {[
                                 {label:"Course Catalog", classNames:"#1877F2", img:iconSvgPath('download')},
                                 {label:"Enroll Now", classNames:"#057003", img:iconSvgPath('caret-right')}

@@ -25,10 +25,10 @@ export default function Home() {
 
 function HeroSection() {
   return (
-    <div className="h-fit px-24 tablet:h-fit py-[50px] flex tablet:flex-col items-center justify-between">      
+    <div className="h-fit px-24 tablet:px-5 tablet:py-0 tablet:h-fit py-[50px] flex tablet:flex-col items-center justify-between">      
       <div className=''>
         <div >
-          <h1 className="text-5xl tablet:text-4xl font-bold tablet:text-left">  
+          <h1 className="text-5xl tablet:text-3xl tablet:mb-2 font-bold tablet:text-left">  
             <span className="text-green">SafePlaceHSE</span> Consulting
           </h1>
           <p className='text-[#2A2A2A] text-lg font-semibold mt-[3px]'>HSE Consultant | Safety, Compliance & Environmental Solutions</p>
@@ -41,7 +41,7 @@ function HeroSection() {
             {[{numbers:"5yrs+", label:"Experience"},
               {numbers:"1k+", label:"Certificates"}].map(({numbers, label},ind)=>
               <div key={ind} className="text-lg tablet:text-left max-w-2xl">
-                <p className='font-semibold text-3xl mb-[6px]'>{numbers}</p>
+                <p className='font-semibold text-3xl tablet:text-2xl mb-[6px]'>{numbers}</p>
                 <p className='light-g text-sm'>{label}</p>
               </div>
             )}
@@ -50,14 +50,14 @@ function HeroSection() {
         <div className='flex gap-x-8 tablet:gap-x-8 tablet:justify-start'>
             {[{label:"Chat with Us", link:"#", primary:true},
               {label:"Learn More", link:"#", primary:false}].map(({label, link, primary},ind)=>
-              <Link href={link} key={ind} className={`mt-8 inline-block ${primary?'bg-green text-white':'border border-green text-green'} font-medium px-8 py-2 rounded-full hover:opacity-90`}> 
+              <Link href={link} key={ind} className={`mt-8 tablet:mt-6 tablet:text-sm inline-block ${primary?'bg-green text-white':'border border-green text-green'} font-medium px-8 py-2 rounded-full hover:opacity-90`}> 
                 {label}
               </Link>
             )}
         </div>
       </div>
       <ImageContainer src={iconSvgPath('izzyboss-hero.png', 'images')} 
-        className={'w-[400px] h-[400px] tablet:w-full tablet:h-[400px]'} 
+        className={'w-[400px] h-[400px] tablet:w-full tablet:h-[300px] tablet:mt-10'} 
         imgClass='object-contain w-[390px] h-[390px]' alt='hero image'/>
     </div>
   )
@@ -65,10 +65,10 @@ function HeroSection() {
 
 function WhoWeAre() {
   return (
-    <section className='px-24  py-[50px] flex flex-col justify-center'>
+    <section className='px-24 py-[50px] tablet:px-5 tablet:py-20 flex flex-col justify-center'>
       <div className='flex justify-center mb-5 tablet:px-6'>
         <div className='w-fit flex flex-col items-center'>
-          <h4 className='text-3xl mb-2 px-3 font-semibold'>WHO WE ARE</h4>
+          <h4 className='text-3xl tablet:2xl mb-2 px-3 font-semibold'>WHO WE ARE</h4>
           <span className='w-[70%] border-green h-[1px] border'></span>
         </div>
        
@@ -76,7 +76,7 @@ function WhoWeAre() {
       {/* <div className="h-fit gap-x-[150px] tablet:h-fit  justify-center flex-col flex tablet:flex-col items-center">       */}
         <div className='flex justify-center'>
           <div className='w-[900px]'>
-            <p className='text-base light-g text-center'>{"HEPHZ-RON CONSULTING, registered with corporate affairs commission (CAC), provides Health, Safety and Environment (HSE) consulting services to oil and gas and non-oil and gas sectors of Nigerian Economy. We also offer HSE Retainership, Nigeria Petroleum Exchange (NIPEX) registration Consultancy and HSE Training across all sectors of Nigeria’s economy."}</p>
+            <p className='text-base light-g text-center'>{"SAFEPLACE HSE CONSULTING, registered with corporate affairs commission (CAC), provides Health, Safety and Environment (HSE) consulting services to oil and gas and non-oil and gas sectors of Nigerian Economy. We also offer HSE Retainership, Nigeria Petroleum Exchange (NIPEX) registration Consultancy and HSE Training across all sectors of Nigeria’s economy."}</p>
           </div>
         </div>
         <div className='flex justify-center mt-10'>
@@ -103,23 +103,23 @@ function Services(){
   ]
 
   return (
-    <section className='bg-[url("/images/services.png")] h-screen bg-cover bg-center flex flex-col justify-center px-[100px] text-white'> 
-      <div className='flex justify-between items-center'>
+    <section className='bg-[url("/images/services.png")] h-screen bg-cover bg-center flex flex-col justify-center px-[100px] tablet:px-5 tablet:h-fit text-white tablet:py-14'> 
+      <div className='flex justify-between items-center tablet:flex-col tablet:gap-y-4'>
         <p className='text-2xl font-semibold'>OUR SERVICES</p>
         <div className='w-[700px] tablet:w-full border-l-2 pl-2 border-white'>
           <p>{"Izzyboss consultancy is committed to quality management to ensure excellent delivery of all our services.  We foster a culture of continuous improvement to deliver our services to specifications and requirements."}</p>
         </div>
       </div>
-      <div className='grid grid-cols-3 gap-x-[70px] mt-16'>
+      <div className='grid grid-cols-3 tablet:grid-cols-1 tablet:gap-x-2 tablet:gap-y-10 gap-x-[70px] mt-16'>
         {services.map(({img, label, desc},ind)=>
-          <div key={ind} className='rounded-md p-7 shadow-xl border border-white flex flex-col items-center'>
+          <div key={ind} className='rounded-md tablet:w-fit tablet:border-2 p-7 shadow-xl border border-white flex flex-col items-center'>
             <img src={iconSvgPath(img+".png", 'images')}/>
             <p className='font-semibold text-lg my-4'>{label}</p>
             <p className='text-center text-sm'>{desc}</p>
           </div>
         )}
       </div>
-      <div className='flex mt-14 justify-center gap-x-4 items-center'>
+      <div className='flex tablet:gap-y-8 mt-14 justify-center gap-x-3 items-center tablet:text-sm'>
         {[{label:"Check our Projects", href:"/", classNames:'shadow-xl border rounded-full py-2.5 px-4'},
         {label:"Explore Courses", href:"/", classNames:"shadow-xl bg-white text-green font-semibold rounded-full py-2.5 px-4"}]
           .map(({label, href, classNames},ind)=>
@@ -163,12 +163,12 @@ function Certificates(){
 
   return(
     <div>
-      <div className='flex justify-center mb-5 tablet:px-6 py-20 flex-col items-center '>
-        <div className='w-fit flex flex-col items-center mb-20'>
-          <h4 className='text-3xl mb-2 px-3 font-semibold'>OUR CERTIFICATES</h4>
+      <div className='flex justify-center mb-5 tablet:px-5 py-20 flex-col items-center '>
+        <div className='w-fit flex flex-col items-center mb-20 tablet:mb-10'>
+          <h4 className='text-3xl tablet:text-2xl mb-2 px-3 font-semibold'>OUR CERTIFICATES</h4>
           <span className='w-[30%] border-green h-[1px] border'></span>
         </div>
-        <div className='grid grid-cols-3 gap-x-[70px] gap-y-10 tablet:grid-cols-1 w-[1000px] tablet:w-full'>
+        <div className='grid grid-cols-3 gap-x-[70px] tablet:gap-y-8 gap-y-10 tablet:grid-cols-1 w-[1000px] tablet:w-full'>
           {certs.map(({img, label, desc},ind)=>
             <div key={ind} className='rounded-md p-7 flex flex-col items-center'>
               <img src={iconSvgPath(img, 'images')}/>
@@ -212,13 +212,13 @@ function Testimonials(){
 ];
 const [activeIndex, setActiveIndex] = useState(0);
   return(
-    <section className='flex flex-col items-center w-screen h-fit px-[100px] py-[100px]'>
+    <section className='flex flex-col items-center w-screen h-fit px-[100px] py-[100px] tablet:px-5 tablet:py-20'>
       <SectionUnderlineHelper label={'HEAR FROM OUR CLIENTS'}/>
-      <div className='flex gap-x-3 items-center tablet:flex-col tablet:gap-y-4'>
-        <button className='w-9 h-9 flex items-center justify-center border border-[#4BCB48] rounded-full'>
+      <div className='flex gap-x-3 items-center tablet:gap-y-4 tablet:flex-wrap tablet:justify-center'>
+        <button className='tablet:order-2 w-9 h-9 flex items-center justify-center border border-[#4BCB48] rounded-full'>
           <img src={'/svg/caret-left.svg'} alt="caret" />
         </button>
-        <div className='flex items-center gap-x-[70px] gap-y-10 tablet:grid-cols-1 w-[1000px] tablet:w-full'>
+        <div className='tablet:basis-full flex items-center gap-x-[70px] gap-y-10 tablet:grid-cols-1 w-[1000px] tablet:w-full'>
           {testimonials.slice(0,1).map(({img, name, title, company, feedback},ind)=>
             <div key={ind} className='bg-[#4BCB48] text-white rounded-md p-7 flex tablet:flex-col items-center border  shadow-xl'>
               <div className='tablet:w-full text-left'>
@@ -230,11 +230,11 @@ const [activeIndex, setActiveIndex] = useState(0);
             </div>
           )}
         </div>
-        <button className='w-9 h-9 flex items-center justify-center border border-green rounded-full'>
+        <button className='tablet:order-3 w-9 h-9 flex items-center justify-center border border-green rounded-full'>
           <img src={'/svg/caret-green-right.svg'} alt="caret" />
         </button>  
       </div>
-      <div className='flex justify-center gap-x-2.5 items-center mt-10'>
+      <div className='flex justify-center tablet:hidden gap-x-2.5 items-center mt-10'>
         {[1,2,3,4].map((_,ind)=>
             <div 
             className="cursor-pointer w-[10px] h-[10px] rounded-full transition-200" key={ind}

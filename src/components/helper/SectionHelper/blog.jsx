@@ -6,9 +6,9 @@ import { useState } from "react";
 export default function BlogHelper({blog_id}){
     const [teamCurr, setTeamCurr]= useState(0)
     return(
-        <div className='mb-10 py-14 px-20 tablet:px-5'>
-        <p className="text-black text-base font-semibold mb-10 px-10 tablet:px-5'">More from Climax Properties Blog</p>
-        <div className='flex gap-x-10 tablet:gap-x-0 tablet:px-3 tablet:hidden'>
+        <div className='mb-10 py-14 px-20 tablet:px-5 tablet:py-10 tablet:mb-0'>
+        <p className="text-black text-base font-semibold mb-10 px-10 tablet:text-xl tablet:px-5">{'READ OUR ARTICLES'}</p>
+        <div className='flex gap-x-10 tablet:gap-x-0 tablet:px-3'>
           <div id="newsscroll" 
             style={{transform: `translateX(-${teamCurr * 100}%)`} }
             className='max-w-[1440px] grid-cols-3 grid tablet:grid-cols-1 px-10 tablet:px-5 pb-4 overflow-x-hidden gap-10'>
