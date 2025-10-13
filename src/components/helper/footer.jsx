@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { useHttpServices, useToast } from '@/hooks';
+// import { useHttpServices, useToast } from '@/hooks';
 import { PAGE_ROUTES, consolelog,API_ENDPOINTS } from '@/configs'
 import { Fragment, useContext, useEffect, useState } from 'react'
 import { useMutation } from '@tanstack/react-query';
@@ -15,11 +15,11 @@ export default function Footer() {
         {icon:"linkedin", link:API_ENDPOINTS?.CONTACT?.LINKEDIN_LINK},
         // {icon:"linkedin", link:}
     ]
-    const {postData}= useHttpServices()
+    // const {postData}= useHttpServices()
     
 const [email, setEmail]= useState('')
     
-    const {NotifySuccess, NotifyError}= useToast()
+    const {NotifySuccess, NotifyError}= {}
 
     const subscribeQue= async()=>{    
         const body={email}
