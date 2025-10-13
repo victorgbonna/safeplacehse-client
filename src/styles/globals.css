@@ -21,7 +21,7 @@
 }
 
 html, body {
-  /* font-family: 'Alan Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; */
+  font-family: 'Montserrat', ui-sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -35,6 +35,8 @@ html, body {
 *{
   scroll-behavior: smooth !important;
   /* transition-duration: 5s; */
+  font-family: 'Montserrat', ui-sans-serif;
+
 }
 html, body {
   scroll-behavior: smooth !important;
