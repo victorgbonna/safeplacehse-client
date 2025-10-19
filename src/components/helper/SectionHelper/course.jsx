@@ -1,7 +1,7 @@
 import { iconSvgPath, ImageContainer } from "@/components";
 import Link from "next/link";
 
-export default function CourseHelper({}){
+export default function CourseHelper({btnLabel, link}){
     const courses = [
         {
             img: "hse1.png",
@@ -114,7 +114,11 @@ export default function CourseHelper({}){
         </div>
         <div className='flex mt-14 justify-center gap-x-4 items-center'>
         {/* {[{label:"Browse More Courses", href:"/", classNames:'hover:opacity-90 shadow-xl border rounded-full py-2.5 px-4 text-green border-green'}] */}
-        {[{label:"Explore Courses", href:"/", classNames:"hover:opacity-90 shadow-xl bg-green border border-[#FFFFFF] text-white font-semibold rounded-full py-2.5 px-4"}]
+        {btnLabel?
+            <Link href={'/'} className="hover:opacity-90 shadow-xl bg-green border border-[#FFFFFF] text-white font-semibold rounded-full py-2.5 px-4">
+            {btnLabel}
+            </Link>
+        :[{label:"Explore Courses", href:"/", classNames:"hover:opacity-90 shadow-xl bg-green border border-[#FFFFFF] text-white font-semibold rounded-full py-2.5 px-4"}]
             .map(({label, href, classNames},ind)=>
             <Link href={href} key={ind} className={classNames}>
             {label}

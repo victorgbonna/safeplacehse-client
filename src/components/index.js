@@ -1,6 +1,9 @@
 export {default as CourseHelper} from './helper/SectionHelper/course';
 export {default as ProjectHelper} from './helper/SectionHelper/project';
 export {default as BlogHelper} from './helper/SectionHelper/blog';
+export {default as CertificateHelper} from './helper/SectionHelper/certificate';
+
+
 export {default as Footer} from './helper/footer';
 
 export {default as SectionUnderlineHelper} from './helper/sectionUnderlineHelper';

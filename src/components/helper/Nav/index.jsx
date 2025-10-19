@@ -11,32 +11,32 @@ export default function Nav({scrolledPast,scrolledPastMobile, activeNav}) {
         {
             type:"menu",
             label:"Home",
-            to:PAGE_ROUTES.ABOUT_US,
+            to:PAGE_ROUTES.HOME,
         }
         ,{
             type:"menu",
             label:"About Us",
-            to:PAGE_ROUTES.ABOUT_US,
+            to:PAGE_ROUTES.ABOUT,
         }
         ,{
             type:"menu",
             label:"Services",
-            to:PAGE_ROUTES.PROPERTIES,
+            to:PAGE_ROUTES.SERVICES,
         },
         {
             type:"menu",
             label:"Projects",
-            to:PAGE_ROUTES.PROPERTIES,
+            to:PAGE_ROUTES.PROJECTS,
         },
         {
             type:"menu",
             label:"Courses",
-            to:PAGE_ROUTES.PROPERTIES,
+            to:PAGE_ROUTES.COURSES,
         },
        {
             type:"menu",
             label:"Blogs",
-            to:PAGE_ROUTES.PROPERTIES,
+            to:PAGE_ROUTES.BLOGS,
         },
         {
             type:"menu",

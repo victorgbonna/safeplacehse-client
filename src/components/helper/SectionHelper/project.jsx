@@ -1,7 +1,7 @@
 import { iconSvgPath, ImageContainer } from "@/components";
 import Link from "next/link";
 
-export default function ProjectHelper({}){
+export default function ProjectHelper({showButtons=true}){
     const projects = [
       {
         img: "training.png",
@@ -46,13 +46,13 @@ export default function ProjectHelper({}){
             )}
         </div>
         <div className='flex mt-14 justify-center gap-x-4 items-center tablet:gap-x-3 tablet:text-sm'>
-        {[{label:"Check our Projects", href:"/", classNames:'shadow-xl border rounded-full py-2.5 px-4 text-green border-green'},
+        {showButtons?[{label:"Check our Projects", href:"/", classNames:'shadow-xl border rounded-full py-2.5 px-4 text-green border-green'},
         {label:"Explore Courses", href:"/", classNames:"shadow-xl bg-green border border-[#FFFFFF] text-white font-semibold rounded-full py-2.5 px-4"}]
             .map(({label, href, classNames},ind)=>
             <Link href={href} key={ind} className={classNames}>
             {label}
             </Link>
-        )}
+        ):null}
         </div>
     </section>
     )
