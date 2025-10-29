@@ -12,7 +12,7 @@ export default function FireSafety() {
             BLOG POST
           </p>
         </div>
-        <div className="h-fit tablet:pt-10  flex items-cente px-[200px] tablet:px-10 justify-center">
+        <div className="h-fit py-10  flex items-cente px-[200px] tablet:px-10 justify-center">
           <h1 className="text-center text-[#2A2A2A] text-3xl leading-[40px] font-semibold tablet:text-xl">
             {"Fire Safety Awareness: Preventing Fire Before It Starts"}
           </h1>

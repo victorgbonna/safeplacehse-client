@@ -6,7 +6,7 @@ import { useState } from "react";
 export default function BlogHelper({blog_id, showHeader=true}){
     const [teamCurr, setTeamCurr]= useState(0)
     return(
-        <div className='mb-10 py-14 px-20 tablet:px-5 tablet:py-10 tablet:mb-0'>
+        <div className='mb-10 py-14 px-20 tablet:px-0 tablet:py-10 tablet:mb-0'>
         {showHeader?<p className="text-black text-base font-semibold mb-10 px-10 tablet:text-xl tablet:px-5 tablet:text-center">{'READ OUR ARTICLES'}</p>:null}
         <div className='flex gap-x-10 tablet:gap-x-0 tablet:px-3'>
           <div id="newsscroll" 
