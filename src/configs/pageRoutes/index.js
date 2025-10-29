@@ -7,8 +7,8 @@ const PAGE_ROUTES = {
   BLOGS: "/blogs",
   CONTACT: "/contact-us",
 
-  A_COMP:(id)=>{
-    return '/competition/league/'+id
+  A_BLOG:(id)=>{
+    return '/blogs/hse/'+id
   },
   A_COMP_EDIT:(id)=>{
     return '/competition/edit/'+id

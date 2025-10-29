@@ -29,7 +29,7 @@ export default function ProjectHelper({showButtons=true}){
                     <ImageContainer src={'/images/training.png'} className='w-[400px] h-[300px] object-cover tablet:w-full tablet:h-[200px]'/>
                     <div className='w-[500px] tablet:w-full'>
                         <p className='font-semibold text-2xl mb-4 tablet:text-xl tablet:mt-3'>{title}</p>
-                        <p className='text-sm'>{desc.slice(0,100)+ '...'} 
+                        <p className='text-sm'>{desc.slice(0,300)+ '...'} 
                             <span>
                                 <Link href={'/'} className='text-green underline ml-1 pc:hidden largepc:hidden tablet:inline'>Read More</Link>
                             </span>
