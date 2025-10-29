@@ -12,14 +12,14 @@ export default function FireSafety() {
             BLOG POST
           </p>
         </div>
-        <div className="h-[25%] tablet:pt-3 flex items-center bg-white px-[200px] tablet:px-10 justify-center">
+        <div className="h-fit tablet:pt-10  flex items-cente px-[200px] tablet:px-10 justify-center">
           <h1 className="text-center text-[#2A2A2A] text-3xl leading-[40px] font-semibold tablet:text-xl">
             {"Fire Safety Awareness: Preventing Fire Before It Starts"}
           </h1>
         </div>
       </div>
 
-      <div className="flex px-20 py-[20px] bg-white justify-between tablet:px-5 tablet:flex-col tablet:gap-y-10">
+      <div className="flex px-20 py-[20px] justify-between tablet:px-5 tablet:flex-col tablet:gap-y-10">
         <div className="tablet:order-1">
           <div className="flex items-center gap-x-2">
             <ImageContainer
@@ -89,7 +89,7 @@ export default function FireSafety() {
             <ImageContainer
               src={iconSvgPath(path + "fire_safety.png", "images")}
               className={
-                "tablet:w-full w-[500px] h-[400px] tablet:h-[300px] object-contain"
+                "tablet:w-full w-[500px] h-[400px] tablet:h-[250px] object-contain"
               }
               alt="Fire triangle diagram"
             />
@@ -144,7 +144,7 @@ export default function FireSafety() {
             <ImageContainer
               src={iconSvgPath(path + "evacuation_sign.jpg", "images")}
               className={
-                "tablet:w-full w-[600px] h-[400px] tablet:h-[300px] object-contain"
+                "tablet:w-full w-[600px] h-[400px] tablet:h-[250px] object-contain"
               }
               alt="Fire evacuation sign"
             />

@@ -66,7 +66,7 @@ function PhoneNav({nav_list, scrolledPast, activeNav}){
                 <Link href={'/'} className='flex items-center gap-x-2'>
                     <ImageContainer 
                         src={'/images/safetyhselogobig.png'} className={'w-[50px] h-[50px]'} alt='safeplace logo'/>
-                    <p className="text-xl font-semibold">SafePlaceHSE</p>
+                    {/* <p className="text-xl font-semibold">SafePlaceHSE</p> */}
                 </Link>
                 
             </div>
@@ -100,7 +100,7 @@ function PcNav({nav_list, scrolledPast, activeNav}){
             <Link href={'/'} className='flex items-center gap-x-2'>
                 <ImageContainer 
                     src={'/images/safetyhselogobig.png'} className={'w-[50px] h-[50px]'} imgClass='' alt='safeplace logo'/>
-                <p className="text-xl font-semibold">SafePlaceHSE</p>
+                {/* <p className="text-xl font-semibold">SafePlaceHSE</p> */}
             </Link >
             <ul className='flex gap-x-7 gap-y-4 items-center'>
                 <>
