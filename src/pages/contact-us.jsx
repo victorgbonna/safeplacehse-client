@@ -2,7 +2,11 @@ import Image from 'next/image'
 
 import { BlogHelper, CertificateHelper, CourseHelper, iconSvgPath, ImageContainer, LoadButton, ProjectHelper, SectionUnderlineHelper } from '@/components'
 import Link from 'next/link'
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
+import { isNotEmail } from '@/configs/inputValidation'
+import { useMutation } from '@tanstack/react-query'
+import { useHttpServices, useToast } from '@/hooks'
+import { API_ENDPOINTS } from '@/configs'
 
 
 export default function ContactUs() {
@@ -13,6 +17,24 @@ export default function ContactUs() {
         {label:'Subject'},
         {label:'Message' , type:'textarea'}
     ] 
+    const {NotifySuccess, NotifyError}= useToast()
+    const {postDataWithoutBaseUrl}= useHttpServices()
+
+    const subscribeQue= async()=>{    
+        // const sheethttps://docs.google.com/spreadsheets/d/1n1F44RrxXW4OY-FEoQMwjkLQzGcRB1-Bi8eZin_mqeA/edit?gid=0#gid=0
+        return await postDataWithoutBaseUrl({path:API_ENDPOINTS?.GOOGLE_SHEET_LINK,body:formData})
+      }
+    
+    const {mutate:subscribeFunc, isPending:isLoading}=useMutation({
+    mutationFn: ()=>subscribeQue(),
+        onError:(error)=>{
+            return NotifyError(error?.error?.message || 'Something went wrong. Please try again later')
+        },
+        onSuccess:({data})=>{
+            return NotifySuccess('Sent! We will be in touch.')
+        }
+    })
+    
     return (
      <div
       className={`py-24 tablet:pt-14 pb-5`}
@@ -34,8 +56,8 @@ export default function ContactUs() {
                         <div key={ind} className='w-full tablet:w-full'>
                             <p className='mb-2'>{'Your '+label}</p>
                             {type==='textarea'?
-                                <textarea className='text-sm bg-blue-50 border rounded-lg py-3 px-5 w-full' onChange={()=>setFormData({...formData, [label.toLowerCase()]:e.target.value})} value={formData[label.toLowerCase()]}/>:
-                                <input className='text-sm bg-blue-50 border rounded-lg py-3 px-5 w-full' type={type} onChange={()=>setFormData({...formData, [label.toLowerCase()]:e.target.value})} value={formData[label.toLowerCase()]}/>
+                                <textarea className='text-sm bg-blue-50 border rounded-lg py-3 px-5 w-full' onChange={(e)=>setFormData({...formData, [label.toLowerCase()]:e.target.value})} value={formData[label.toLowerCase()] || ''}/>:
+                                <input className='text-sm bg-blue-50 border rounded-lg py-3 px-5 w-full' type={type} onChange={(e)=>setFormData({...formData, [label.toLowerCase()]:e.target.value})} value={formData[label.toLowerCase()] || ''}/>
                             }
                         </div>
                     )}
@@ -43,11 +65,24 @@ export default function ContactUs() {
                 <div className='flex justify-between items-center tablet:flex-col tablet:gap-y-10 tablet:justify-center'>
                     
                      <div className='flex gap-x-8 tablet:gap-x-8 tablet:flex-col tablet:w-full'>
-                        {[{label:"Send Message", link:"#", primary:true},
+                        {[{label:"Send Message", link:"", primary:true},
                         {label:"Chat on Whatsapp Instead", link:"#", primary:false}].map(({label, link, primary},ind)=>
-                        <Link href={link} key={ind} className={`mt-8 tablet:mt-6 text-center tablet:w-full tablet:text-sm inline-block ${primary?'bg-green text-white':'border border-green text-green'} font-medium px-8 py-2 tablet:py-3 rounded-full hover:opacity-90`}> 
+                        <Fragment key={ind}>
+                        {
+                        link?
+                        <Link key={ind} href={link}
+                            className={`mt-8 tablet:mt-6 text-center tablet:w-full tablet:text-sm inline-block ${primary?'bg-green text-white':'border border-green text-green'} font-medium px-8 py-2 tablet:py-3 rounded-full hover:opacity-90`}> 
                             {label}
-                        </Link>
+                        </Link>:
+                        
+                        <LoadButton onClick={()=>subscribeFunc()} 
+                            isLoading={isLoading}
+                            disabled={isNotEmail(formData.email) || !formData.name || !formData.subject || !formData.message}
+                            className={`mt-8 tablet:mt-6 text-center tablet:w-full tablet:text-sm inline-block ${primary?'bg-green text-white':'border border-green text-green'} font-medium px-8 py-2 tablet:py-3 rounded-full`}>
+                            {label}
+                        </LoadButton>
+                        }
+                        </Fragment>
                         )}
                     </div>
                 </div>
@@ -66,7 +101,7 @@ export default function ContactUs() {
                     </div>
                     <div className='flex items-center gap-x-3'>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6.33058 1C6.93978 1 9.37662 6.48288 9.37662 7.09209C9.37662 8.3105 7.54899 9.52892 6.93978 10.7473C6.33058 11.9658 7.54899 13.1842 8.76741 14.4026C9.24259 14.8778 11.2042 16.8394 12.4227 16.2302C13.6411 15.621 14.8595 13.7934 16.0779 13.7934C16.6871 13.7934 22.17 16.2302 22.17 16.8394C22.17 19.2763 20.3424 21.1039 18.5147 21.7131C16.6871 22.3223 15.4687 22.3223 13.0319 21.7131C10.595 21.1039 8.76741 20.4947 5.72137 17.4486C2.67532 14.4026 2.06612 12.575 1.45691 10.1381C0.847698 7.70129 0.847698 6.48288 1.45691 4.65525C2.06612 2.82763 3.89374 1 6.33058 1Z" stroke="#484848" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6.33058 1C6.93978 1 9.37662 6.48288 9.37662 7.09209C9.37662 8.3105 7.54899 9.52892 6.93978 10.7473C6.33058 11.9658 7.54899 13.1842 8.76741 14.4026C9.24259 14.8778 11.2042 16.8394 12.4227 16.2302C13.6411 15.621 14.8595 13.7934 16.0779 13.7934C16.6871 13.7934 22.17 16.2302 22.17 16.8394C22.17 19.2763 20.3424 21.1039 18.5147 21.7131C16.6871 22.3223 15.4687 22.3223 13.0319 21.7131C10.595 21.1039 8.76741 20.4947 5.72137 17.4486C2.67532 14.4026 2.06612 12.575 1.45691 10.1381C0.847698 7.70129 0.847698 6.48288 1.45691 4.65525C2.06612 2.82763 3.89374 1 6.33058 1Z" stroke="#484848" strokeWidth="2" strokeLinecap="round" stroke-linejoin="round"/>
                         </svg>
                         <p>+234 8138948489</p>
                     </div>

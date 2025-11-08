@@ -3,14 +3,26 @@ import Link from "next/link";
 
 export default function ProjectHelper({showButtons=true}){
     const projects = [
-      {
-        img: "training.png",
-        title: "HIPAA Compliance Training",
-        desc: `SC Training (formerly EdApp)'s HIPAA compliance training course gives your learners a detailed breakdown of everything they need to know about HIPAA compliance. It begins by describing HIPAA and why it was created. It then instructs learners on the most important facts, such as recommended practices in HIPAA compliance situations, risks and remedies, and privacy, breach, and security standards.
-        It also includes knowledge assessments and sample situations for assessing and applying learning. A glossary of valuable resources is included at the conclusion of this course so your learners can easily reference back to the important keywords.`
+        {
+            img: "/images/projects/white/izzy-on-white7.jpg",
+            title: "HIPAA Compliance Training",
+            desc: `SC Training (formerly EdApp)'s HIPAA compliance training course gives your learners a detailed breakdown of everything they need to know about HIPAA compliance. It begins by describing HIPAA and why it was created. It then instructs learners on the most important facts, such as recommended practices in HIPAA compliance situations, risks and remedies, and privacy, breach, and security standards.
+            It also includes knowledge assessments and sample situations for assessing and applying learning. A glossary of valuable resources is included at the conclusion of this course so your learners can easily reference back to the important keywords.`
           },
           {
-            img: "training.png",
+            img: "/images/projects/white/izzy-on-white2.jpg",
+            title: "HIPAA Compliance Training",
+            desc: `SC Training (formerly EdApp)'s HIPAA compliance training course gives your learners a detailed breakdown of everything they need to know about HIPAA compliance. It begins by describing HIPAA and why it was created. It then instructs learners on the most important facts, such as recommended practices in HIPAA compliance situations, risks and remedies, and privacy, breach, and security standards.
+              It also includes knowledge assessments and sample situations for assessing and applying learning. A glossary of valuable resources is included at the conclusion of this course so your learners can easily reference back to the important keywords.`
+          },
+          {
+            img: "/images/projects/white/izzy-on-white10.jpg",
+            title: "HIPAA Compliance Training",
+            desc: `SC Training (formerly EdApp)'s HIPAA compliance training course gives your learners a detailed breakdown of everything they need to know about HIPAA compliance. It begins by describing HIPAA and why it was created. It then instructs learners on the most important facts, such as recommended practices in HIPAA compliance situations, risks and remedies, and privacy, breach, and security standards.
+            It also includes knowledge assessments and sample situations for assessing and applying learning. A glossary of valuable resources is included at the conclusion of this course so your learners can easily reference back to the important keywords.`
+          },
+          {
+            img: "/images/projects/white/izzy-on-white12.jpg",
             title: "HIPAA Compliance Training",
             desc: `SC Training (formerly EdApp)'s HIPAA compliance training course gives your learners a detailed breakdown of everything they need to know about HIPAA compliance. It begins by describing HIPAA and why it was created. It then instructs learners on the most important facts, such as recommended practices in HIPAA compliance situations, risks and remedies, and privacy, breach, and security standards.
               It also includes knowledge assessments and sample situations for assessing and applying learning. A glossary of valuable resources is included at the conclusion of this course so your learners can easily reference back to the important keywords.`
@@ -26,7 +38,7 @@ export default function ProjectHelper({showButtons=true}){
         <div className="space-y-10 tablet:space-y-8">
             {projects.map(({img, title, desc},ind)=>
                 <div key={ind} className={`bg-white border border-green relative shadow-xl tablet:pb-10 rounded-md p-7 flex gap-x-10 items-center tablet:flex-col`}>
-                    <ImageContainer src={'/images/training.png'} className='w-[400px] h-[300px] object-cover tablet:w-full tablet:h-[200px]'/>
+                    <ImageContainer src={img} imgClass="object-center object-cover" className='w-[400px] h-[300px] object-cover tablet:w-full tablet:h-[200px]'/>
                     <div className='w-[500px] tablet:w-full'>
                         <p className='font-semibold text-2xl mb-4 tablet:text-xl tablet:mt-3'>{title}</p>
                         <p className='text-sm'>{desc.slice(0,300)+ '...'} 

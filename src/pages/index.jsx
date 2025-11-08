@@ -79,10 +79,21 @@ function WhoWeAre() {
             <p className='text-base light-g text-center'>{"SAFEPLACE HSE CONSULTING, registered with corporate affairs commission (CAC), provides Health, Safety and Environment (HSE) consulting services to oil and gas and non-oil and gas sectors of Nigerian Economy. We also offer HSE Retainership, Nigeria Petroleum Exchange (NIPEX) registration Consultancy and HSE Training across all sectors of Nigeria’s economy."}</p>
           </div>
         </div>
-        <div className='flex justify-center mt-10'>
-          <ImageContainer src={iconSvgPath('izzyboss-hero.png', 'images')} 
-            className={'w-[400px] h-[400px] tablet:w-full tablet:h-[300px]'} 
-            imgClass='object-contain w-[390px] h-[390px]' alt='hero image'/>
+        <div className='flex justify-center tablet:flex-col relative mt-10'>
+           <div className='absolute w-fit left-0 z-2 right-0 top-3 bottom-3'>
+            <img src={iconSvgPath('projects/white/izzy-on-white11.jpg', 'images')} 
+              className={'object-contain object-top rounded-md w-[400px] h-[400px] tablet:w-full tablet:h-[300px]'} 
+              imgClass='object-contain w-[390px] h-[390px]' alt='hero image'/>
+          </div>
+          
+          <div className='absolute w-fit right-0 z-1 right-0 top-3 bottom-3'>
+            <img src={iconSvgPath('projects/white/izzy-on-white8.jpg', 'images')} 
+              className={'object-contain object-top rounded-md w-[400px] h-[400px] tablet:w-full tablet:h-[300px]'} 
+              imgClass='object-contain w-[390px] h-[390px]' alt='hero image'/>
+          </div>
+          <ImageContainer src={iconSvgPath('projects/white/izzy-on-white10.jpg', 'images')} 
+            className={'w-[400px] z-3 relative h-[400px] tablet:w-full tablet:h-[300px]'} 
+            imgClass='shadow-lg relative z-3 object-contain w-[390px] h-[390px]' alt='hero image'/>
         </div>
         <div className=' flex justify-center'>
           <button className='mt-10 flex justify-center items-center gap-x-2 bg-green text-white font-medium px-8 py-2 rounded-full hover:opacity-90'>

@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function CourseHelper({btnLabel, link}){
     const courses = [
         {
-            img: "hse1.png",
+            img: "conference/izzy-cyber-conference4.jpeg",
             title: "HSE Level 1 – Health, Safety & Environment Awareness",
             desc: "This introductory course provides learners with fundamental HSE knowledge, covering workplace safety, hazard recognition, and emergency response procedures.",
             duration: "2 weeks",
@@ -13,7 +13,7 @@ export default function CourseHelper({btnLabel, link}){
             views: 1340
         },
         {
-            img: "hse2.png",
+            img: "projects/white/izzy-on-white.jpg",
             title: "HSE Level 2 – Risk Assessment & Safety Management",
             desc: "This course focuses on hazard identification, workplace inspections, and control measures to ensure a safe working environment.",
             duration: "3 weeks",
@@ -22,7 +22,7 @@ export default function CourseHelper({btnLabel, link}){
             views: 980
         },
         {
-            img: "hse3.png",
+            img: "projects/white/izzy-on-white10.jpg",
             title: "HSE Level 3 – Advanced Health and Safety Management",
             desc: "Designed for professionals, this advanced course covers policy creation, safety leadership, and incident investigation for effective HSE management.",
             duration: "4 weeks",
@@ -30,17 +30,17 @@ export default function CourseHelper({btnLabel, link}){
             price: "₦50,000",
             views: 1675
         },
+        // {
+        //     img: "fire.png",
+        //     title: "Fire Safety & Emergency Preparedness Training",
+        //     desc: "Learn essential fire safety principles, evacuation planning, and the use of fire extinguishers to minimize risks during emergencies.",
+        //     duration: "1 week",
+        //     audience: ["Employees", "Contractors", "Facility managers"],
+        //     price: "₦15,000",
+        //     views: 890
+        // },
         {
-            img: "fire.png",
-            title: "Fire Safety & Emergency Preparedness Training",
-            desc: "Learn essential fire safety principles, evacuation planning, and the use of fire extinguishers to minimize risks during emergencies.",
-            duration: "1 week",
-            audience: ["Employees", "Contractors", "Facility managers"],
-            price: "₦15,000",
-            views: 890
-        },
-        {
-            img: "firstaid.png",
+            img: "projects/white/izzy-on-white8.jpg",
             title: "First Aid & CPR Certification",
             desc: "This course equips learners with life-saving first aid and CPR techniques to handle medical emergencies at work or home.",
             duration: "1 week",
@@ -61,7 +61,9 @@ export default function CourseHelper({btnLabel, link}){
             {courses.map(({img, title, desc, price, views, audience, duration, status="Active"},ind)=>
                 <div key={ind} className={`tablet:bg-lightgreen tablet:px-3 bg-white relative shadow-xl  rounded-2xl flex gap-x-10 items-start tablet:flex-col`}>
                     <div className="flex gap-x-6 tablet:gap-y-4 tablet:flex-col">
-                        <ImageContainer src={'/images/couse.png'} className='w-[300px] shadow-xl h-[300px] object-cover tablet:w-full tablet:h-[200px]'/>
+                        <ImageContainer src={'/images/'+img} 
+                            imgClass="object-center object-cover"
+                            className='w-[300px] shadow-xl h-[300px] object-cover tablet:w-full tablet:h-[200px]'/>
                         <div className="pt-5 max-w-[400px] tablet:max-w-full">
                             <p className="text-2xl font-semibold mb-4 tablet:text-xl">{title}</p>
                             <p className="text-[#626262] text-[15px] tablet:text-sm">{desc}</p>

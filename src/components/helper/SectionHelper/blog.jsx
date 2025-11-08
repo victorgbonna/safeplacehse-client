@@ -23,7 +23,7 @@ export default function BlogHelper({blog_id, showHeader=true}){
               <div>
                   <ImageContainer 
                     src={
-                      iconSvgPath('blog.png', 'images')
+                      iconSvgPath(src, 'images')
                     }  
                     className={'w-full h-[200px] rounded-t-md'}
                      

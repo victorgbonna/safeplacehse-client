@@ -24,7 +24,7 @@ export default function FireSafety() {
           <div className="flex items-center gap-x-2">
             <ImageContainer
               imgClass={"object-top object-cover"}
-              src={iconSvgPath("isreal.png", "images")}
+              src={iconSvgPath("/projects/white/izzy-on-white6.jpg", "images")}
               className={"w-20 h-20 rounded-full"}
               alt="Isreal Johnson"
             />

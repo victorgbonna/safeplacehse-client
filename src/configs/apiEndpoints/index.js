@@ -1,4 +1,11 @@
 const API_ENDPOINTS = {
+  GOOGLE_SHEET_LINK:'https://script.google.com/macros/s/AKfycbyV5Lm1gfzDbgiB3XW8UQrW708FHXQ-2UduInGNaHszoosdvzQKDODAzjBUJDdh1asE9Q/exec',
+  GOOGLE_SHEET_ID:'1n1F44RrxXW4OY-FEoQMwjkLQzGcRB1-Bi8eZin_mqeA',
+  CERTIFICATIONS:[
+    {label:'Nebosh IGC', img:'nebosh2.png' },
+    {label:'ISO 45001 IRCA certified lead Auditor', img:'iso.png'}, 
+    {label:'iosh diploma level 6', img:'iosh2.png'}
+  ],
   BLOGS: [
   {
     id: -14,
@@ -8,7 +15,17 @@ const API_ENDPOINTS = {
     category: ["public"],
     type: "HSE update",
     link: "/blogs/hse/building-a-safer-workplace",
-    src: "blog/hse/hse-training-session.png"
+    src: "projects/white/izzy-on-white2.jpg"
+  },
+  {
+    id: -18,
+    title: "Environmental Management: Keeping Our Sites Clean and Sustainable.",
+    text: "Beyondp compliance, we are committed to environmental protection. Our recent environmental management campaign focused on proper waste disposal and eco-friendly practices across all project sites.",
+    date: "25/07/2025",
+    category: ["public"],
+    type: "environmental update",
+    link: "/blogs/hse/environmental-management",
+    src: "conference/izzy-cyber-conference4.jpeg"
   },
   {
     id: -15,
@@ -18,7 +35,7 @@ const API_ENDPOINTS = {
     category: ["public"],
     type: "HSE training",
     link: "/blogs/hse/fire-safety-awareness",
-    src: "blog/hse/fire-safety-training.png"
+    src: "firesafety/evacuation_sign.jpg"
   },
   {
     id: -16,
@@ -27,8 +44,8 @@ const API_ENDPOINTS = {
     date: "28/08/2025",
     category: ["public"],
     type: "HSE exercise",
-    link: "/blogs/hse/hazard-identification",
-    src: "blog/hse/hazard-audit.png"
+    link: "conference/izzy-cyber-conference.jpeg",
+    src: "projects/white/izzy-on-white3.jpg"
   },
   {
     id: -17,
@@ -38,17 +55,7 @@ const API_ENDPOINTS = {
     category: ["public"],
     type: "HSE training",
     link: "/blogs/hse/first-aid-cpr-training",
-    src: "blog/hse/firstaid-session.png"
-  },
-  {
-    id: -18,
-    title: "Environmental Management: Keeping Our Sites Clean and Sustainable.",
-    text: "Beyond compliance, we are committed to environmental protection. Our recent environmental management campaign focused on proper waste disposal and eco-friendly practices across all project sites.",
-    date: "25/07/2025",
-    category: ["public"],
-    type: "environmental update",
-    link: "/blogs/hse/environmental-management",
-    src: "blog/hse/environmental-drive.png"
+    src: "projects/white/izzy-on-white5.jpg"
   }
 ],
 

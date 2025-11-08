@@ -1,7 +1,9 @@
 import { iconSvgPath } from "@/components";
+import { API_ENDPOINTS } from "@/configs";
 
 export default function CertificateHelper(){
-  const certs = [
+  const certs =API_ENDPOINTS.CERTIFICATIONS
+  const certs1 = [
   {
     img: "cert.png",
     label: "ISO 45001",
@@ -39,9 +41,9 @@ export default function CertificateHelper(){
         <div className='grid grid-cols-3 gap-x-[70px] tablet:gap-y-8 gap-y-10 tablet:grid-cols-1 w-[1000px] tablet:w-full'>
           {certs.map(({img, label, desc},ind)=>
             <div key={ind} className='rounded-md p-7 flex flex-col items-center'>
-              <img src={iconSvgPath(img, 'images')}/>
-              <p className='font-semibold text-lg my-4'>{label}</p>
-              <p className='text-center text-sm'>{desc}</p>
+              <img className="w-20 h-20 object-top object-cover" src={iconSvgPath('certifications/'+img, 'images')}/>
+              <p className='text-center font-semibold text-lg my-4'>{label}</p>
+              {/* <p className='text-center text-sm'>{desc}</p> */}
             </div>
           )}
         </div>
