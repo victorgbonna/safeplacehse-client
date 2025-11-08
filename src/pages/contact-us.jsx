@@ -19,13 +19,14 @@ export default function ContactUs() {
     ] 
     const {NotifySuccess, NotifyError}= useToast()
     const {postDataWithoutBaseUrl}= useHttpServices()
+    const [isLoading, setLoading]= useState(false)
 
     const subscribeQue= async()=>{    
         // const sheethttps://docs.google.com/spreadsheets/d/1n1F44RrxXW4OY-FEoQMwjkLQzGcRB1-Bi8eZin_mqeA/edit?gid=0#gid=0
         return await postDataWithoutBaseUrl({path:API_ENDPOINTS?.GOOGLE_SHEET_LINK,body:formData})
       }
     
-    const {mutate:subscribeFunc, isPending:isLoading}=useMutation({
+    const {mutate:subscribeFunc, isPending:isLading}=useMutation({
     mutationFn: ()=>subscribeQue(),
         onError:(error)=>{
             return NotifyError(error?.error?.message || 'Something went wrong. Please try again later')
@@ -34,7 +35,27 @@ export default function ContactUs() {
             return NotifySuccess('Sent! We will be in touch.')
         }
     })
-    
+    function subscribeFund(e){
+        setLoading(true)
+        e?.preventDefault();
+        fetch(API_ENDPOINTS.GOOGLE_SHEET_LINK, {
+        method: 'POST',
+        body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            subject: formData.subject,
+            message:formData.message
+        })
+        })
+        // .then(res => res.text())
+        .then(res =>{
+            NotifySuccess('Sent! We will be in touch.')
+            setLoading(false)
+        } )
+        .catch(err => {
+            setLoading(false)
+        });
+    }
     return (
      <div
       className={`py-24 tablet:pt-14 pb-5`}
@@ -49,7 +70,7 @@ export default function ContactUs() {
         </section>
       
         <div className='justify-between grid items-center tablet:grid-cols-1 grid-cols-[1fr,0.75fr] gap-[100px] py-[100px] px-20 tablet:px-5 tablet:py-6'>
-            <div>
+            <form id='contactForm'>
                 <p className='text-[#20C905] text-4xl tablet:text-3xl font-semibold mb-4'>Get in Touch</p>
                 <div className='mb-7 w-full grid grid-cols-2 tablet:grid-cols-1 gap-8'>
                     {form_inputs_list.map(({label, type='text'},ind)=>
@@ -75,9 +96,9 @@ export default function ContactUs() {
                             {label}
                         </Link>:
                         
-                        <LoadButton onClick={()=>subscribeFunc()} 
+                        <LoadButton onClick={()=>subscribeFund()} 
                             isLoading={isLoading}
-                            disabled={isNotEmail(formData.email) || !formData.name || !formData.subject || !formData.message}
+                            disabled={!!isNotEmail(formData.email) || !formData.name || !formData.subject || !formData.message}
                             className={`mt-8 tablet:mt-6 text-center tablet:w-full tablet:text-sm inline-block ${primary?'bg-green text-white':'border border-green text-green'} font-medium px-8 py-2 tablet:py-3 rounded-full`}>
                             {label}
                         </LoadButton>
@@ -87,7 +108,7 @@ export default function ContactUs() {
                     </div>
                 </div>
 
-            </div>
+            </form>
             <div className='flex items-center flex-col'>
                 <ImageContainer src={iconSvgPath('izzyboss-hero.png', 'images')} 
                 className={'w-[300px] h-[300px] tablet:w-full tablet:h-[300px]'} 

@@ -239,7 +239,7 @@ input::-webkit-inner-spin-button {
   background: #F0F9FA !important;
   font-size:"13px" !important;
   color: #000000 !important;
-  font-family: "Manrope", sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
  
 
 }
@@ -248,7 +248,7 @@ input::-webkit-inner-spin-button {
   background: #FAE1E2 !important;
   font-size:"13px" !important;
   color: #000000 !important;
-  font-family: "Manrope", sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
 }
 
 tr:nth-child(even) {

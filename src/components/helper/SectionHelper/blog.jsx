@@ -12,7 +12,7 @@ export default function BlogHelper({blog_id, showHeader=true}){
           <div id="newsscroll" 
             style={{transform: `translateX(-${teamCurr * 100}%)`} }
             className='max-w-[1440px] grid-cols-3 grid tablet:grid-cols-1 px-10 tablet:px-5 pb-4 overflow-x-hidden gap-10'>
-            {API_ENDPOINTS.BLOGS.filter(({id})=>id!==blog_id).map(({title, text,src,link,date},ind)=>
+            {API_ENDPOINTS.BLOGS.filter(({id})=>id!==blog_id).map(({title, text,src,link,date,id},ind)=>
               <div key={ind} 
 
                 className="rounded-md bg-white w-full pb-4 tablet:min-w-[100%]"
@@ -25,9 +25,9 @@ export default function BlogHelper({blog_id, showHeader=true}){
                     src={
                       iconSvgPath(src, 'images')
                     }  
-                    className={'w-full h-[200px] rounded-t-md'}
+                    className={'w-full h-[200px] rounded-t-md '}
                      
-                    imgClass="object-center object-cover"
+                    imgClass={(id===-16?' object-top ':' object-center ')+"  object-cover"}
                     alt={title}
                   />
                   </div>
