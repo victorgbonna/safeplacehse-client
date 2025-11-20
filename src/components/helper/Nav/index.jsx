@@ -18,11 +18,12 @@ export default function Nav({scrolledPast,scrolledPastMobile, activeNav}) {
             label:"About Us",
             to:PAGE_ROUTES.ABOUT,
         }
-        ,{
-            type:"menu",
-            label:"Services",
-            to:PAGE_ROUTES.SERVICES,
-        },
+        // ,{
+        //     type:"menu",
+        //     label:"Services",
+        //     to:PAGE_ROUTES.SERVICES,
+        // },
+        ,
         {
             type:"menu",
             label:"Projects",
@@ -99,7 +100,7 @@ function PcNav({nav_list, scrolledPast, activeNav}){
         }:{}} className="phone:hidden z-[90] py-7 fixed top-0 left-0 right-0 w-full flex justify-between px-[90px] items-center">
             <Link href={'/'} className='flex items-center gap-x-2'>
                 <ImageContainer 
-                    src={'/images/safeplacehse_logo.png'} className={'w-[50px] h-[70px]'} imgClass='' alt='safeplace logo'/>
+                    src={'/images/safeplacehse_logo.png'} className={'w-[50px] h-[50px]'} imgClass='' alt='safeplace logo'/>
                 {/* <p className="text-xl font-semibold">SafePlaceHSE</p> */}
             </Link >
             <ul className='flex gap-x-7 gap-y-4 items-center'>
