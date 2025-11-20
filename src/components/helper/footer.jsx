@@ -45,7 +45,7 @@ const [email, setEmail]= useState('')
                 <div className="max-w-[350px]">
                     {/* <h2 className="text-xl text-green font-semibold">Gogota Farm</h2> */}
                     <div className="flex items-end gap-x-2">
-                        <ImageContainer src={'/images/safeplacehse_logo.png'} style={{filter: 'brightness(0) invert(1)'}} className={'w-[50px] h-[50px]'} alt='safeplace logo'/>
+                        <ImageContainer src={'/images/safeplacehse_logo.png'} style={{filter: 'brightness(0) invert(1)'}} className={'w-[40px] h-[45px]'} alt='safeplace logo'/>
                         {/* <p className="text-lg">Safeplace HSE</p> */}
                     </div>
 

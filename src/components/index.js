@@ -16,10 +16,6 @@ export {default as LoadButton} from './helper/LoadButton';
 
 export {default as SearchField} from './helper/SearchField';
 
-// export {default as Sidebar} from './helper/Sidebar';
-
-// export {default as TeamTable} from './table/TeamTable';
-// UserTable
 export {default as RichTextEditor} from "./helper/RichTextEditor";
 
 export {default as Paginator} from './helper/Paginator';
@@ -38,5 +34,5 @@ export { default as LazyBackground } from './helper/LazyBackground';
 
 export { default as DataFetch } from "./helper/Datafetch";
 
-
+export { default as ContactForm } from "./helper/ContactForm";
 // DataFetch

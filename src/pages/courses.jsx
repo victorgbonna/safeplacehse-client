@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { CourseHelper } from '@/components'
+import { ContactForm, CourseHelper } from '@/components'
 import Link from 'next/link'
 import { useState } from 'react'
 
@@ -18,7 +18,10 @@ export default function Courses() {
             </div>
         </section>
         <div className='mt-20'>
-            <CourseHelper btnLabel={'View Projects'}/>
+          <CourseHelper btnLabel={'View Projects'}/>
+        </div>
+        <div className='mt-20 flex flex-col justify-center tablet:px-5 px-20'>
+          <ContactForm sheetName={'Course Request'} text='Want some trainings/courses not provided here?' showSubject={false} options={['Training', 'Courses']}/>
         </div>
     </div>
   )

@@ -66,7 +66,6 @@ export default function ContactUs() {
                 <h1 className='text-5xl tablet:text-4xl mb-3'>Contact Us</h1>
                 <p className='text-lg tablet:text-base'>{'Looking for how to reach out to me? Look no more! fill out the form or message me on my contact line and you are just a step closer to my doorstep.'}</p>                
             </div>
-            
         </section>
       
         <div className='justify-between grid items-center tablet:grid-cols-1 grid-cols-[1fr,0.75fr] gap-[100px] py-[100px] px-20 tablet:px-5 tablet:py-6'>
