@@ -19,7 +19,7 @@ const API_ENDPOINTS = {
   // },
   // {
   //   id: -18,
-  //   title: "Environmental Management: Keeping Our Sites Clean and Sustainable.",
+  //   title: "Environmental Management: ing Our Sites Clean and Sustainable.",
   //   text: "Beyond compliance, we are committed to environmental protection. Our recent environmental management campaign focused on proper waste disposal and eco-friendly practices across all project sites.",
   //   date: "25/07/2025",
   //   category: ["public"],
