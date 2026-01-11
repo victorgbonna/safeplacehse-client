@@ -1,94 +1,218 @@
-import Link from "next/link"
-// import { useHttpServices, useToast } from '@/hooks';
-import { PAGE_ROUTES, consolelog,API_ENDPOINTS } from '@/configs'
-import { Fragment, useContext, useEffect, useState } from 'react'
-import { useMutation } from '@tanstack/react-query';
-import { ImageContainer } from "@/components";
+import Image from 'next/image'
 
+import { BlogHelper, CertificateHelper, CourseHelper, iconSvgPath, ImageContainer, ProjectHelper, SectionUnderlineHelper } from '@/components'
+import Link from 'next/link'
+import { useState } from 'react'
+import { PAGE_ROUTES } from '@/configs'
+import useIntersectionObserver from '@/hooks/useIntersectionObserver'
 
+export default function EnhancedHome() {
+  return (
+    <div className={`py-24`}>
+      <HeroSection />
+      <WhoWeAre />
+      <Services />
+      <CertificateHelper />
+      <ProjectHelper />
+      <Testimonials />
+      <CourseHelper />
+      <BlogHelper />
+    </div>
+  )
+}
 
-export default function Footer() {    
-    const soc_links=[
-        // {icon:"youtube", link:API_ENDPOINTS?.CONTACT?.YOUTUBE_LINK},
-        {icon:"insta", link:API_ENDPOINTS?.CONTACT?.INSTA_LINK},
-        {icon:"fb", link:API_ENDPOINTS?.CONTACT?.FACEBOOK_LINK},
-        {icon:"whatsapp", link:API_ENDPOINTS?.CONTACT?.WHATSAPP_LINK},
-        {icon:"linkedin", link:API_ENDPOINTS?.CONTACT?.LINKEDIN_LINK},
-        // {icon:"linkedin", link:}
-    ]
-    // const {postData}= useHttpServices()
-    
-const [email, setEmail]= useState('')
-    
-    const {NotifySuccess, NotifyError}= {}
+function HeroSection() {
+  const ref = useIntersectionObserver();
+  
+  return (
+    <div ref={ref} className="h-fit px-24 tablet:px-5 tablet:py-0 tablet:h-fit py-[50px] flex tablet:flex-col items-center justify-between opacity-0">
+      <div>
+        <div>
+          <h1 className="text-5xl tablet:text-3xl tablet:mb-2 font-bold tablet:text-left">
+            <span className="text-green">SafePlaceHSE</span> Consulting
+          </h1>
+          <p className='text-[#2A2A2A] text-lg font-semibold mt-[3px]'>HSE Consultant | Safety, Compliance & Environmental Solutions</p>
+        </div>
+        <div>
+          <p className="mt-2 text-sm text-[#2A2A2A] mt-6 mb-5 tablet:text-left max-w-2xl">
+            At SafeplaceHSE, we believe that safety is more than a regulatory requirement,<br /> it is a responsibility, a culture, and a commitment to preserving life, health, and the environment
+          </p>
+          <div className='flex gap-x-10 tablet:gap-x-6 tablet:justify-start'>
+            {[{ numbers: "5yrs+", label: "Experience" },
+            { numbers: "1k+", label: "Certificates" }].map(({ numbers, label }, ind) =>
+              <div key={ind} className="text-lg tablet:text-left max-w-2xl">
+                <p className='font-semibold text-3xl tablet:text-2xl mb-[6px] hover:text-green transition-colors duration-300'>{numbers}</p>
+                <p className='light-g text-sm'>{label}</p>
+              </div>
+            )}
+          </div>
+        </div>
+        <div className='flex gap-x-8 tablet:gap-x-8 tablet:justify-start'>
+          {[{ label: "Chat with Us", link: "#", primary: true },
+          { label: "Learn More", link: "#", primary: false }].map(({ label, link, primary }, ind) =>
+            <Link href={link} key={ind} className={`mt-8 tablet:mt-6 tablet:text-sm inline-block hero-button-hover ${primary ? 'bg-green text-white' : 'border border-green text-green'} font-medium px-8 py-2 rounded-full hover:opacity-90`}>
+              {label}
+            </Link>
+          )}
+        </div>
+      </div>
+      <div>
+        <ImageContainer src={iconSvgPath('safety-hse-israel.jpg', 'images')}
+          className={'w-[400px] h-[350px] tablet:w-full tablet:h-[300px] tablet:mt-10 image-hover-lift'}
+          imgClass='object-contain w-[390px] h-[390px]' alt='hero image' />
+      </div>
+    </div>
+  )
+}
 
-    const subscribeQue= async()=>{    
-        const body={email}
-        console.log(body)
-        return await postData({path:API_ENDPOINTS?.SUBSCRIBE_TO_NEWSLETTER,body})
-      }
-    
-      const {mutate:subscribeFunc, isPending:pendLoading}=useMutation({
-        mutationFn: ()=>subscribeQue(),
-          onError:(error)=>{
-              consolelog({error})
-              return NotifyError(error?.error?.message || 'Could not get data')
-          },
-          onSuccess:({data})=>{
-            console.log({data})
-              return NotifySuccess('Sent! We will be in touch.')
-          }
-        })
-    
-    return (    
-        <footer className="px-[70px] tablet:px-10 tablet:py-10 tablet:mt-10 mt-[80px] py-[40px] ta text-white pb-10 bg-[url('/images/services.png')] bg-cover bg-no-repeat bg-bottom">     
-            <div className="gap-x-[150px] tablet:gap-x-10 flex tablet:flex-col tablet:gap-y-10">
-                <div className="max-w-[350px]">
-                    {/* <h2 className="text-xl text-green font-semibold">Gogota Farm</h2> */}
-                    <div className="flex items-end gap-x-2">
-                        <ImageContainer src={'/images/safeplacehse_logo.png'} style={{filter: 'brightness(0) invert(1)'}} className={'w-[40px] h-[45px]'} alt='safeplace logo'/>
-                        {/* <p className="text-lg">Safeplace HSE</p> */}
-                    </div>
+function WhoWeAre() {
+  const ref = useIntersectionObserver();
+  
+  return (
+    <section ref={ref} className='px-24 py-[50px] tablet:px-5 tablet:py-20 flex flex-col justify-center opacity-0'>
+      <div className='flex justify-center mb-5 tablet:px-6'>
+        <div className='w-fit flex flex-col items-center'>
+          <h4 className='text-3xl tablet:2xl mb-2 px-3 font-semibold'>WHO WE ARE</h4>
+          <span className='w-[70%] border-green h-[1px] border'></span>
+        </div>
+      </div>
+      <div className='flex justify-center'>
+        <div className='w-[900px]'>
+          <p className='text-base light-g text-center'>{"SAFEPLACE HSE CONSULTING, registered with corporate affairs commission (CAC), provides Health, Safety and Environment (HSE) consulting services to oil and gas and non-oil and gas sectors of Nigerian Economy. We also offer HSE Retainership, Nigeria Petroleum Exchange (NIPEX) registration Consultancy and HSE Training across all sectors of Nigeria's economy."}</p>
+        </div>
+      </div>
+      <div className='flex justify-center tablet:flex-col relative mt-10'>
+        <div className='absolute w-fit left-0 z-2 right-0 top-3 bottom-3'>
+          <img src={iconSvgPath('projects/white/izzy-on-white11.jpg', 'images')}
+            className={'object-contain object-top rounded-md w-[400px] h-[400px] tablet:w-full tablet:h-[300px] image-hover-lift'}
+            imgClass='object-contain w-[390px] h-[390px]' alt='hero image' />
+        </div>
 
-                    {/* <div className="flex items-center gap-6 mt-4">
-                        {soc_links.map(({icon, link},ind)=>
-                            <Link target="_blank" href={link || '/'} key={ind}>
-                                <div>
-                                    <ImageContainer src={iconSvgPath('socials/'+icon)} alt={icon} className="w-6 h-6"/>
-                                </div>
-                            </Link>
-                        )
-                        }
-                    </div> */}
-                </div>
-                <div className="flex gap-x-10 tablet:flex-col tablet:gap-y-6">                    
-                    <div>
-                        
-                        <p className="text-lg font-[500] mb-4 text-[#F5F5F5]">Contact</p>
-                        <div className="max-w-[300px] text-base space-y-2">
-                            <p className="">Phone: <span className="font-medium">{API_ENDPOINTS?.CONTACT?.PHONE ?? '+971592295379'}</span></p>
-                            {/* <p className="text-sm  font-semibold">Facebook: <span className="font-medium">+234 9728330023</span></p> */}
-                            <p className="">Email: <span className="font-medium">{API_ENDPOINTS?.CONTACT?.GMAIL ?? 'info.safeplacehse.com'}</span></p>
-                            {/* <p className="text-sm  font-semibold">: <span className="font-medium">43 lorem ipsum Niger, Niger State</span></p> */}
-                        </div>
-                    </div>                    
-                </div>
-                <div>
-                    <p className="text-lg font-[500] mb-4 text-[#F5F5F5]">Quick Links</p>
-                    <div className="text-base flex flex-col gap-y-2">
-                        <Link href={PAGE_ROUTES?.ABOUT_US ?? '/'}><p className="">About Us</p></Link>
-                        <Link href={PAGE_ROUTES?.PROPERTIES ?? '/'}><p className="">Properties</p></Link>
-                        <Link href={PAGE_ROUTES?.CONTACT ?? '/'}><p className="">Contact Us</p></Link>
-                    </div>
-                </div>
-                
+        <div className='absolute w-fit right-0 z-1 right-0 top-3 bottom-3'>
+          <img src={iconSvgPath('projects/white/izzy-on-white8.jpg', 'images')}
+            className={'object-contain object-top rounded-md w-[400px] h-[400px] tablet:w-full tablet:h-[300px] image-hover-lift'}
+            imgClass='object-contain w-[390px] h-[390px]' alt='hero image' />
+        </div>
+        <ImageContainer src={iconSvgPath('projects/white/izzy-on-white10.jpg', 'images')}
+          className={'w-[400px] z-3 relative h-[400px] tablet:w-full tablet:h-[300px]'}
+          imgClass='shadow-lg relative z-3 object-contain w-[390px] h-[390px] image-hover-lift' alt='hero image' />
+      </div>
+      <div className=' flex justify-center'>
+        <button className='mt-10 flex justify-center items-center gap-x-2 bg-green text-white font-medium px-8 py-2 rounded-full hover:opacity-90 hero-button-hover'>
+          <p>Read Our Story</p>
+          <img src={iconSvgPath('caret-right')} alt="caret-right" />
+        </button>
+      </div>
+    </section>
+  )
+}
+
+function Services() {
+  const ref = useIntersectionObserver();
+  const services = [
+    { img: "/audit", label: "Audits", desc: "We deliver thorough HSE audits to identify risks, ensure compliance, and drive continuous improvement." },
+    { img: "/train", label: "Training", desc: "We provide practical HSE training to equip teams with the knowledge and skills for a safer workplace." },
+    { img: "/compliance", label: "Compliance Support", desc: "We offer tailored compliance support to help organizations meet regulatory standards with ease." }
+  ]
+
+  return (
+    <section ref={ref} className='bg-[url("/images/services.png")] h-screen bg-cover bg-center flex flex-col justify-center px-[100px] tablet:px-5 tablet:h-fit text-white tablet:py-14 opacity-0'>
+      <div className='flex justify-between items-center tablet:flex-col tablet:gap-y-4'>
+        <p className='text-2xl font-semibold'>OUR SERVICES</p>
+        <div className='w-[700px] tablet:w-full border-l-2 pl-2 border-white'>
+          <p>{"Safeplace HSE is committed to quality management to ensure excellent delivery of all our services.  We foster a culture of continuous improvement to deliver our services to specifications and requirements."}</p>
+        </div>
+      </div>
+      <div className='grid grid-cols-3 tablet:grid-cols-1 tablet:gap-x-2 tablet:gap-y-10 gap-x-[70px] mt-16'>
+        {services.map(({ img, label, desc }, ind) =>
+          <div key={ind} className='rounded-md tablet:w-fit tablet:border-2 p-7 shadow-xl border border-white flex flex-col items-center service-card-hover'>
+            <img src={iconSvgPath(img + ".png", 'images')} />
+            <p className='font-semibold text-lg my-4'>{label}</p>
+            <p className='text-center text-sm'>{desc}</p>
+          </div>
+        )}
+      </div>
+      <div className='flex tablet:gap-y-8 mt-14 justify-center gap-x-3 items-center tablet:text-sm'>
+        {[{ label: "Check our Projects", href: PAGE_ROUTES.PROJECTS, classNames: 'shadow-xl border rounded-full py-2.5 px-4 hero-button-hover' },
+        { label: "Explore Courses", href: PAGE_ROUTES.COURSES, classNames: "shadow-xl bg-white text-green font-semibold rounded-full py-2.5 px-4 hero-button-hover" }]
+          .map(({ label, href, classNames }, ind) =>
+          <Link href={href} key={ind} className={classNames}>
+            {label}
+          </Link>
+        )}
+      </div>
+    </section>
+  )
+}
+
+function Testimonials() {
+  const ref = useIntersectionObserver();
+  const testimonials = [
+    {
+      img: "client.png",
+      name: "John Smith",
+      title: "HSE Manager",
+      company: "Total Energies",
+      feedback:
+        "Working with SC Training has been a great experience. Their HSE courses are practical, engaging, and easy to implement within our team."
+    },
+    {
+      img: "client.png",
+      name: "Amaka Johnson",
+      title: "Project Supervisor",
+      company: "Shell Nigeria",
+      feedback:
+        "The training was incredibly detailed and aligned with our compliance goals. We've seen measurable improvement in our team's safety awareness."
+    },
+    {
+      img: "client.png",
+      name: "David Thompson",
+      title: "Operations Lead",
+      company: "Chevron",
+      feedback:
+        "Their courses make complex safety and compliance concepts simple to understand. Highly recommended for organizations aiming for international standards."
+    }
+  ];
+  const [activeIndex, setActiveIndex] = useState(0);
+  return (
+    <section ref={ref} className='flex flex-col items-center w-screen h-fit px-[100px] py-[100px] tablet:px-5 tablet:py-20 opacity-0'>
+      <div>
+        <SectionUnderlineHelper label={'HEAR FROM OUR CLIENTS'} />
+      </div>
+      <div className='flex gap-x-3 items-center tablet:gap-y-4 tablet:flex-wrap tablet:justify-center'>
+        <button className='tablet:order-2 w-9 h-9 flex items-center justify-center border border-[#4BCB48] rounded-full hover:bg-[#4BCB48] hover:scale-110 transition-all duration-300'>
+          <img src={'/svg/caret-left.svg'} alt="caret" />
+        </button>
+        <div className='tablet:basis-full flex items-center gap-x-[70px] gap-y-10 tablet:grid-cols-1 w-[1000px] tablet:w-full'>
+          {testimonials.slice(0, 1).map(({ img, name, title, company, feedback }, ind) =>
+            <div key={ind} className='bg-[#4BCB48] text-white rounded-md p-7 flex tablet:flex-col items-center border shadow-xl testimonial-card-animate hover:shadow-2xl'>
+              <div className='tablet:w-full text-left'>
+                <p className='text-xl mb-5'>{`" ${feedback} "`}</p>
+                <p className='font-semibold text-base mb-2'>{name + ' | ' + title}</p>
+                <p className='text-sm italic'>{company}</p>
+              </div>
+              <img src={iconSvgPath(img, 'images')} className='image-hover-lift' />
             </div>
-            
-            <hr className="mt-20"/>
-            <p className="text-center font-[600] text-sm pt-10">
-            &copy; Copyright {new Date().getFullYear()} SafePlaceHSE. All rights reserved.
-            </p>
-        </footer>
-
-    )
+          )}
+        </div>
+        <button className='tablet:order-3 w-9 h-9 flex items-center justify-center border border-green rounded-full hover:bg-green hover:scale-110 transition-all duration-300'>
+          <img src={'/svg/caret-green-right.svg'} alt="caret" />
+        </button>
+      </div>
+      <div className='flex justify-center tablet:hidden gap-x-2.5 items-center mt-10'>
+        {[1, 2, 3, 4].map((_, ind) =>
+          <div
+            className="cursor-pointer w-[10px] h-[10px] rounded-full transition-all duration-300 hover:scale-125" key={ind}
+            onClick={() => setActiveIndex(ind)}
+            style={
+              activeIndex === ind ?
+                { background: '#4BCB48' } :
+                { background: 'transparent', border: '1px solid #4BCB48' }
+            }></div>
+        )}
+      </div>
+      <div className='mt-20 text-center'>
+      </div>
+    </section>
+  )
 }
