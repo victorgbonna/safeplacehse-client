@@ -3,7 +3,8 @@ import Link from "next/link"
 import { PAGE_ROUTES, consolelog,API_ENDPOINTS } from '@/configs'
 import { Fragment, useContext, useEffect, useState } from 'react'
 import { useMutation } from '@tanstack/react-query';
-import { iconSvgPath, ImageContainer } from "..";
+import { ImageContainer } from "@/components";
+
 
 
 export default function Footer() {    
