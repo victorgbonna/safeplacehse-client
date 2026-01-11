@@ -1,63 +1,66 @@
 import { iconSvgPath, ImageContainer } from "@/components";
+import { PAGE_ROUTES } from "@/configs";
 import Link from "next/link";
+import useIntersectionObserver from "@/hooks/useIntersectionObserver";
 
 export default function CourseHelper({btnLabel, link}){
-    const courses = [
-        {
-            img: "conference/izzy-cyber-conference4.jpeg",
-            title: "HSE Level 1 – Health, Safety & Environment Awareness",
-            desc: "This introductory course provides learners with fundamental HSE knowledge, covering workplace safety, hazard recognition, and emergency response procedures.",
-            duration: "2 weeks",
-            audience: ["Beginners", "Entry-level workers", "Interns"],
-            price: "₦20,000",
-            views: 1340
-        },
-        {
-            img: "projects/white/izzy-on-white.jpg",
-            title: "HSE Level 2 – Risk Assessment & Safety Management",
-            desc: "This course focuses on hazard identification, workplace inspections, and control measures to ensure a safe working environment.",
-            duration: "3 weeks",
-            audience: ["Supervisors", "Safety officers", "Team leads"],
-            price: "₦35,000",
-            views: 980
-        },
-        {
-            img: "projects/white/izzy-on-white10.jpg",
-            title: "HSE Level 3 – Advanced Health and Safety Management",
-            desc: "Designed for professionals, this advanced course covers policy creation, safety leadership, and incident investigation for effective HSE management.",
-            duration: "4 weeks",
-            audience: ["Managers", "Coordinators", "HSE professionals"],
-            price: "₦50,000",
-            views: 1675
-        },
-        // {
-        //     img: "fire.png",
-        //     title: "Fire Safety & Emergency Preparedness Training",
-        //     desc: "Learn essential fire safety principles, evacuation planning, and the use of fire extinguishers to minimize risks during emergencies.",
-        //     duration: "1 week",
-        //     audience: ["Employees", "Contractors", "Facility managers"],
-        //     price: "₦15,000",
-        //     views: 890
-        // },
-        {
-            img: "projects/white/izzy-on-white8.jpg",
-            title: "First Aid & CPR Certification",
-            desc: "This course equips learners with life-saving first aid and CPR techniques to handle medical emergencies at work or home.",
-            duration: "1 week",
-            audience: ["General staff", "First responders", "HSE trainees"],
-            price: "₦25,000",
-            views: 1420
-        }
-    ];
+    const ref = useIntersectionObserver();
+    // const courses = [
+    //     {
+    //         img: "conference/izzy-cyber-conference4.jpeg",
+    //         title: "HSE Level 1 – Health, Safety & Environment Awareness",
+    //         desc: "This introductory course provides learners with fundamental HSE knowledge, covering workplace safety, hazard recognition, and emergency response procedures.",
+    //         duration: "2 weeks",
+    //         audience: ["Beginners", "Entry-level workers", "Interns"],
+    //         price: "₦20,000",
+    //         views: 1340
+    //     },
+    //     {
+    //         img: "projects/white/izzy-on-white.jpg",
+    //         title: "HSE Level 2 – Risk Assessment & Safety Management",
+    //         desc: "This course focuses on hazard identification, workplace inspections, and control measures to ensure a safe working environment.",
+    //         duration: "3 weeks",
+    //         audience: ["Supervisors", "Safety officers", "Team leads"],
+    //         price: "₦35,000",
+    //         views: 980
+    //     },
+    //     {
+    //         img: "projects/white/izzy-on-white10.jpg",
+    //         title: "HSE Level 3 – Advanced Health and Safety Management",
+    //         desc: "Designed for professionals, this advanced course covers policy creation, safety leadership, and incident investigation for effective HSE management.",
+    //         duration: "4 weeks",
+    //         audience: ["Managers", "Coordinators", "HSE professionals"],
+    //         price: "₦50,000",
+    //         views: 1675
+    //     },
+    //     // {
+    //     //     img: "fire.png",
+    //     //     title: "Fire Safety & Emergency Preparedness Training",
+    //     //     desc: "Learn essential fire safety principles, evacuation planning, and the use of fire extinguishers to minimize risks during emergencies.",
+    //     //     duration: "1 week",
+    //     //     audience: ["Employees", "Contractors", "Facility managers"],
+    //     //     price: "₦15,000",
+    //     //     views: 890
+    //     // },
+    //     {
+    //         img: "projects/white/izzy-on-white8.jpg",
+    //         title: "First Aid & CPR Certification",
+    //         desc: "This course equips learners with life-saving first aid and CPR techniques to handle medical emergencies at work or home.",
+    //         duration: "1 week",
+    //         audience: ["General staff", "First responders", "HSE trainees"],
+    //         price: "₦25,000",
+    //         views: 1420
+    //     }
+    // ];
 
 
     return (
-    <section className='flex flex-col items-center w-screen h-fit bg-cover bg-top px-[100px] tablet:px-5'>
+    <section ref={ref} className='flex flex-col items-center w-screen h-fit bg-cover bg-top px-[100px] tablet:px-5 opacity-0'>
         <div className='w-fit flex flex-col justify-center items-center mb-10'>
             <h4 className='text-3xl mb-2 px-3 font-semibold tablet:text-2xl'>OUR COURSES</h4>
             <span className='w-[30%] border-green h-[1px] border'></span>
         </div>
-        <div className="space-y-8">
+        {/* <div className="space-y-8">
             {courses.map(({img, title, desc, price, views, audience, duration, status="Active"},ind)=>
                 <div key={ind} className={`tablet:bg-lightgreen tablet:px-3 bg-white relative shadow-xl  rounded-2xl flex gap-x-10 items-start tablet:flex-col`}>
                     <div className="flex gap-x-6 tablet:gap-y-4 tablet:flex-col">
@@ -113,19 +116,38 @@ export default function CourseHelper({btnLabel, link}){
                     </div>
                 </div>
             )}
+        </div> */}
+        <div className="w-full flex justify-center items-center py-20 tablet:py-12">
+            <div className="flex flex-col items-center justify-center text-center max-w-2xl">
+                <div className="mb-6">
+                    <svg className="w-24 h-24 tablet:w-16 tablet:h-16 mx-auto text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C6.5 6.253 3 9.086 3 12.5c0 4.446 4.03 8.211 9 11.911m0-13c5.5-3.7 9-7.465 9-11.911 0-3.414-3.5-6.247-9-6.253m0 13V3m0 13c-5.07 3.7-9 7.465-9 11.911M12 3c5.07 0 9 2.847 9 6.253" />
+                    </svg>
+                </div>
+                <h3 className="text-3xl tablet:text-2xl font-semibold text-gray-800 mb-3">
+                    No Courses Available
+                </h3>
+                <p className="text-lg tablet:text-base text-gray-600 mb-8 leading-relaxed">
+                    We're currently not offering any courses at the moment. However, we provide comprehensive HSE consulting, training programs, and safety solutions tailored to your organization's needs.
+                </p>
+                <p className="text-sm tablet:text-xs text-gray-500 px-4">
+                    If you're interested in custom training or HSE development programs, please reach out to us via the contact form below.
+                </p>
+            </div>
         </div>
         <div className='flex mt-14 justify-center gap-x-4 items-center'>
         {/* {[{label:"Browse More Courses", href:"/", classNames:'hover:opacity-90 shadow-xl border rounded-full py-2.5 px-4 text-green border-green'}] */}
         {btnLabel?
-            <Link href={'/'} className="hover:opacity-90 shadow-xl bg-green border border-[#FFFFFF] text-white font-semibold rounded-full py-2.5 px-4">
+            <Link href={PAGE_ROUTES.PROJECTS} className="hover:opacity-90 shadow-xl bg-green border border-[#FFFFFF] text-white font-semibold rounded-full py-2.5 px-4">
             {btnLabel}
             </Link>
-        :[{label:"Explore Courses", href:"/", classNames:"hover:opacity-90 shadow-xl bg-green border border-[#FFFFFF] text-white font-semibold rounded-full py-2.5 px-4"}]
+        :null}
+        {/* :[{label:"Explore Courses", href:"/", classNames:"hover:opacity-90 shadow-xl bg-green border border-[#FFFFFF] text-white font-semibold rounded-full py-2.5 px-4"}]
             .map(({label, href, classNames},ind)=>
             <Link href={href} key={ind} className={classNames}>
             {label}
             </Link>
-        )}
+        ) */}
         </div>
     </section>
     )

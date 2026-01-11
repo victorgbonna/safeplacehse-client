@@ -86,7 +86,7 @@ export default function ContactUs() {
                     
                      <div className='flex gap-x-8 tablet:gap-x-8 tablet:flex-col tablet:w-full'>
                         {[{label:"Send Message", link:"", primary:true},
-                        {label:"Chat on Whatsapp Instead", link:"#", primary:false}].map(({label, link, primary},ind)=>
+                        {label:"Chat on Whatsapp Instead", link:"https://wa.me/+971592295379", primary:false}].map(({label, link, primary},ind)=>
                         <Fragment key={ind}>
                         {
                         link?
@@ -109,7 +109,7 @@ export default function ContactUs() {
 
             </form>
             <div className='flex items-center flex-col'>
-                <ImageContainer src={iconSvgPath('izzyboss-hero.png', 'images')} 
+                <ImageContainer src={iconSvgPath('safety-hse-israel.jpg', 'images')} 
                 className={'w-[300px] h-[300px] tablet:w-full tablet:h-[300px]'} 
                 imgClass='object-contain w-[390px] h-[390px]' alt='hero image'/>
                 <div className='mt-5 space-y-3 flex flex-col items-center font-semibold'>
@@ -117,7 +117,7 @@ export default function ContactUs() {
                         <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M2.2 17.5C1.595 17.5 1.07727 17.2921 0.6468 16.8763C0.216333 16.4605 0.000733333 15.9601 0 15.375V2.625C0 2.04062 0.2156 1.54054 0.6468 1.12475C1.078 0.708958 1.59573 0.500708 2.2 0.5H19.8C20.405 0.5 20.9231 0.70825 21.3543 1.12475C21.7855 1.54125 22.0007 2.04133 22 2.625V15.375C22 15.9594 21.7848 16.4598 21.3543 16.8763C20.9238 17.2928 20.4057 17.5007 19.8 17.5H2.2ZM11 10.0625L2.2 4.75V15.375H19.8V4.75L11 10.0625ZM11 7.9375L19.8 2.625H2.2L11 7.9375ZM2.2 4.75V2.625V15.375V4.75Z" fill="#484848"/>
                         </svg>
-                        <p>hi@safeplacehse.com</p>
+                        <p>info@safeplacehse.com</p>
                     </div>
                     <div className='flex items-center gap-x-3'>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

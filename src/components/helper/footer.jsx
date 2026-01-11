@@ -49,7 +49,7 @@ const [email, setEmail]= useState('')
                         {/* <p className="text-lg">Safeplace HSE</p> */}
                     </div>
 
-                    <div className="flex items-center gap-6 mt-4">
+                    {/* <div className="flex items-center gap-6 mt-4">
                         {soc_links.map(({icon, link},ind)=>
                             <Link target="_blank" href={link || '/'} key={ind}>
                                 <div>
@@ -58,14 +58,14 @@ const [email, setEmail]= useState('')
                             </Link>
                         )
                         }
-                    </div>
+                    </div> */}
                 </div>
                 <div className="flex gap-x-10 tablet:flex-col tablet:gap-y-6">                    
                     <div>
                         
                         <p className="text-lg font-[500] mb-4 text-[#F5F5F5]">Contact</p>
                         <div className="max-w-[300px] text-base space-y-2">
-                            <p className="">Phone: <span className="font-medium">{API_ENDPOINTS?.CONTACT?.PHONE ?? '+234 827 9283 101'}</span></p>
+                            <p className="">Phone: <span className="font-medium">{API_ENDPOINTS?.CONTACT?.PHONE ?? '+971592295379'}</span></p>
                             {/* <p className="text-sm  font-semibold">Facebook: <span className="font-medium">+234 9728330023</span></p> */}
                             <p className="">Email: <span className="font-medium">{API_ENDPOINTS?.CONTACT?.GMAIL ?? 'info.safeplacehse.com'}</span></p>
                             {/* <p className="text-sm  font-semibold">: <span className="font-medium">43 lorem ipsum Niger, Niger State</span></p> */}

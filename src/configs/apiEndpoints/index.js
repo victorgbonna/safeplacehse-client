@@ -7,26 +7,26 @@ const API_ENDPOINTS = {
     {label:'iosh diploma level 6', img:'iosh2.png'}
   ],
   BLOGS: [
-  {
-    id: -14,
-    title: "Building a Safer Workplace: Our HSE Commitment in Action.",
-    text: "At SafeplaceHSE, safety is more than a policy, it’s our culture. Through regular HSE trainings, safety drills, and compliance audits, we ensure every team member is equipped to work smart and safe on-site.",
-    date: "02/10/2025",
-    category: ["public"],
-    type: "HSE update",
-    link: "/blogs/hse/building-a-safer-workplace",
-    src: "projects/white/izzy-on-white2.jpg"
-  },
-  {
-    id: -18,
-    title: "Environmental Management: Keeping Our Sites Clean and Sustainable.",
-    text: "Beyondp compliance, we are committed to environmental protection. Our recent environmental management campaign focused on proper waste disposal and eco-friendly practices across all project sites.",
-    date: "25/07/2025",
-    category: ["public"],
-    type: "environmental update",
-    link: "/blogs/hse/environmental-management",
-    src: "conference/izzy-cyber-conference4.jpeg"
-  },
+  // {
+  //   id: -14,
+  //   title: "Building a Safer Workplace: Our HSE Commitment in Action.",
+  //   text: "At SafeplaceHSE, safety is more than a policy, it's our culture. Through regular HSE trainings, safety drills, and compliance audits, we ensure every team member is equipped to work smart and safe on-site.",
+  //   date: "02/10/2025",
+  //   category: ["public"],
+  //   type: "HSE update",
+  //   link: "/blogs/hse/building-a-safer-workplace",
+  //   src: "projects/white/izzy-on-white2.jpg"
+  // },
+  // {
+  //   id: -18,
+  //   title: "Environmental Management: Keeping Our Sites Clean and Sustainable.",
+  //   text: "Beyond compliance, we are committed to environmental protection. Our recent environmental management campaign focused on proper waste disposal and eco-friendly practices across all project sites.",
+  //   date: "25/07/2025",
+  //   category: ["public"],
+  //   type: "environmental update",
+  //   link: "/blogs/hse/environmental-management",
+  //   src: "conference/izzy-cyber-conference4.jpeg"
+  // },
   {
     id: -15,
     title: "Fire Safety Awareness: Preparing Teams for Emergency Response.",
@@ -34,7 +34,7 @@ const API_ENDPOINTS = {
     date: "19/09/2025",
     category: ["public"],
     type: "HSE training",
-    link: "/blogs/hse/fire-safety-awareness",
+    link: "fire-safety-awareness",
     src: "firesafety/evacuation_sign.jpg"
   },
   {
@@ -44,7 +44,7 @@ const API_ENDPOINTS = {
     date: "28/08/2025",
     category: ["public"],
     type: "HSE exercise",
-    link: "conference/izzy-cyber-conference.jpeg",
+    link: "workplace-hazard-identification",
     src: "projects/white/izzy-on-white3.jpg"
   },
   {
@@ -54,7 +54,7 @@ const API_ENDPOINTS = {
     date: "12/08/2025",
     category: ["public"],
     type: "HSE training",
-    link: "/blogs/hse/first-aid-cpr-training",
+    link: "first-aid-cpr-training",
     src: "projects/white/izzy-on-white5.jpg"
   }
 ],
@@ -84,11 +84,18 @@ const API_ENDPOINTS = {
     }
   ],
   COMMUNITY:[
-    {type:"whatsapp", link:"https://wa.me/+2348102603301"},
+    {type:"whatsapp", link:"https://wa.me/+971592295379"},
     {type:"telegram"},
     {type:"discord"},
     {type:"slack"}
   ],
+  CONTACT:{
+    WHATSAPP_LINK:"https://wa.me/+971592295379",
+    PHONE:'+971592295379',
+    INSTA_LINK:"https://instagram.com",
+    FACEBOOK_LINK:"https://facebook.com",
+    LINKEDIN_LINK:"https://linkedin.com"
+  },
   REGISTER:"api/admin/auth/create",
   LOGIN:"api/admin/auth/login",
   GET_ALL_ADMINS:'api/admin?limit=10',

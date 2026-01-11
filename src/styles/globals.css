@@ -358,3 +358,61 @@ tr:not(:has(th)):hover {
 #dateInput::-webkit-input-placeholder{ 
   visibility: hidden !important;
 }
+
+/* Enhanced Home Page Animations - Intersection Observer */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in-view {
+  animation: slideUpFade 1.2s ease-out forwards;
+}
+
+.service-card-hover {
+  transition: all 0.3s ease;
+}
+
+.service-card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(75, 203, 72, 0.2);
+}
+
+.testimonial-card-animate {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hero-button-hover {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-button-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: left 0.3s ease;
+}
+
+.hero-button-hover:hover::before {
+  left: 100%;
+}
+
+.image-hover-lift {
+  transition: all 0.4s ease;
+}
+
+.image-hover-lift:hover {
+  transform: translateY(-5px);
+}

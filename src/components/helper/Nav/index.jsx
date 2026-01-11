@@ -64,7 +64,7 @@ function PhoneNav({nav_list, scrolledPast, activeNav}){
         >
         <div className='flex justify-between items-center px-6 py-3'>
             <div>
-                <Link href={'/'} className='flex items-center gap-x-2'>
+                <Link href={PAGE_ROUTES.HOME} className='flex items-center gap-x-2'>
                     <ImageContainer 
                         src={'/images/safeplacehse_logo.png'} className={'w-[40px] h-[40px]'} alt='safeplace logo'/>
                     {/* <p className="text-xl font-semibold">SafePlaceHSE</p> */}
@@ -98,7 +98,7 @@ function PcNav({nav_list, scrolledPast, activeNav}){
             boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)"
         
         }:{}} className="phone:hidden z-[90] py-7 fixed top-0 left-0 right-0 w-full flex justify-between px-[90px] items-center">
-            <Link href={'/'} className='flex items-center gap-x-2'>
+            <Link href={PAGE_ROUTES.HOME} className='flex items-center gap-x-2'>
                 <ImageContainer 
                     src={'/images/safeplacehse_logo.png'} className={'w-[50px] h-[50px]'} imgClass='' alt='safeplace logo'/>
                 {/* <p className="text-xl font-semibold">SafePlaceHSE</p> */}

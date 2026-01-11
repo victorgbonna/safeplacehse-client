@@ -169,10 +169,10 @@ export default function FireSafety() {
         </div>
       </div>
       <div className='flex justify-center'>
-          <button className='rounded-[22px]  px-5 py-2 bg-[#05C202] text-white flex items-center gap-x-3'>
+          <a href="https://wa.me/+971592295379" target="_blank" rel="noopener noreferrer" className='rounded-[22px]  px-5 py-2 bg-[#05C202] text-white flex items-center gap-x-3 hover:opacity-90'>
             <p>Book a Consultation</p>
             <img src="/svg/socials/whatsapp.svg" alt="whatsapp" />
-          </button>
+          </a>
       </div>
       {/* <BlogHelper blog_id={-14} /> */}
     </main>

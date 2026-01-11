@@ -2,11 +2,13 @@ import { AutoSlider, iconSvgPath, ImageContainer } from "@/components";
 import { API_ENDPOINTS, PAGE_ROUTES } from "@/configs";
 import Link from "next/link";
 import { useState } from "react";
+import useIntersectionObserver from "@/hooks/useIntersectionObserver";
 
 export default function BlogHelper({blog_id, showHeader=true}){
+    const ref = useIntersectionObserver();
     const [teamCurr, setTeamCurr]= useState(0)
     return(
-        <div className='mb-10 py-14 px-20 tablet:px-0 tablet:py-10 tablet:mb-0'>
+        <div ref={ref} className='mb-10 py-14 px-20 tablet:px-0 tablet:py-10 tablet:mb-0 opacity-0'>
         {showHeader?<p className="text-black text-base font-semibold mb-10 px-10 tablet:text-xl tablet:px-5 tablet:text-center">{'READ OUR ARTICLES'}</p>:null}
         <div className='flex gap-x-10 tablet:gap-x-0 tablet:px-3'>
           <div id="newsscroll" 
@@ -42,7 +44,7 @@ export default function BlogHelper({blog_id, showHeader=true}){
                     <p className=" text-graySubHd text-[13px]">{text.slice(0, 120)+'...' || 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid dolore vel voluptatum voluptate totam? Rep'} </p>
                   </div>
                   {link?<div className="flex justify-end">
-                    <Link href={PAGE_ROUTES.A_BLOG('fire-safety-awareness')}
+                    <Link href={PAGE_ROUTES.A_BLOG(link)}
                       className='w-fit mt-5 flex items-center gap-x-2'>
                       <p className='text-sm text-green'>Read Article</p>
                       <img src={iconSvgPath('caret-green-right')} alt="" />

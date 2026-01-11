@@ -1,7 +1,9 @@
 import { iconSvgPath } from "@/components";
 import { API_ENDPOINTS } from "@/configs";
+import useIntersectionObserver from "@/hooks/useIntersectionObserver";
 
 export default function CertificateHelper(){
+  const ref = useIntersectionObserver();
   const certs =API_ENDPOINTS.CERTIFICATIONS
   const certs1 = [
   {
@@ -32,7 +34,7 @@ export default function CertificateHelper(){
 ];
 
   return(
-    <div>
+    <div ref={ref} className='opacity-0'>
       <div className='flex justify-center mb-5 tablet:px-5 py-20 flex-col items-center '>
         <div className='w-fit flex flex-col items-center mb-20 tablet:mb-10'>
           <h4 className='text-3xl tablet:text-2xl mb-2 px-3 font-semibold'>OUR CERTIFICATES</h4>
