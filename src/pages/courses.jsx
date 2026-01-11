@@ -12,7 +12,7 @@ export default function Courses() {
         <div className="bg-black bg-opacity-25 py-7 px-[75px] tablet:px-5 text-center rounded-md">
           <h1 className="text-5xl tablet:text-4xl mb-3">Courses</h1>
           <p className="text-lg tablet:text-base">
-            {`We’ve listed the best online HSE courses with certificates for you to check out. These courses will teach your learners how to put health and safety at the forefront of everything.`}
+            {`We have listed the best online HSE courses with certificates for you to check out. These courses will teach your learners how to put health and safety at the forefront of everything.`}
           </p>
         </div>
       </section>

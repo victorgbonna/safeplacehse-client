@@ -60,7 +60,7 @@ export default function CourseHelper({btnLabel, link}){
             <h4 className='text-3xl mb-2 px-3 font-semibold tablet:text-2xl'>OUR COURSES</h4>
             <span className='w-[30%] border-green h-[1px] border'></span>
         </div>
-        {/* <div className="space-y-8">
+        {/* <div className="space-y-">
             {courses.map(({img, title, desc, price, views, audience, duration, status="Active"},ind)=>
                 <div key={ind} className={`tablet:bg-lightgreen tablet:px-3 bg-white relative shadow-xl  rounded-2xl flex gap-x-10 items-start tablet:flex-col`}>
                     <div className="flex gap-x-6 tablet:gap-y-4 tablet:flex-col">
@@ -128,10 +128,10 @@ export default function CourseHelper({btnLabel, link}){
                     No Courses Available
                 </h3>
                 <p className="text-lg tablet:text-base text-gray-600 mb-8 leading-relaxed">
-                    We're currently not offering any courses at the moment. However, we provide comprehensive HSE consulting, training programs, and safety solutions tailored to your organization's needs.
+                    {"We're currently not offering any courses at the moment. However, we provide comprehensive HSE consulting, training programs, and safety solutions tailored to your organization's needs."}
                 </p>
                 <p className="text-sm tablet:text-xs text-gray-500 px-4">
-                    If you're interested in custom training or HSE development programs, please reach out to us via the contact form below.
+                    {"If you're interested in custom training or HSE development programs, please reach out to us via the contact form below."}
                 </p>
             </div>
         </div>
