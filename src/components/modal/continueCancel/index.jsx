@@ -11,7 +11,7 @@ export default function ContinueCancel({onClose,isLoading=null, onNext,text,html
                 }} 
                 onClick={(e)=> e.stopPropagation()} 
                 className={"monte bg-white relative rounded-md px-10 py-10 text-center w-fit text-sm"+extraClass}>
-                <img src={'/svg/close.svg'} className="w-7 h-7 cursor-pointer absolute right-3 top-2" onClick={onClose}/>
+                <img src={'/svg/cancel-red.svg'} className="w-7 h-7 cursor-pointer absolute right-3 top-2" onClick={onClose}/>
                 <div>
                     {html?html: <p className="text-semibold">{text}</p>}
                 </div>

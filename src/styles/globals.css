@@ -416,3 +416,21 @@ tr:not(:has(th)):hover {
 .image-hover-lift:hover {
   transform: translateY(-5px);
 }
+
+/* Project Gallery Modal Styles */
+.modal-carousel-button {
+  transition: all 0.3s ease;
+}
+
+.modal-carousel-button:hover {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  transform: scale(1.1);
+}
+
+.carousel-slide-indicator {
+  transition: all 0.3s ease;
+}
+
+.carousel-slide-indicator:hover {
+  transform: scale(1.2);
+}

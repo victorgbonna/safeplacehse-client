@@ -84,13 +84,13 @@ const API_ENDPOINTS = {
     }
   ],
   COMMUNITY:[
-    {type:"whatsapp", link:"https://wa.me/+971592295379"},
+    {type:"whatsapp", link:"https://wa.me/971592295379"},
     {type:"telegram"},
     {type:"discord"},
     {type:"slack"}
   ],
   CONTACT:{
-    WHATSAPP_LINK:"https://wa.me/+971592295379",
+    WHATSAPP_LINK:"https://wa.me/971592295379",
     PHONE:'+971592295379',
     INSTA_LINK:"https://instagram.com",
     FACEBOOK_LINK:"https://facebook.com",

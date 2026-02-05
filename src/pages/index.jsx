@@ -15,7 +15,7 @@ export default function EnhancedHome() {
       <CertificateHelper />
       <ProjectHelper />
       <Testimonials />
-      <CourseHelper />
+      <CourseHelper fromHome={true}/>
       <BlogHelper />
     </div>
   )
@@ -47,10 +47,10 @@ function HeroSection() {
             )}
           </div>
         </div>
-        <div className='flex gap-x-8 tablet:gap-x-8 tablet:justify-start'>
-          {[{ label: "Chat with Us", link: "#", primary: true },
-          { label: "Learn More", link: "#", primary: false }].map(({ label, link, primary }, ind) =>
-            <Link href={link} key={ind} className={`mt-8 tablet:mt-6 tablet:text-sm inline-block hero-button-hover ${primary ? 'bg-green text-white' : 'border border-green text-green'} font-medium px-8 py-2 rounded-full hover:opacity-90`}>
+        <div className='flex gap-x-8 tablet:gap-x-8 tablet:justify-start tablet:flex-col tablet:mt-3'>
+          {[{ label: "Chat with Us", link: "/contact-us", primary: true },
+          { label: "Learn More", link: "/about-us", primary: false }].map(({ label, link, primary }, ind) =>
+            <Link href={link} key={ind} className={`tablet:text-center tablet:py-4 mt-8 tablet:mt-6 tablet:text-sm inline-block hero-button-hover ${primary ? 'bg-green text-white' : 'border border-green text-green'} font-medium px-8 py-2 rounded-full hover:opacity-90`}>
               {label}
             </Link>
           )}
@@ -58,7 +58,7 @@ function HeroSection() {
       </div>
       <div>
         <ImageContainer src={iconSvgPath('safety-hse-israel.jpg', 'images')}
-          className={'w-[400px] h-[350px] tablet:w-full tablet:h-[300px] tablet:mt-10 image-hover-lift'}
+          className={'w-[400px] h-[350px] tablet:hidden tablet:w-full tablet:h-[300px] tablet:mt-10 image-hover-lift'}
           imgClass='object-contain w-[390px] h-[390px]' alt='hero image' />
       </div>
     </div>
@@ -77,31 +77,31 @@ function WhoWeAre() {
         </div>
       </div>
       <div className='flex justify-center'>
-        <div className='w-[900px]'>
-          <p className='text-base light-g text-center'>{"SAFEPLACE HSE CONSULTING, registered with corporate affairs commission (CAC), provides Health, Safety and Environment (HSE) consulting services to oil and gas and non-oil and gas sectors of Nigerian Economy. We also offer HSE Retainership, Nigeria Petroleum Exchange (NIPEX) registration Consultancy and HSE Training across all sectors of Nigeria's economy."}</p>
+        <div className='w-[900px] tablet:w-full'>
+          <p className='text-base light-g text-center'>{`Safeplace HSE Consulting provides comprehensive Health, Safety, and Environment (HSE) consulting services to both the oil and gas and non–oil and gas sectors of the Nigerian economy. We support organizations across diverse industries in building safe, compliant, and sustainable operations. Our services include HSE consulting and advisory, HSE retainership, Nigeria Petroleum Exchange (NIPEX) registration consultancy, and HSE training programs tailored to meet industry standards and organizational needs. Through our expertise and practical approach, we help businesses strengthen their safety systems, meet regulatory expectations, and foster a culture of safety across all sectors of Nigeria’s economy.`}</p>
         </div>
       </div>
       <div className='flex justify-center tablet:flex-col relative mt-10'>
         <div className='absolute w-fit left-0 z-2 right-0 top-3 bottom-3'>
           <img src={iconSvgPath('projects/white/izzy-on-white11.jpg', 'images')}
             className={'object-contain object-top rounded-md w-[400px] h-[400px] tablet:w-full tablet:h-[300px] image-hover-lift'}
-            imgClass='object-contain w-[390px] h-[390px]' alt='hero image' />
+             alt='hero image' />
         </div>
 
         <div className='absolute w-fit right-0 z-1 right-0 top-3 bottom-3'>
           <img src={iconSvgPath('projects/white/izzy-on-white8.jpg', 'images')}
             className={'object-contain object-top rounded-md w-[400px] h-[400px] tablet:w-full tablet:h-[300px] image-hover-lift'}
-            imgClass='object-contain w-[390px] h-[390px]' alt='hero image' />
+             alt='hero image' />
         </div>
         <ImageContainer src={iconSvgPath('projects/white/izzy-on-white10.jpg', 'images')}
           className={'w-[400px] z-3 relative h-[400px] tablet:w-full tablet:h-[300px]'}
           imgClass='shadow-lg relative z-3 object-contain w-[390px] h-[390px] image-hover-lift' alt='hero image' />
       </div>
       <div className=' flex justify-center'>
-        <button className='mt-10 flex justify-center items-center gap-x-2 bg-green text-white font-medium px-8 py-2 rounded-full hover:opacity-90 hero-button-hover'>
+        <Link href={'/about-us'} className='mt-10 flex justify-center items-center gap-x-2 bg-green text-white font-medium px-8 py-2 rounded-full hover:opacity-90 hero-button-hover'>
           <p>Read Our Story</p>
           <img src={iconSvgPath('caret-right')} alt="caret-right" />
-        </button>
+        </Link>
       </div>
     </section>
   )
@@ -132,9 +132,9 @@ function Services() {
           </div>
         )}
       </div>
-      <div className='flex tablet:gap-y-8 mt-14 justify-center gap-x-3 items-center tablet:text-sm'>
-        {[{ label: "Check our Projects", href: PAGE_ROUTES.PROJECTS, classNames: 'shadow-xl border rounded-full py-2.5 px-4 hero-button-hover' },
-        { label: "Explore Courses", href: PAGE_ROUTES.COURSES, classNames: "shadow-xl bg-white text-green font-semibold rounded-full py-2.5 px-4 hero-button-hover" }]
+      <div className='flex tablet:gap-y-8 mt-14 justify-center gap-x-3 items-center tablet:text-sm tablet:flex-col'>
+        {[{ label: "Check our Projects", href: PAGE_ROUTES.PROJECTS, classNames: 'tablet:py-2 shadow-xl border rounded-full py-2.5 px-4 hero-button-hover' },
+        { label: "Explore Courses", href: PAGE_ROUTES.COURSES, classNames: "tablet:py-2 shadow-xl bg-white text-green font-semibold rounded-full py-2.5 px-4 hero-button-hover" }]
           .map(({ label, href, classNames }, ind) =>
           <Link href={href} key={ind} className={classNames}>
             {label}
