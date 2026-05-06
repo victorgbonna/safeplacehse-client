@@ -125,7 +125,7 @@ export default function AboutUs() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-extrabold text-primary mb-4">Industry Expertise</h2>
             <p className="text-on-surface-variant max-w-2xl mx-auto">
-              Specialized HSE solutions tailored to your industry's unique challenges
+              {"Specialized HSE solutions tailored to your industry's unique challenges"}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
