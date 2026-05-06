@@ -76,7 +76,7 @@ export default function Projects() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-extrabold text-primary mb-4">Featured Projects</h2>
             <p className="text-on-surface-variant max-w-2xl mx-auto">
-              Discover how we've helped organizations transform their safety culture and achieve remarkable results.
+              Discover how we&apos;ve helped organizations transform their safety culture and achieve remarkable results.
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -219,7 +219,7 @@ export default function Projects() {
                 <img src="/svg/star.svg" alt="star" className="inline align-middle w-5 h-5" />
                 <img src="/svg/star.svg" alt="star" className="inline align-middle w-5 h-5" />
               </div>
-              <p className="text-lg italic mb-6">"SafePlaceHSE transformed our safety culture. Their systematic approach reduced incidents by 75% in just 6 months."</p>
+              <p className="text-lg italic mb-6">&quot;SafePlaceHSE transformed our safety culture. Their systematic approach reduced incidents by 75% in just 6 months.&quot;</p>
               <div>
                 <div className="font-bold">Michael Okoro</div>
                 <div className="text-sm text-on-primary-container">Operations Director, Energy Corp</div>
@@ -233,7 +233,7 @@ export default function Projects() {
                 <img src="/svg/star.svg" alt="star" className="inline align-middle w-5 h-5" />
                 <img src="/svg/star.svg" alt="star" className="inline align-middle w-5 h-5" />
               </div>
-              <p className="text-lg italic mb-6">"The NIPEX audit support was exceptional. We achieved pre-qualification in record time."</p>
+              <p className="text-lg italic mb-6">&quot;The NIPEX audit support was exceptional. We achieved pre-qualification in record time.&quot;</p>
               <div>
                 <div className="font-bold">Fatima Ahmed</div>
                 <div className="text-sm text-on-primary-container">HSE Manager, PetroTech Ltd</div>
@@ -247,7 +247,7 @@ export default function Projects() {
                 <img src="/svg/star.svg" alt="star" className="inline align-middle w-5 h-5" />
                 <img src="/svg/star.svg" alt="star" className="inline align-middle w-5 h-5" />
               </div>
-              <p className="text-lg italic mb-6">"Their training programs are practical and engaging. Our team's safety awareness has improved dramatically."</p>
+              <p className="text-lg italic mb-6">&quot;Their training programs are practical and engaging. Our team&apos;s safety awareness has improved dramatically.&quot;</p>
               <div>
                 <div className="font-bold">David Chen</div>
                 <div className="text-sm text-on-primary-container">CEO, BuildRight Construction</div>

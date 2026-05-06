@@ -10,10 +10,10 @@ import { LoadButton } from '@/components'
 export default function ContactUs() {
     const [formData, setFormData]= useState({})
     const form_inputs_list=[
-        {label:'Name', },
-        {label:'Email', type:'email'},
-        {label:'Subject'},
-        {label:'Message' , type:'textarea'}
+        {label:"Name"},
+        {label:"Email", type:"email"},
+        {label:"Subject"},
+        {label:"Message", type:"textarea"}
     ] 
     const {NotifySuccess, NotifyError}= useToast()
     const {postDataWithoutBaseUrl}= useHttpServices()
@@ -79,10 +79,10 @@ export default function ContactUs() {
               Get In Touch
             </div>
             <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
-              Let's Build a Safer Future Together
+              Let&apos;s Build a Safer Future Together
             </h1>
             <p className="text-xl text-white/90 mb-8 leading-relaxed max-w-2xl">
-              Looking for how to reach out to us? Fill out the form or message us on our contact line and you're just a step closer to transforming your safety culture.
+              Looking for how to reach out to us? Fill out the form or message us on our contact line and you&apos;re just a step closer to transforming your safety culture.
             </p>
             <div className="flex flex-col sm:flex-row gap-5">
               <button className="bg-tertiary-fixed text-tertiary-container px-10 py-5 rounded-md font-bold text-lg shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
@@ -106,25 +106,25 @@ export default function ContactUs() {
               <div className="mb-8">
                 <h2 className="text-4xl font-extrabold text-primary mb-4">Send Us a Message</h2>
                 <p className="text-on-surface-variant text-lg">
-                  Have questions about our services? Need a consultation? Fill out the form below and we'll get back to you within 24 hours.
+                  Have questions about our services? Need a consultation? Fill out the form below and we will get back to you within 24 hours.
                 </p>
               </div>
               
-              <form id='contactForm' className="space-y-6">
+              <form id="contactForm" className="space-y-6">
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-                  {form_inputs_list.map(({label, type='text'},ind)=>
+                  {form_inputs_list.map(({label, type="text"},ind)=>
                     <div key={ind} className='w-full'>
-                      <label className='block text-sm font-medium text-on-surface-variant mb-2'>{'Your '+label}</label>
+                      <label className='block text-sm font-medium text-on-surface-variant mb-2'>Your {label}</label>
                       {type==='textarea'?
                         <textarea 
-                          className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm bg-surface-container-lowest' 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm bg-surface-container-lowest" 
                           rows={4}
                           onChange={(e)=>setFormData({...formData, [label.toLowerCase()]:e.target.value})} 
                           value={formData[label.toLowerCase()] || ''}
                           placeholder={`Enter your ${label.toLowerCase()}`}
                         />:
                         <input 
-                          className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm bg-surface-container-lowest' 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm bg-surface-container-lowest" 
                           type={type} 
                           onChange={(e)=>setFormData({...formData, [label.toLowerCase()]:e.target.value})} 
                           value={formData[label.toLowerCase()] || ''}
@@ -136,7 +136,7 @@ export default function ContactUs() {
                 </div>
                 
                 <div className='flex flex-col sm:flex-row gap-4 mt-8'>
-                  <LoadButton
+                  <LoadButton 
                     onClick={()=>subscribeFund()} 
                     isLoading={isLoading}
                     disabled={!!isNotEmail(formData.email) || !formData.name || !formData.subject || !formData.message}

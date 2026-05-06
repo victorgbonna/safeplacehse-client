@@ -124,7 +124,7 @@ export default function Blog() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-extrabold text-primary mb-4">Explore by Category</h2>
             <p className="text-on-surface-variant max-w-2xl mx-auto">
-              Find exactly what you're looking for with our expertly curated safety topics
+              Find exactly what you&apos;re looking for with our expertly curated safety topics
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

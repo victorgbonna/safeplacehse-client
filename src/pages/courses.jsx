@@ -31,7 +31,7 @@ export default function Courses() {
               Learn <span className="text-tertiary-fixed">Safety</span> That Saves Lives
             </h1>
             <p className="text-xl md:text-2xl text-slate-200 mb-12 max-w-2xl leading-relaxed font-light">
-              Have you ever wondered what it takes to become a safety leader who truly makes a difference? At SafePlaceHSE, we don't just teach courses—we build confidence, competence, and careers that protect lives.
+              Have you ever wondered what it takes to become a safety leader who truly makes a difference? At SafePlaceHSE, we don&apos;t just teach courses—we build confidence, competence, and careers that protect lives.
             </p>
             <div className="flex flex-col sm:flex-row gap-5">
               <button className="bg-tertiary-fixed text-tertiary-container px-10 py-5 rounded-md font-bold text-lg shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
@@ -60,7 +60,7 @@ export default function Courses() {
                     Learn from Industry Veterans
                   </h4>
                   <p className="text-on-surface-variant leading-relaxed">
-                    Our instructors aren't just academics—they're seasoned HSE professionals who've managed safety for multinational corporations. They bring real-world scenarios, not just textbook theories.
+                    Our instructors aren&apos;t just academics—they&apos;re seasoned HSE professionals who&apos;ve managed safety for multinational corporations. They bring real-world scenarios, not just textbook theories.
                   </p>
                 </div>
                 <div className="p-6 bg-surface-container-low rounded-lg border-l-4 border-primary">
@@ -313,7 +313,7 @@ export default function Courses() {
       <section className="py-24 bg-surface-container-lowest">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-extrabold text-primary mb-4">What You'll Achieve</h2>
+            <h2 className="text-4xl font-extrabold text-primary mb-4">What You&apos;ll Achieve</h2>
             <p className="text-on-surface-variant max-w-2xl mx-auto">
               Our graduates don't just get certificates—they get results. Here's what makes our training different:
             </p>
