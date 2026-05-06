@@ -1,218 +1,357 @@
 import Image from 'next/image'
-
-import { BlogHelper, CertificateHelper, CourseHelper, iconSvgPath, ImageContainer, ProjectHelper, SectionUnderlineHelper } from '@/components'
 import Link from 'next/link'
-import { useState } from 'react'
-import { PAGE_ROUTES } from '@/configs'
-import useIntersectionObserver from '@/hooks/useIntersectionObserver'
 
-export default function EnhancedHome() {
+export default function Home() {
   return (
-    <div className={`py-24`}>
-      <HeroSection />
-      <WhoWeAre />
-      <Services />
-      <CertificateHelper />
-      <ProjectHelper />
-      <Testimonials />
-      <CourseHelper fromHome={true}/>
-      <BlogHelper />
-    </div>
-  )
-}
-
-function HeroSection() {
-  const ref = useIntersectionObserver();
-  
-  return (
-    <div ref={ref} className="h-fit px-24 tablet:px-5 tablet:py-0 tablet:h-fit py-[50px] flex tablet:flex-col items-center justify-between opacity-0">
-      <div>
-        <div>
-          <h1 className="text-5xl tablet:text-3xl tablet:mb-2 font-bold tablet:text-left">
-            <span className="text-green">SafePlaceHSE</span> Consulting
-          </h1>
-          <p className='text-[#2A2A2A] text-lg font-semibold mt-[3px]'>HSE Consultant | Safety, Compliance & Environmental Solutions</p>
+    <div className="bg-background text-on-background scroll-smooth">
+      <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            alt="HSE Professionals"
+            className="w-full h-full object-cover"
+            src="/images/projects/white/izzy-on-white2.jpg"
+            fill
+            priority
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-transparent"></div>
+          <div className="absolute inset-0 bg-slate-900/30"></div>
         </div>
-        <div>
-          <p className="mt-2 text-sm text-[#2A2A2A] mt-6 mb-5 tablet:text-left max-w-2xl">
-            At SafeplaceHSE, we believe that safety is more than a regulatory requirement,<br /> it is a responsibility, a culture, and a commitment to preserving life, health, and the environment
-          </p>
-          <div className='flex gap-x-10 tablet:gap-x-6 tablet:justify-start'>
-            {[{ numbers: "5yrs+", label: "Experience" },
-            { numbers: "1k+", label: "Certificates" }].map(({ numbers, label }, ind) =>
-              <div key={ind} className="text-lg tablet:text-left max-w-2xl">
-                <p className='font-semibold text-3xl tablet:text-2xl mb-[6px] hover:text-green transition-colors duration-300'>{numbers}</p>
-                <p className='light-g text-sm'>{label}</p>
-              </div>
-            )}
-          </div>
-        </div>
-        <div className='flex gap-x-8 tablet:gap-x-8 tablet:justify-start tablet:flex-col tablet:mt-3'>
-          {[{ label: "Chat with Us", link: "/contact-us", primary: true },
-          { label: "Learn More", link: "/about-us", primary: false }].map(({ label, link, primary }, ind) =>
-            <Link href={link} key={ind} className={`tablet:text-center tablet:py-4 mt-8 tablet:mt-6 tablet:text-sm inline-block hero-button-hover ${primary ? 'bg-green text-white' : 'border border-green text-green'} font-medium px-8 py-2 rounded-full hover:opacity-90`}>
-              {label}
-            </Link>
-          )}
-        </div>
-      </div>
-      <div>
-        <ImageContainer src={iconSvgPath('safety-hse-israel.jpg', 'images')}
-          className={'w-[400px] h-[350px] tablet:hidden tablet:w-full tablet:h-[300px] tablet:mt-10 image-hover-lift'}
-          imgClass='object-contain w-[390px] h-[390px]' alt='hero image' />
-      </div>
-    </div>
-  )
-}
-
-function WhoWeAre() {
-  const ref = useIntersectionObserver();
-  
-  return (
-    <section ref={ref} className='px-24 py-[50px] tablet:px-5 tablet:py-20 flex flex-col justify-center opacity-0'>
-      <div className='flex justify-center mb-5 tablet:px-6'>
-        <div className='w-fit flex flex-col items-center'>
-          <h4 className='text-3xl tablet:2xl mb-2 px-3 font-semibold'>WHO WE ARE</h4>
-          <span className='w-[70%] border-green h-[1px] border'></span>
-        </div>
-      </div>
-      <div className='flex justify-center'>
-        <div className='w-[900px] tablet:w-full'>
-          <p className='text-base light-g text-center'>{`Safeplace HSE Consulting provides comprehensive Health, Safety, and Environment (HSE) consulting services to both the oil and gas and non–oil and gas sectors of the Nigerian economy. We support organizations across diverse industries in building safe, compliant, and sustainable operations. Our services include HSE consulting and advisory, HSE retainership, Nigeria Petroleum Exchange (NIPEX) registration consultancy, and HSE training programs tailored to meet industry standards and organizational needs. Through our expertise and practical approach, we help businesses strengthen their safety systems, meet regulatory expectations, and foster a culture of safety across all sectors of Nigeria’s economy.`}</p>
-        </div>
-      </div>
-      <div className='flex justify-center tablet:flex-col relative mt-10'>
-        <div className='absolute w-fit left-0 z-2 right-0 top-3 bottom-3'>
-          <img src={iconSvgPath('projects/white/izzy-on-white11.jpg', 'images')}
-            className={'object-contain object-top rounded-md w-[400px] h-[400px] tablet:w-full tablet:h-[300px] image-hover-lift'}
-             alt='hero image' />
-        </div>
-
-        <div className='absolute w-fit right-0 z-1 right-0 top-3 bottom-3'>
-          <img src={iconSvgPath('projects/white/izzy-on-white8.jpg', 'images')}
-            className={'object-contain object-top rounded-md w-[400px] h-[400px] tablet:w-full tablet:h-[300px] image-hover-lift'}
-             alt='hero image' />
-        </div>
-        <ImageContainer src={iconSvgPath('projects/white/izzy-on-white10.jpg', 'images')}
-          className={'w-[400px] z-3 relative h-[400px] tablet:w-full tablet:h-[300px]'}
-          imgClass='shadow-lg relative z-3 object-contain w-[390px] h-[390px] image-hover-lift' alt='hero image' />
-      </div>
-      <div className=' flex justify-center'>
-        <Link href={'/about-us'} className='mt-10 flex justify-center items-center gap-x-2 bg-green text-white font-medium px-8 py-2 rounded-full hover:opacity-90 hero-button-hover'>
-          <p>Read Our Story</p>
-          <img src={iconSvgPath('caret-right')} alt="caret-right" />
-        </Link>
-      </div>
-    </section>
-  )
-}
-
-function Services() {
-  const ref = useIntersectionObserver();
-  const services = [
-    { img: "/audit", label: "Audits", desc: "We deliver thorough HSE audits to identify risks, ensure compliance, and drive continuous improvement." },
-    { img: "/train", label: "Training", desc: "We provide practical HSE training to equip teams with the knowledge and skills for a safer workplace." },
-    { img: "/compliance", label: "Compliance Support", desc: "We offer tailored compliance support to help organizations meet regulatory standards with ease." }
-  ]
-
-  return (
-    <section ref={ref} className='bg-[url("/images/services.png")] h-screen bg-cover bg-center flex flex-col justify-center px-[100px] tablet:px-5 tablet:h-fit text-white tablet:py-14 opacity-0'>
-      <div className='flex justify-between items-center tablet:flex-col tablet:gap-y-4'>
-        <p className='text-2xl font-semibold'>OUR SERVICES</p>
-        <div className='w-[700px] tablet:w-full border-l-2 pl-2 border-white'>
-          <p>{"Safeplace HSE is committed to quality management to ensure excellent delivery of all our services.  We foster a culture of continuous improvement to deliver our services to specifications and requirements."}</p>
-        </div>
-      </div>
-      <div className='grid grid-cols-3 tablet:grid-cols-1 tablet:gap-x-2 tablet:gap-y-10 gap-x-[70px] mt-16'>
-        {services.map(({ img, label, desc }, ind) =>
-          <div key={ind} className='rounded-md tablet:w-fit tablet:border-2 p-7 shadow-xl border border-white flex flex-col items-center service-card-hover'>
-            <img src={iconSvgPath(img + ".png", 'images')} />
-            <p className='font-semibold text-lg my-4'>{label}</p>
-            <p className='text-center text-sm'>{desc}</p>
-          </div>
-        )}
-      </div>
-      <div className='flex tablet:gap-y-8 mt-14 justify-center gap-x-3 items-center tablet:text-sm tablet:flex-col'>
-        {[{ label: "Check our Projects", href: PAGE_ROUTES.PROJECTS, classNames: 'tablet:py-2 shadow-xl border rounded-full py-2.5 px-4 hero-button-hover' },
-        { label: "Explore Courses", href: PAGE_ROUTES.COURSES, classNames: "tablet:py-2 shadow-xl bg-white text-green font-semibold rounded-full py-2.5 px-4 hero-button-hover" }]
-          .map(({ label, href, classNames }, ind) =>
-          <Link href={href} key={ind} className={classNames}>
-            {label}
-          </Link>
-        )}
-      </div>
-    </section>
-  )
-}
-
-function Testimonials() {
-  const ref = useIntersectionObserver();
-  const testimonials = [
-    {
-      img: "client.png",
-      name: "John Smith",
-      title: "HSE Manager",
-      company: "Total Energies",
-      feedback:
-        "Working with SC Training has been a great experience. Their HSE courses are practical, engaging, and easy to implement within our team."
-    },
-    {
-      img: "client.png",
-      name: "Amaka Johnson",
-      title: "Project Supervisor",
-      company: "Shell Nigeria",
-      feedback:
-        "The training was incredibly detailed and aligned with our compliance goals. We've seen measurable improvement in our team's safety awareness."
-    },
-    {
-      img: "client.png",
-      name: "David Thompson",
-      title: "Operations Lead",
-      company: "Chevron",
-      feedback:
-        "Their courses make complex safety and compliance concepts simple to understand. Highly recommended for organizations aiming for international standards."
-    }
-  ];
-  const [activeIndex, setActiveIndex] = useState(0);
-  return (
-    <section ref={ref} className='flex flex-col items-center w-screen h-fit px-[100px] py-[100px] tablet:px-5 tablet:py-20 opacity-0'>
-      <div>
-        <SectionUnderlineHelper label={'HEAR FROM OUR CLIENTS'} />
-      </div>
-      <div className='flex gap-x-3 items-center tablet:gap-y-4 tablet:flex-wrap tablet:justify-center'>
-        <button className='tablet:order-2 w-9 h-9 flex items-center justify-center border border-[#4BCB48] rounded-full hover:bg-[#4BCB48] hover:scale-110 transition-all duration-300'>
-          <img src={'/svg/caret-left.svg'} alt="caret" />
-        </button>
-        <div className='tablet:basis-full flex items-center gap-x-[70px] gap-y-10 tablet:grid-cols-1 w-[1000px] tablet:w-full'>
-          {testimonials.slice(0, 1).map(({ img, name, title, company, feedback }, ind) =>
-            <div key={ind} className='bg-[#4BCB48] text-white rounded-md p-7 flex tablet:flex-col items-center border shadow-xl testimonial-card-animate hover:shadow-2xl'>
-              <div className='tablet:w-full text-left'>
-                <p className='text-xl mb-5'>{`" ${feedback} "`}</p>
-                <p className='font-semibold text-base mb-2'>{name + ' | ' + title}</p>
-                <p className='text-sm italic'>{company}</p>
-              </div>
-              <img src={iconSvgPath(img, 'images')} className='image-hover-lift' />
+        <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary-fixed/20 border border-tertiary-fixed/30 text-tertiary-fixed text-xs font-bold uppercase tracking-widest mb-8">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-fixed opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-tertiary-fixed"></span>
+              </span>
+              Industry Leading HSE Standards
             </div>
-          )}
+            <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-[1.1] mb-8 tracking-tighter">
+              Excellence in <span className="text-tertiary-fixed">HSE Consulting</span> & Strategic Safety Management.
+            </h1>
+            <p className="text-xl md:text-2xl text-slate-200 mb-12 max-w-2xl leading-relaxed font-light">
+              Delivering high-impact audit, specialized training, and compliance solutions that protect your personnel and optimize industrial performance globally.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-5">
+              <button className="bg-tertiary-fixed text-tertiary-container px-10 py-5 rounded-md font-bold text-lg shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
+                Start a Project
+                <img src="/svg/arrow-right.svg" alt="arrow forward" className="inline align-middle w-6 h-6" />
+              </button>
+              <button className="backdrop-blur-md bg-white/10 border border-white/20 text-white px-10 py-5 rounded-md font-bold text-lg hover:bg-white/20 transition-all duration-300">
+                Our Services
+              </button>
+            </div>
+            <div className="mt-16 flex items-center gap-8 border-t border-white/10 pt-8 max-w-md">
+              <div className="flex -space-x-4">
+                <Image
+                  alt="Client"
+                  className="w-10 h-10 rounded-full border-2 border-primary"
+                  src="/images/client.png"
+                  width={40}
+                  height={40}
+                />
+                <Image
+                  alt="Client"
+                  className="w-10 h-10 rounded-full border-2 border-primary"
+                  src="/images/client.png"
+                  width={40}
+                  height={40}
+                />
+                <Image
+                  alt="Client"
+                  className="w-10 h-10 rounded-full border-2 border-primary"
+                  src="/images/client.png"
+                  width={40}
+                  height={40}
+                />
+              </div>
+              <div>
+                <div className="flex text-tertiary-fixed">
+                  <img src="/svg/star.svg" alt="star" className="inline align-middle w-4 h-4" />
+                  <img src="/svg/star.svg" alt="star" className="inline align-middle w-4 h-4" />
+                  <img src="/svg/star.svg" alt="star" className="inline align-middle w-4 h-4" />
+                  <img src="/svg/star.svg" alt="star" className="inline align-middle w-4 h-4" />
+                  <img src="/svg/star.svg" alt="star" className="inline align-middle w-4 h-4" />
+                </div>
+                <p className="text-white text-sm font-semibold">Trusted by 250+ Global Enterprises</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <button className='tablet:order-3 w-9 h-9 flex items-center justify-center border border-green rounded-full hover:bg-green hover:scale-110 transition-all duration-300'>
-          <img src={'/svg/caret-green-right.svg'} alt="caret" />
-        </button>
-      </div>
-      <div className='flex justify-center tablet:hidden gap-x-2.5 items-center mt-10'>
-        {[1, 2, 3, 4].map((_, ind) =>
-          <div
-            className="cursor-pointer w-[10px] h-[10px] rounded-full transition-all duration-300 hover:scale-125" key={ind}
-            onClick={() => setActiveIndex(ind)}
-            style={
-              activeIndex === ind ?
-                { background: '#4BCB48' } :
-                { background: 'transparent', border: '1px solid #4BCB48' }
-            }></div>
-        )}
-      </div>
-      <div className='mt-20 text-center'>
-      </div>
-    </section>
+      </section>
+
+      {/* Quick Metrics */}
+      <section className="py-12 bg-surface-container-low">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center p-6 bg-surface-container-lowest rounded-xl border-b-4 border-tertiary-fixed shadow-sm">
+              <div className="text-4xl font-extrabold text-primary mb-2">15+</div>
+              <div className="text-sm font-semibold text-on-surface-variant uppercase tracking-widest">Years Experience</div>
+            </div>
+            <div className="text-center p-6 bg-surface-container-lowest rounded-xl border-b-4 border-tertiary-fixed shadow-sm">
+              <div className="text-4xl font-extrabold text-primary mb-2">250+</div>
+              <div className="text-sm font-semibold text-on-surface-variant uppercase tracking-widest">Clients Served</div>
+            </div>
+            <div className="text-center p-6 bg-surface-container-lowest rounded-xl border-b-4 border-tertiary-fixed shadow-sm">
+              <div className="text-4xl font-extrabold text-primary mb-2">48</div>
+              <div className="text-sm font-semibold text-on-surface-variant uppercase tracking-widest">Certifications</div>
+            </div>
+            <div className="text-center p-6 bg-surface-container-lowest rounded-xl border-b-4 border-tertiary-fixed shadow-sm">
+              <div className="text-4xl font-extrabold text-primary mb-2">99%</div>
+              <div className="text-sm font-semibold text-on-surface-variant uppercase tracking-widest">Compliance Rate</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Who We Are / Retainership Support */}
+      <section className="py-24 bg-surface-container-lowest">
+        <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="relative group">
+            <Image
+              alt="SafePlaceHSE Team"
+              className="rounded-xl shadow-xl w-full h-[450px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+              src="/images/projects/white/izzy-on-white.jpg"
+              width={600}
+              height={450}
+            />
+            <div className="absolute -bottom-8 -right-8 bg-primary-container p-8 rounded-xl shadow-2xl hidden md:block">
+              <img src="/svg/verified_user.svg" alt="verified user" className="text-tertiary-fixed mb-2 w-10 h-10" />
+              <p className="text-surface font-bold text-lg">ISO 45001 Certified Advisory</p>
+            </div>
+          </div>
+          <div>
+            <h2 className="text-sm font-bold text-on-tertiary-fixed-variant uppercase tracking-[0.2em] mb-4">Strategic Partnership</h2>
+            <h3 className="text-4xl font-extrabold text-primary leading-tight mb-8">Comprehensive Retainership & NIPEX Support</h3>
+            <div className="space-y-6">
+              <div className="p-6 bg-surface-container-low rounded-lg">
+                <h4 className="font-bold text-primary flex items-center gap-2 mb-2">
+                  <img src="/svg/policy.svg" alt="policy" className="text-on-tertiary-container w-6 h-6" />
+                  HSE Advisory & Retainership
+                </h4>
+                <p className="text-on-surface-variant text-sm">Long-term partnerships that integrate safety leadership directly into your corporate DNA, ensuring constant readiness.</p>
+              </div>
+              <div className="p-6 bg-surface-container-low rounded-lg">
+                <h4 className="font-bold text-primary flex items-center gap-2 mb-2">
+                  <img src="/svg/approval.svg" alt="approval" className="text-on-tertiary-container w-6 h-6" />
+                  NIPEX & Tendering Support
+                </h4>
+                <p className="text-on-surface-variant text-sm">Expert documentation and pre-qualification support for NIPEX audits and high-stakes contract bidding processes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section id="services" className="py-24 bg-surface">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="flex justify-between items-end mb-16">
+            <div className="max-w-2xl">
+              <h2 className="text-4xl font-extrabold text-primary tracking-tight mb-4">Core Consulting Services</h2>
+              <p className="text-on-surface-variant">We move beyond check-box compliance to create operational value.</p>
+            </div>
+            <Link className="text-primary font-bold border-b-2 border-tertiary-fixed pb-1 hover:text-on-tertiary-container transition-colors" href="#services">View All Services</Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[600px]">
+            {/* Major Card */}
+            <div className="md:col-span-2 md:row-span-2 bg-primary-container rounded-xl p-10 flex flex-col justify-between text-white relative overflow-hidden group">
+              <Image
+                alt="Auditing"
+                className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-105 transition-transform duration-700"
+                src="/images/services.png"
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+              <div className="relative z-10">
+                <span className="bg-tertiary-fixed text-tertiary-container px-3 py-1 rounded-md text-xs font-bold uppercase tracking-widest mb-4 inline-block">Bespoke Auditing</span>
+                <h4 className="text-3xl font-bold mb-4">Integrated HSE Audits</h4>
+                <p className="text-surface-container-low max-w-md">Systematic, independent, and documented evidence evaluation for your safety management systems.</p>
+              </div>
+              <div className="relative z-10">
+                <button className="flex items-center gap-2 text-tertiary-fixed font-bold">
+                  Learn More 
+                  {/* <img src="/svg/arrow-right.svg" alt="arrow forward" className="inline align-middle w-6 h-6" /> */}
+                </button>
+              </div>
+            </div>
+            {/* Small Card 1 */}
+            <div className="bg-surface-container-high rounded-xl p-8 flex flex-col justify-between hover:shadow-lg transition-shadow border-t-2 border-transparent hover:border-tertiary-fixed">
+              <div>
+                <img src="/svg/analytics.svg" alt="analytics" className="text-on-tertiary-container mb-4 w-10 h-10" />
+                <h4 className="text-xl font-bold text-primary mb-2">Risk Assessment</h4>
+                <p className="text-on-surface-variant text-sm">JHA, HEMP, and HAZID studies tailored to complex operations.</p>
+              </div>
+              <Link className="text-primary font-bold text-sm mt-4" href="#services">Details</Link>
+            </div>
+            {/* Small Card 2 */}
+            <div className="bg-surface-container-high rounded-xl p-8 flex flex-col justify-between hover:shadow-lg transition-shadow border-t-2 border-transparent hover:border-tertiary-fixed">
+              <div>
+                <img src="/svg/engineering.svg" alt="engineering" className="text-on-tertiary-container mb-4 w-10 h-10" />
+                <h4 className="text-xl font-bold text-primary mb-2">Compliance Support</h4>
+                <p className="text-on-surface-variant text-sm">Navigating DPR, Federal, and State regulatory environments.</p>
+              </div>
+              <Link className="text-primary font-bold text-sm mt-4" href="#services">Details</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Course Preview */}
+      <section id="courses" className="py-24 bg-surface-container-low">
+        <div className="max-w-7xl mx-auto px-8">
+          <h2 className="text-3xl font-extrabold text-primary mb-12 text-center">Upcoming Certification Courses</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Course 1 */}
+            <div className="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+              <Image
+                alt="NEBOSH Course"
+                className="w-full h-48 object-cover"
+                src="/images/certifications/nebosh.png"
+                width={400}
+                height={192}
+              />
+              <div className="p-8">
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-xs font-bold text-tertiary px-2 py-1 bg-tertiary-fixed rounded">Popular</span>
+                  <span className="text-sm font-semibold text-on-surface-variant">4 Weeks</span>
+                </div>
+                <h4 className="text-xl font-bold text-primary mb-4">NEBOSH International General Cert</h4>
+                <p className="text-on-surface-variant text-sm mb-6">The gold standard for health and safety professionals worldwide.</p>
+                <button className="w-full py-3 border border-primary text-primary font-bold rounded hover:bg-primary hover:text-white transition-all">Enroll Now</button>
+              </div>
+            </div>
+            {/* Course 2 */}
+            <div className="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+              <Image
+                alt="IOSH Course"
+                className="w-full h-48 object-cover"
+                src="/images/certifications/iosh.jpg"
+                width={400}
+                height={192}
+              />
+              <div className="p-8">
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-xs font-bold text-secondary px-2 py-1 bg-secondary-container rounded">Essential</span>
+                  <span className="text-sm font-semibold text-on-surface-variant">3 Days</span>
+                </div>
+                <h4 className="text-xl font-bold text-primary mb-4">IOSH Managing Safely</h4>
+                <p className="text-on-surface-variant text-sm mb-6">Essential knowledge for every manager and supervisor in high-risk zones.</p>
+                <button className="w-full py-3 border border-primary text-primary font-bold rounded hover:bg-primary hover:text-white transition-all">Enroll Now</button>
+              </div>
+            </div>
+            {/* Course 3 */}
+            <div className="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+              <Image
+                alt="Environmental Mgmt"
+                className="w-full h-48 object-cover"
+                src="/images/certifications/iso.png"
+                width={400}
+                height={192}
+              />
+              <div className="p-8">
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-xs font-bold text-on-secondary-fixed-variant px-2 py-1 bg-primary-fixed rounded">Advanced</span>
+                  <span className="text-sm font-semibold text-on-surface-variant">5 Days</span>
+                </div>
+                <h4 className="text-xl font-bold text-primary mb-4">ISO 14001 Implementation</h4>
+                <p className="text-on-surface-variant text-sm mb-6">Expert-led training on building effective Environmental Management Systems.</p>
+                <button className="w-full py-3 border border-primary text-primary font-bold rounded hover:bg-primary hover:text-white transition-all">Enroll Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Partners / Logos */}
+      <section className="py-16 border-y border-outline-variant/10">
+        <div className="max-w-7xl mx-auto px-8 text-center">
+          <p className="text-xs font-bold text-outline uppercase tracking-widest mb-10">Trusted by Global Industry Leaders</p>
+          <div className="flex flex-wrap justify-center items-center gap-16 opacity-50 grayscale hover:grayscale-0 transition-all">
+            <span className="text-2xl font-black text-primary">ENI</span>
+            <span className="text-2xl font-black text-primary">CHEVRON</span>
+            <span className="text-2xl font-black text-primary">TOTAL</span>
+            <span className="text-2xl font-black text-primary">SHELL</span>
+            <span className="text-2xl font-black text-primary">DPR</span>
+            <span className="text-2xl font-black text-primary">NIPEX</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-24 bg-primary text-on-primary">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+            <div className="lg:col-span-1">
+              <h2 className="text-4xl font-extrabold mb-6 leading-tight">What Our Partners Say</h2>
+              <p className="text-on-primary-container text-lg leading-relaxed">Join 250+ companies that have transformed their safety culture with SafePlaceHSE.</p>
+            </div>
+            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="p-8 bg-primary-container rounded-xl border-l-4 border-tertiary-fixed">
+                <p className="text-lg italic mb-6">"Their NIPEX audit support was unparalleled. We achieved pre-qualification in record time thanks to their systematic approach."</p>
+                <div>
+                  <div className="font-bold">Emeka Nwosu</div>
+                  <div className="text-sm text-on-primary-container">Operations Director, Energy Solutions</div>
+                </div>
+              </div>
+              <div className="p-8 bg-primary-container rounded-xl border-l-4 border-tertiary-fixed">
+                <p className="text-lg italic mb-6">"The training programs provided are not just lectures; they are practical sessions that actually stick with our field staff."</p>
+                <div>
+                  <div className="font-bold">Sarah Jenkins</div>
+                  <div className="text-sm text-on-primary-container">HSE Manager, Logistics Corp</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Recent Projects Gallery */}
+      <section className="py-24 bg-surface">
+        <div className="max-w-7xl mx-auto px-8">
+          <h2 className="text-3xl font-extrabold text-primary mb-12">Project Impact Gallery</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="md:col-span-2 h-64 overflow-hidden rounded-xl relative group">
+              <Image
+                alt="Project 1"
+                className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700"
+                src="/images/projects/white/izzy-on-white.jpg"
+                width={600}
+                height={256}
+              />
+              <div className="absolute inset-0 bg-primary/40 flex items-end p-6">
+                <p className="text-white font-bold">Facility Audit - Port Harcourt</p>
+              </div>
+            </div>
+            <div className="h-64 overflow-hidden rounded-xl relative group">
+              <Image
+                alt="Project 2"
+                className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700"
+                src="/images/projects/white/izzy-on-white2.jpg"
+                width={300}
+                height={256}
+              />
+              <div className="absolute inset-0 bg-primary/40 flex items-end p-6">
+                <p className="text-white font-bold">Risk Map</p>
+              </div>
+            </div>
+            <div className="h-64 overflow-hidden rounded-xl relative group">
+              <Image
+                alt="Project 3"
+                className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700"
+                src="/images/projects/white/izzy-on-white3.jpg"
+                width={300}
+                height={256}
+              />
+              <div className="absolute inset-0 bg-primary/40 flex items-end p-6">
+                <p className="text-white font-bold">Strategy Workshop</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
   )
 }

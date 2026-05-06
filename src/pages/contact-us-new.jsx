@@ -5,7 +5,6 @@ import { isNotEmail } from '@/configs/inputValidation'
 import { useMutation } from '@tanstack/react-query'
 import { useHttpServices, useToast } from '@/hooks'
 import { API_ENDPOINTS } from '@/configs'
-import { LoadButton } from '@/components'
 
 export default function ContactUs() {
     const [formData, setFormData]= useState({})
@@ -136,7 +135,7 @@ export default function ContactUs() {
                 </div>
                 
                 <div className='flex flex-col sm:flex-row gap-4 mt-8'>
-                  <LoadButton
+                  <LoadButton 
                     onClick={()=>subscribeFund()} 
                     isLoading={isLoading}
                     disabled={!!isNotEmail(formData.email) || !formData.name || !formData.subject || !formData.message}

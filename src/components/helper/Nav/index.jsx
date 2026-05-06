@@ -60,23 +60,24 @@ function PhoneNav({nav_list, scrolledPast, activeNav}){
     const [showNav, setShowNav]= useState(false)
     return(
         <div className='pc:hidden bigpic:hidden tablet:hidden phone:block' 
-            style={scrolledPast?{background:"#F4FFF4"}:{background:"transparent"}}
+            style={scrolledPast?{background:"#F4FFF4"}:{background:"transparent", color:'#FFFFFF'}}
         >
         <div className='flex justify-between items-center px-6 py-3'>
             <div>
                 <Link href={PAGE_ROUTES.HOME} className='flex items-center gap-x-2'>
                     <ImageContainer 
-                        src={'/images/safeplacehse_logo.png'} className={'w-[40px] h-[40px]'} alt='safeplace logo'/>
+                        src={'/images/safeplacehse_logo_2.png'} className={'w-[40px] h-[40px]'} alt='safeplace logo'/>
                     {/* <p className="text-xl font-semibold">SafePlaceHSE</p> */}
                 </Link>
                 
             </div>
             <button onClick={()=>setShowNav(!showNav)}>
-                <img src="/svg/barcode.svg" alt="barcode" className='w-8 h-8'/>
+                <img style={!scrolledPast?{filter:'brightness(0) invert(1)'}:{}} src="/svg/barcode.svg" alt="barcode" className='w-8 h-8'/>
             </button>
         </div>
         {showNav && 
-        <div className='navboi z-[10] bg-lightgreen border-b absolute min-h-fit py-7 px-6 top-full w-full space-y-6'>
+        <div style={scrolledPast?{background:'#F4FFF4'}:{background:'#000000e3'}} 
+            className='navboi z-[10] border-b absolute min-h-fit py-7 px-6 top-full w-full space-y-6'>
             {nav_list.filter(({type})=>type!=="contact").map(({label,to},ind)=>
                 <Link className="hover_class_green flex items-center gap-x-2" style={activeNav===to?{color:"05C202"}:{}} href={to || '/'} onClick={()=>setShowNav(false)}
                     key={ind}>
@@ -97,10 +98,10 @@ function PcNav({nav_list, scrolledPast, activeNav}){
         <div style={scrolledPast?{backgroundColor:"#F4FFF4",
             boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)"
         
-        }:{}} className="phone:hidden z-[90] py-7 fixed top-0 left-0 right-0 w-full flex justify-between px-[90px] items-center">
+        }:{color:'#FFFFFF'}} className="phone:hidden z-[90] py-7 fixed top-0 left-0 right-0 w-full flex justify-between px-[90px] items-center">
             <Link href={PAGE_ROUTES.HOME} className='flex items-center gap-x-2'>
                 <ImageContainer 
-                    src={'/images/safeplacehse_logo.png'} className={'w-[50px] h-[50px]'} imgClass='' alt='safeplace logo'/>
+                    src={'/images/safeplacehse_logo_2.png'} className={'w-[50px] h-[50px]'} imgClass='' alt='safeplace logo'/>
                 {/* <p className="text-xl font-semibold">SafePlaceHSE</p> */}
             </Link >
             <ul className='flex gap-x-7 gap-y-4 items-center'>
@@ -111,7 +112,7 @@ function PcNav({nav_list, scrolledPast, activeNav}){
                     // <React.Fragment key={ind}>
                         <li key={ind} 
                         style={scrolledPast?{}:{}}
-                            className='font-medium text-black text-[16px] tablet:text-[15px]'>
+                            className='font-medium text-[16px] tablet:text-[15px]'>
                             <Link  className="hover_class_green" href={to || '/'} >
                                 {label}
                             </Link >

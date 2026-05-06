@@ -1,7 +1,5 @@
-/* Google Fonts: Montserrat */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900');
-
+/* Google Fonts: Geom */
+@import url('https://fonts.googleapis.com/css2?family=Geom:ital,wght@0,300..900;1,300..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -40,13 +38,15 @@ html, body {
 }
 html, body {
   scroll-behavior: smooth !important;
+  font-family: "Geom", sans-serif !important;
+
 }
 
 #team, #news{
   transition: transform 0.5s ease-in-out;
 }
 .poppins{
-  font-family: "Poppins", sans-serif !important;
+  font-family: "Geom", sans-serif !important;
 }
 .poin * {
   pointer-events: none;
@@ -239,7 +239,7 @@ input::-webkit-inner-spin-button {
   background: #F0F9FA !important;
   font-size:"13px" !important;
   color: #000000 !important;
-  font-family: "Poppins", sans-serif !important;
+  font-family: "Geom", sans-serif !important;
  
 
 }
@@ -248,7 +248,7 @@ input::-webkit-inner-spin-button {
   background: #FAE1E2 !important;
   font-size:"13px" !important;
   color: #000000 !important;
-  font-family: "Poppins", sans-serif !important;
+  font-family: "Geom", sans-serif !important;
 }
 
 tr:nth-child(even) {

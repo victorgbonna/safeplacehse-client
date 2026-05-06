@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SafePlaceHSE | Excellence in HSE Consulting &amp; Training</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#001d32",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#001d33",
+                    "tertiary-fixed-dim": "#ffb690",
+                    "surface-container": "#e3efff",
+                    "on-tertiary-fixed": "#341100",
+                    "surface": "#f7f9ff",
+                    "surface-tint": "#49607c",
+                    "outline-variant": "#c4c6cf",
+                    "on-surface-variant": "#43474e",
+                    "on-tertiary-container": "#fe771b",
+                    "outline": "#74777f",
+                    "on-primary-fixed-variant": "#314863",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#bfddfe",
+                    "surface-bright": "#f7f9ff",
+                    "surface-container-low": "#edf4ff",
+                    "background": "#f7f9ff",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#d8eaff",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#1f3751",
+                    "inverse-primary": "#b0c9e8",
+                    "secondary-fixed-dim": "#accaea",
+                    "primary-fixed": "#d1e4ff",
+                    "on-primary-fixed": "#011d35",
+                    "on-secondary-fixed-variant": "#2c4964",
+                    "surface-container-highest": "#cee5ff",
+                    "inverse-on-surface": "#e8f2ff",
+                    "secondary": "#44617d",
+                    "on-background": "#001d32",
+                    "tertiary": "#3b1500",
+                    "secondary-fixed": "#cee5ff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#5d2500",
+                    "tertiary-fixed": "#ffdbca",
+                    "on-tertiary-fixed-variant": "#783200",
+                    "on-secondary-container": "#45627e",
+                    "on-primary-container": "#89a1bf",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#b0c9e8",
+                    "surface-dim": "#c1ddfb",
+                    "inverse-surface": "#16334a",
+                    "surface-variant": "#cee5ff",
+                    "primary": "#06223a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body { font-family: 'Inter', sans-serif; }
+      h1, h2, h3, .headline { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background">
+<!-- TopNavBar (Updated from COMPONENTS_5) -->
+<nav class="fixed top-0 w-full z-50 bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-bold text-blue-950 dark:text-white font-headline">
+            SafePlaceHSE
+        </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-blue-900 dark:text-white border-b-2 border-blue-900 dark:border-blue-400 pb-1 font-headline tracking-tight font-bold scale-95 duration-150 ease-in-out" href="#">Services</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 font-headline tracking-tight font-bold scale-95 duration-150 ease-in-out transition-colors" href="#">Courses</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 font-headline tracking-tight font-bold scale-95 duration-150 ease-in-out transition-colors" href="#">Consulting</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 font-headline tracking-tight font-bold scale-95 duration-150 ease-in-out transition-colors" href="#">Insights</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-md font-bold text-sm hover:opacity-90 transition-opacity">
+                Get Started
+            </button>
+<button class="md:hidden text-blue-950 dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section (Restyled to match Hybrid-HSE) -->
+<section class="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 z-0">
+<img alt="HSE Professionals" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uiyTknVuiTfYQoM4wVo-0vmce7ykKxFB_s_nzZtzv72KuvtA8q3j0-vAZpofiMzTnDblWRF78TS8rf-nwNvYYSFLXW3cVY3D779taQD-V8CSBohPH_KkoJUB4IJEAykrTdc2XyWCtQu9AisA0z0QclrijHk6NB0Nh6uHwkKG1Zm2AErA1T1LPNY2ayxrL7tn3gaA5r7jRcvqtKeQJhU09UiPF4qQJv1VdCymZLFshEmjrwVqkmnxzQfR9OJXuz4pQymPVKdXUYzvXs"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-transparent"></div>
+<div class="absolute inset-0 bg-slate-900/30"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
+<div class="max-w-3xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary-fixed/20 border border-tertiary-fixed/30 text-tertiary-fixed text-xs font-bold uppercase tracking-widest mb-8">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-fixed opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary-fixed"></span>
+</span>
+                Industry Leading HSE Standards
+            </div>
+<h1 class="text-5xl md:text-7xl font-extrabold text-white leading-[1.1] mb-8 tracking-tighter">
+                Excellence in <span class="text-tertiary-fixed">HSE Consulting</span> &amp; Strategic Safety Management.
+            </h1>
+<p class="text-xl md:text-2xl text-slate-200 mb-12 max-w-2xl leading-relaxed font-light">
+                Delivering high-impact audit, specialized training, and compliance solutions that protect your personnel and optimize industrial performance globally.
+            </p>
+<div class="flex flex-col sm:flex-row gap-5">
+<button class="bg-tertiary-fixed text-tertiary-container px-10 py-5 rounded-md font-bold text-lg shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
+                    Start a Project
+                    <span class="material-symbols-outlined">arrow-right</span>
+</button>
+<button class="backdrop-blur-md bg-white/10 border border-white/20 text-white px-10 py-5 rounded-md font-bold text-lg hover:bg-white/20 transition-all duration-300">
+                    Our Services
+                </button>
+</div>
+<div class="mt-16 flex items-center gap-8 border-t border-white/10 pt-8 max-w-md">
+<div class="flex -space-x-4">
+<img alt="Client" class="w-10 h-10 rounded-full border-2 border-primary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiLRNEoLAcUowt_npe56eob7Z_qldmnR6Fnhf6nTIQdx8rTveu3vG0vCxhmPd6M5S3GZgo-yHR09WXcZErC_SZMrbdBN18Wq-a9bhetpDUMNwV5pn39ygYrxq4rDRj5oaTiChbWdQbOPv_v7x27iAdMEhSy_W0nhxXGiGIdAZr8BpfoKjuDRRkGQglFKGmBB9GY8qN-1GwZFVwD4ODB-sl4flMX7GQBSz79mcvoRkwq9C4aCch_SbD4Jl1ozaKFz5CeAlLC78kltJY"/>
+<img alt="Client" class="w-10 h-10 rounded-full border-2 border-primary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwPMpCt5P6aOiZJvkMvSQIMwDrplkCxwcJMEyMxh_dORhxZ4fpKMyLGkPa1E9GIX9t0-WBgt35swI2xOgIOSfXRLmOVtTcp72zxPu95F-0Hok2EGfbc3wMDx8zVO70DxaeuvoycXZir0bsSy-v5_TXX8YsnbTYPhZD41BDLGWqAx0TOXCOVOC9jHsdTMtUFo0b6dDtsQHXoMj5PsAUtphbI5xnPX4_UZNNolRJGTHieD4xM9tAyo2j9Xgo_WhtihSRN0BPAXTGs-ei"/>
+<img alt="Client" class="w-10 h-10 rounded-full border-2 border-primary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCLbfYFa7H5aJ2xxctliEedtJ_-zlcZhzRCBv1nlasdymXmAtaH0-MXHKM8hX6KdcHE08IFuL0MYMXg0f3o-KMMo_scx7sSNglC_4z-yCu4oaBpy-hozcFcFzW3O54U-hU8RQfBFtUIho-jBSvBe_QvITcSilDXahDgaloNCik3jm-xl02OMfrH-kxuBOe4yqW3fIfUiE5Bplli6N88EXeAhRGjAzDvfbfZKltMLzH8z0LolgWmRwN6OrVlruQ5PbGTH6XVanO7JZn"/>
+</div>
+<div>
+<div class="flex text-tertiary-fixed">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+<p class="text-white text-sm font-semibold">Trusted by 250+ Global Enterprises</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Metrics -->
+<section class="py-12 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="text-center p-6 bg-surface-container-lowest rounded-xl border-b-4 border-tertiary-fixed shadow-sm">
+<div class="text-4xl font-extrabold text-primary mb-2">15+</div>
+<div class="text-sm font-semibold text-on-surface-variant uppercase tracking-widest">Years Experience</div>
+</div>
+<div class="text-center p-6 bg-surface-container-lowest rounded-xl border-b-4 border-tertiary-fixed shadow-sm">
+<div class="text-4xl font-extrabold text-primary mb-2">250+</div>
+<div class="text-sm font-semibold text-on-surface-variant uppercase tracking-widest">Clients Served</div>
+</div>
+<div class="text-center p-6 bg-surface-container-lowest rounded-xl border-b-4 border-tertiary-fixed shadow-sm">
+<div class="text-4xl font-extrabold text-primary mb-2">48</div>
+<div class="text-sm font-semibold text-on-surface-variant uppercase tracking-widest">Certifications</div>
+</div>
+<div class="text-center p-6 bg-surface-container-lowest rounded-xl border-b-4 border-tertiary-fixed shadow-sm">
+<div class="text-4xl font-extrabold text-primary mb-2">99%</div>
+<div class="text-sm font-semibold text-on-surface-variant uppercase tracking-widest">Compliance Rate</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Who We Are / Retainership Support -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+<div class="relative group">
+<img alt="SafePlaceHSE Team" class="rounded-xl shadow-xl w-full h-[450px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Group of diverse professional safety consultants in a bright meeting room discussing compliance documents with focused expressions" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa7gwfnx6ICrLwY-zJE2dbWlRxoTIIQO41rrzO4tBdhZUkxUiGcVJzrN5_et5W9tbzctndAYA2ulo0GRvNvI2TG1qr2ofOx1cY_gLPxrxQWp34GHIBfW3L7SiV5Gacw3C9OtTmagj8GnsucKHFc09ZQpqjAFeIrvbq9r3BXKdkpcZkhmv2pwQCx_gTe6NPIV_ovBtwdREC87IpVRzwhX5k0FGKV1rBY6Rpdwd7jf7Glq-9rUZovDhPZNH0w6uDTldhmH3LmUlUpHvs"/>
+<div class="absolute -bottom-8 -right-8 bg-primary-container p-8 rounded-xl shadow-2xl hidden md:block">
+<span class="material-symbols-outlined text-tertiary-fixed text-4xl mb-2">verified_user</span>
+<p class="text-surface font-bold text-lg">ISO 45001 Certified Advisory</p>
+</div>
+</div>
+<div>
+<h2 class="text-sm font-bold text-on-tertiary-fixed-variant uppercase tracking-[0.2em] mb-4">Strategic Partnership</h2>
+<h3 class="text-4xl font-extrabold text-primary leading-tight mb-8">Comprehensive Retainership &amp; NIPEX Support</h3>
+<div class="space-y-6">
+<div class="p-6 bg-surface-container-low rounded-lg">
+<h4 class="font-bold text-primary flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-on-tertiary-container">policy</span>
+                        HSE Advisory &amp; Retainership
+                    </h4>
+<p class="text-on-surface-variant text-sm">Long-term partnerships that integrate safety leadership directly into your corporate DNA, ensuring constant readiness.</p>
+</div>
+<div class="p-6 bg-surface-container-low rounded-lg">
+<h4 class="font-bold text-primary flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-on-tertiary-container">approval</span>
+                        NIPEX &amp; Tendering Support
+                    </h4>
+<p class="text-on-surface-variant text-sm">Expert documentation and pre-qualification support for NIPEX audits and high-stakes contract bidding processes.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Grid (Bento Style) -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex justify-between items-end mb-16">
+<div class="max-w-2xl">
+<h2 class="text-4xl font-extrabold text-primary tracking-tight mb-4">Core Consulting Services</h2>
+<p class="text-on-surface-variant">We move beyond check-box compliance to create operational value.</p>
+</div>
+<a class="text-primary font-bold border-b-2 border-tertiary-fixed pb-1 hover:text-on-tertiary-container transition-colors" href="#">View All Services</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[600px]">
+<!-- Major Card -->
+<div class="md:col-span-2 md:row-span-2 bg-primary-container rounded-xl p-10 flex flex-col justify-between text-white relative overflow-hidden group">
+<img alt="Auditing" class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-105 transition-transform duration-700" data-alt="Industrial professional climbing an oil platform ladder with safety harness against a clear blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAad06HDj4ahCsUL1pZTWfnOOfrsb88o1aZyOgAMJ-OlwPIH68GI5casptn9LNfCB2vRwn1YhmWkeialHrEXZjSDzyrUrTwXS6PFc_nv3ney7fb1p2W1Ww02zYwrwNADwO9hOM2sV8Z-QH8Hzj5pNHimeAxiz1TXV9vkqHdLnj9ZrrUsKf7GNWMjGP3Idw_HbBk-3JwAnDbq6Mtn1X9ws24gFcDNDgBQHYZ4Aej0lP1H8Itxpw6BoSSKUNY69fRu-XQs0aisQ3AEbV4"/>
+<div class="relative z-10">
+<span class="bg-tertiary-fixed text-tertiary-container px-3 py-1 rounded-md text-xs font-bold uppercase tracking-widest mb-4 inline-block">Bespoke Auditing</span>
+<h4 class="text-3xl font-bold mb-4">Integrated HSE Audits</h4>
+<p class="text-surface-container-low max-w-md">Systematic, independent, and documented evidence evaluation for your safety management systems.</p>
+</div>
+<div class="relative z-10">
+<button class="flex items-center gap-2 text-tertiary-fixed font-bold">
+                        Learn More <span class="material-symbols-outlined">arrow-right</span>
+</button>
+</div>
+</div>
+<!-- Small Card 1 -->
+<div class="bg-surface-container-high rounded-xl p-8 flex flex-col justify-between hover:shadow-lg transition-shadow border-t-2 border-transparent hover:border-tertiary-fixed">
+<div>
+<span class="material-symbols-outlined text-on-tertiary-container text-4xl mb-4">analytics</span>
+<h4 class="text-xl font-bold text-primary mb-2">Risk Assessment</h4>
+<p class="text-on-surface-variant text-sm">JHA, HEMP, and HAZID studies tailored to complex operations.</p>
+</div>
+<a class="text-primary font-bold text-sm mt-4" href="#">Details</a>
+</div>
+<!-- Small Card 2 -->
+<div class="bg-surface-container-high rounded-xl p-8 flex flex-col justify-between hover:shadow-lg transition-shadow border-t-2 border-transparent hover:border-tertiary-fixed">
+<div>
+<span class="material-symbols-outlined text-on-tertiary-container text-4xl mb-4">engineering</span>
+<h4 class="text-xl font-bold text-primary mb-2">Compliance Support</h4>
+<p class="text-on-surface-variant text-sm">Navigating DPR, Federal, and State regulatory environments.</p>
+</div>
+<a class="text-primary font-bold text-sm mt-4" href="#">Details</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Course Preview -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<h2 class="text-3xl font-extrabold text-primary mb-12 text-center">Upcoming Certification Courses</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Course 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+<img alt="NEBOSH Course" class="w-full h-48 object-cover" data-alt="Close up of a NEBOSH certificate resting on a clean office desk with professional safety glasses nearby" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk73xJ6Q9mivXXYztmqpQMQd2CpwezLLHCHgzeUSTDuAD_kBD1UENWF_lLPGjBCj1UEP3uTEsCkVAt2CTuoe2owEOAZfLPSa55O63PA5H1hL88AUaIMoHhbdUx9W7BPRI8hehZCtOpmhEt2LKYs7yUZ6KD-PkYIllEzu1NMW1XrFVXFhQFlDNZCo1C4IYtpnWsIOgvUvJFk8e29ABacuK3hz1gwqhOXosmA9cjp9sJ4czBHGBAv-w4MiQY9rdYzc4J9-pT-K5tTTmi"/>
+<div class="p-8">
+<div class="flex justify-between items-center mb-4">
+<span class="text-xs font-bold text-tertiary px-2 py-1 bg-tertiary-fixed rounded">Popular</span>
+<span class="text-sm font-semibold text-on-surface-variant">4 Weeks</span>
+</div>
+<h4 class="text-xl font-bold text-primary mb-4">NEBOSH International General Cert</h4>
+<p class="text-on-surface-variant text-sm mb-6">The gold standard for health and safety professionals worldwide.</p>
+<button class="w-full py-3 border border-primary text-primary font-bold rounded hover:bg-primary hover:text-white transition-all">Enroll Now</button>
+</div>
+</div>
+<!-- Course 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+<img alt="IOSH Course" class="w-full h-48 object-cover" data-alt="Instructor pointing at a safety diagram on a digital whiteboard in a modern classroom setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDovkQT4qVVG9gyHlz-gymS--noq3JhH2UnY6q3aUqiLKi1aocK3MwAkgg01j5M-GpehrogsWwninY905rz8JF2K0J0W56XgtfE3TON1YUDIt8kz7ck1v1uB6M1Mx3dHOrVWLExPinDrl4IGu6JoOTwReDV4r_aqtj9qOHwj5LKQG7s1kzCkencsOlzGfg7ZIDp9DCu-bAeuFS3Qpn0-STi0A_buasgmr2T5FEIU77WSC9WYHLqr_uuaBgmNfKTSQ_OLigR6Y1VFGXs"/>
+<div class="p-8">
+<div class="flex justify-between items-center mb-4">
+<span class="text-xs font-bold text-secondary px-2 py-1 bg-secondary-container rounded">Essential</span>
+<span class="text-sm font-semibold text-on-surface-variant">3 Days</span>
+</div>
+<h4 class="text-xl font-bold text-primary mb-4">IOSH Managing Safely</h4>
+<p class="text-on-surface-variant text-sm mb-6">Essential knowledge for every manager and supervisor in high-risk zones.</p>
+<button class="w-full py-3 border border-primary text-primary font-bold rounded hover:bg-primary hover:text-white transition-all">Enroll Now</button>
+</div>
+</div>
+<!-- Course 3 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+<img alt="Environmental Mgmt" class="w-full h-48 object-cover" data-alt="A solar farm at sunrise representing environmental management and green energy safety standards" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOXYQDe-AGkHVn3aOOj4q3eIsj0yJ8-UbfIatGbpV40RTkb71Pc3fIRfbBsaQdkURlh40SWVqGrinO7cJ1G2bC5C6L0Z-tn4RKD8gKTisZ-7AJ0Bzz1jJU6hrc0FDJiiJB4gWmj6niM-JFCg6YH06v2zaCg51dGqWB0q7wY2kOMq2W1PI4_zB0-qQTsSRLl2m61cYdJK7ATkcvFBi0aZD9d9i9aNNIPUrbzd2HPx2gJAojCyBWeK_YpJVcnYc3IeG3YNbh-nK53jVb"/>
+<div class="p-8">
+<div class="flex justify-between items-center mb-4">
+<span class="text-xs font-bold text-on-secondary-fixed-variant px-2 py-1 bg-primary-fixed rounded">Advanced</span>
+<span class="text-sm font-semibold text-on-surface-variant">5 Days</span>
+</div>
+<h4 class="text-xl font-bold text-primary mb-4">ISO 14001 Implementation</h4>
+<p class="text-on-surface-variant text-sm mb-6">Expert-led training on building effective Environmental Management Systems.</p>
+<button class="w-full py-3 border border-primary text-primary font-bold rounded hover:bg-primary hover:text-white transition-all">Enroll Now</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Partners / Logos -->
+<section class="py-16 border-y border-outline-variant/10">
+<div class="max-w-7xl mx-auto px-8 text-center">
+<p class="text-xs font-bold text-outline uppercase tracking-widest mb-10">Trusted by Global Industry Leaders</p>
+<div class="flex flex-wrap justify-center items-center gap-16 opacity-50 grayscale hover:grayscale-0 transition-all">
+<span class="text-2xl font-black text-primary">ENI</span>
+<span class="text-2xl font-black text-primary">CHEVRON</span>
+<span class="text-2xl font-black text-primary">TOTAL</span>
+<span class="text-2xl font-black text-primary">SHELL</span>
+<span class="text-2xl font-black text-primary">DPR</span>
+<span class="text-2xl font-black text-primary">NIPEX</span>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-24 bg-primary text-on-primary">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+<div class="lg:col-span-1">
+<h2 class="text-4xl font-extrabold mb-6 leading-tight">What Our Partners Say</h2>
+<p class="text-on-primary-container text-lg leading-relaxed">Join 250+ companies that have transformed their safety culture with SafePlaceHSE.</p>
+</div>
+<div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="p-8 bg-primary-container rounded-xl border-l-4 border-tertiary-fixed">
+<p class="text-lg italic mb-6">"Their NIPEX audit support was unparalleled. We achieved pre-qualification in record time thanks to their systematic approach."</p>
+<div>
+<div class="font-bold">Emeka Nwosu</div>
+<div class="text-sm text-on-primary-container">Operations Director, Energy Solutions</div>
+</div>
+</div>
+<div class="p-8 bg-primary-container rounded-xl border-l-4 border-tertiary-fixed">
+<p class="text-lg italic mb-6">"The training programs provided are not just lectures; they are practical sessions that actually stick with our field staff."</p>
+<div>
+<div class="font-bold">Sarah Jenkins</div>
+<div class="text-sm text-on-primary-container">HSE Manager, Logistics Corp</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Projects Gallery -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<h2 class="text-3xl font-extrabold text-primary mb-12">Project Impact Gallery</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="md:col-span-2 h-64 overflow-hidden rounded-xl relative group">
+<img alt="Project 1" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-700" data-alt="Interior of a modern high-tech warehouse facility with clean lines and perfect organization" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqltxdaY8C9hJN7ikiZE-ssAfa_II818NG4MzzLdoOXmiQOowSNnwXF4C59CPx0RelQknr9bSQzDlrIOmsQ8-SNljFXLz8Jp_gtLQZg28TG2Vp2q4aH1o1K-7X9Xkm2eio_NCKFb6bjkLtZ9O7wmrtrHhMzDVIm9yBLY5e93TVSKUknaxaYLHACotg-lSW1lyJFbMlOPaufOY87Ye2faL1yBgng39TEJqvuzmWKP8LkvwRSAtNknxRsJnOfwA3MANlo4GBeTZchAFK"/>
+<div class="absolute inset-0 bg-primary/40 flex items-end p-6">
+<p class="text-white font-bold">Facility Audit - Port Harcourt</p>
+</div>
+</div>
+<div class="h-64 overflow-hidden rounded-xl relative group">
+<img alt="Project 2" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-700" data-alt="Close up of mechanical gears and industrial machinery in a well-maintained factory setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFjBI_Dy8wjdH7JNf6A7YSpOtKOVDmGZrZbhSLIXvZ_QyAFMUgRTV2Chc-IsF2mlIBPrOj5UY9wGE_lrxl9fHrw7Xx4PmQi48qguXKJ9KuyVuVzwK7hUQDruRc-Vlk6s0bh_qVpN3yE2pPtDIIJ4_TYBAX2_1aaiAmoCWprD4Ga8eB09tn5jERj66w1Z_6FErFzuaFU8cyyr9fIsqNc1gnQOWErd3O9TSiiqG0NkaaYA3SvZvQImaDQ_mLgQeF3aUD2OLNMUHv9Q8J"/>
+<div class="absolute inset-0 bg-primary/40 flex items-end p-6">
+<p class="text-white font-bold">Risk Map</p>
+</div>
+</div>
+<div class="h-64 overflow-hidden rounded-xl relative group">
+<img alt="Project 3" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-700" data-alt="A group of people attending a high-tech conference about corporate sustainability and safety" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlL9rqbLdSRh6wDgaupRqasqvx_x1vbpFUacJN2dCcPToxDRCs4ZM5h40o7FkseHRNzdgp22lyQyyvR5Q8WmwT0taI5Udmy9vc5qn289Tf08d5yeYzlM9gPqciKAdt-uGwR2jFrpH__qTQJ7SiujkKbyx-tjpB_MeCusXGS-BoY2yqFSqJJEGdzr9aSo3aKJx9FnwnrqYU_k2H54XVUp6rYWKiJw9AsVd1tdNG3tIlpHXYQl8pz_0rkOezePq8931vBG8BVNOTFZOg"/>
+<div class="absolute inset-0 bg-primary/40 flex items-end p-6">
+<p class="text-white font-bold">Strategy Workshop</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer (Updated from COMPONENTS_5) -->
+<footer class="bg-slate-100 dark:bg-slate-950 border-t border-slate-200/20 dark:border-slate-800/20 w-full py-12 px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+<div class="opacity-80 hover:opacity-100 transition-opacity">
+<div class="text-lg font-bold text-blue-950 dark:text-white mb-6">SafePlaceHSE</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-inter leading-relaxed">Leading the frontier of safety management and corporate HSE excellence in the African energy sector.</p>
+</div>
+<div class="opacity-80 hover:opacity-100 transition-opacity">
+<h4 class="font-semibold text-blue-900 dark:text-blue-300 mb-6">Expertise</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 dark:text-slate-400 text-sm font-inter hover:underline decoration-orange-500" href="#">Safety Audit</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 text-sm font-inter hover:underline decoration-orange-500" href="#">Risk Assessment</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 text-sm font-inter hover:underline decoration-orange-500" href="#">NIPEX Support</a></li>
+</ul>
+</div>
+<div class="opacity-80 hover:opacity-100 transition-opacity">
+<h4 class="font-semibold text-blue-900 dark:text-blue-300 mb-6">Resources</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 dark:text-slate-400 text-sm font-inter hover:underline decoration-orange-500" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 text-sm font-inter hover:underline decoration-orange-500" href="#">Terms of Service</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 text-sm font-inter hover:underline decoration-orange-500" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div class="opacity-80 hover:opacity-100 transition-opacity">
+<h4 class="font-semibold text-blue-900 dark:text-blue-300 mb-6">Global HQ</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-inter leading-relaxed">
+                Lagos State Business District, Nigeria.<br/>
+                support@safeplacehse.com
+            </p>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-slate-200/10 text-center">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-inter">© 2024 SafePlaceHSE Consulting. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

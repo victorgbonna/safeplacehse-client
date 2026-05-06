@@ -189,12 +189,12 @@ const courses = [
                         </div>
                     </div>
                     <div className="min-w-fit w-fit text-sm pt-4 pb-7 flex flex-col h-[300px] tablet:h-fit justify-between">
-                       <div className="space-y-2 pr-5 tablet:mb-8">
+                       <div className="space-y-2 pr-5 tablet:mb-3">
                             <p>
                                 <span className="font-bold">Course Duration:</span>{' '}
                                 <span className="text-[#414141]">{duration}</span>
                             </p>
-                            <p>
+                            <p> 
                                 <span className="font-bold">Target Audience:</span>{' '}
                                 <span className="text-[#414141]">
                                 {audience.map((type, ind) => (
@@ -215,7 +215,7 @@ const courses = [
                                 <span className="text-[#414141]">{status}</span>
                             </p>
                         </div>
-                        <div className="mt-6 tablet:mt-0 flex gap-x-3 tablet:justify-end">
+                        <div className="mt-0 tablet:mt-0 flex gap-x-3 tablet:justify-end">
                             {[
                                 // {label:"Course Catalog", classNames:"#1877F2", img:iconSvgPath('download')},
                                 {label:"Enroll Now", 

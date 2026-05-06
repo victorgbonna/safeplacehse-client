@@ -4,7 +4,7 @@ export default function ImageContainer({style={},src, imgClass="", className, al
     return(
         <div style={style} className={className+ ' relative overflow-hidden '+parentColor}>
             <Image fill={true} priority={true} 
-            
+            sizes="(max-width: 768px) 100vw, 50vw"
             className={"w-full h-full "+ imgClass}
                 placeholder = 'empty'  src={src} alt={alt || src || 'icon'}
             />

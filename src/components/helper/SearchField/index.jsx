@@ -17,7 +17,7 @@ export default function SearchField({
     setSearchQuery(initialValue);
   }, [initialValue]);
   return (
-    <div className={"relative monte " + parentClass}
+    <div className={"relative " + parentClass}
         style={{
             boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)"
 
