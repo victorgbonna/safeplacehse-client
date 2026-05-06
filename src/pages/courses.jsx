@@ -315,7 +315,7 @@ export default function Courses() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-extrabold text-primary mb-4">What You&apos;ll Achieve</h2>
             <p className="text-on-surface-variant max-w-2xl mx-auto">
-              Our graduates don't just get certificates—they get results. Here's what makes our training different:
+              Our graduates don&apos;t just get certificates—they get results. Here&apos;s what makes our training different:
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

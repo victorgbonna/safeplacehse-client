@@ -70,7 +70,7 @@ export default function AboutUs() {
                 <div className="p-6 bg-surface-container-low rounded-lg border-l-4 border-tertiary-fixed">
                   <h4 className="font-bold text-primary mb-3">Our Mission</h4>
                   <p className="text-on-surface-variant leading-relaxed">
-                    To help organizations build safer, healthier, and more sustainable workplaces. We believe safety is more than compliance—it's a responsibility, a culture, and a commitment to preserving life, health, and the environment.
+                    To help organizations build safer, healthier, and more sustainable workplaces. We believe safety is more than compliance—it&apos;s a responsibility, a culture, and a commitment to preserving life, health, and the environment.
                   </p>
                 </div>
                 <div className="p-6 bg-surface-container-low rounded-lg border-l-4 border-primary">

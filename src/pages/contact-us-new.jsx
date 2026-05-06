@@ -78,10 +78,10 @@ export default function ContactUs() {
               Get In Touch
             </div>
             <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
-              Let's Build a Safer Future Together
+              Let&apos;s Build a Safer Future Together
             </h1>
             <p className="text-xl text-white/90 mb-8 leading-relaxed max-w-2xl">
-              Looking for how to reach out to us? Fill out the form or message us on our contact line and you're just a step closer to transforming your safety culture.
+              Looking for how to reach out to us? Fill out the form or message us on our contact line and you&apos;re just a step closer to transforming your safety culture.
             </p>
             <div className="flex flex-col sm:flex-row gap-5">
               <button className="bg-tertiary-fixed text-tertiary-container px-10 py-5 rounded-md font-bold text-lg shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
