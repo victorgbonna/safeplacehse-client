@@ -1,5 +1,5 @@
-/* Google Fonts: Geom */
-@import url('https://fonts.googleapis.com/css2?family=Geom:ital,wght@0,300..900;1,300..900&display=swap');
+/* Google Fonts: Nunito */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300..900;1,300..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -19,7 +19,7 @@
 }
 
 html, body {
-  /* font-family: 'Montserrat', ui-sans-serif; */
+  /* font-family: 'Nunito', ui-sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -33,12 +33,12 @@ html, body {
 *{
   scroll-behavior: smooth !important;
   /* transition-duration: 5s; */
-  /* font-family: 'Montserrat', ui-sans-serif; */
+  /* font-family: 'Nunito', ui-sans-serif; */
 
 }
 html, body {
   scroll-behavior: smooth !important;
-  font-family: "Geom", sans-serif !important;
+  /* font-family: "Nunito", sans-serif !important; */
 
 }
 
@@ -46,7 +46,7 @@ html, body {
   transition: transform 0.5s ease-in-out;
 }
 .poppins{
-  font-family: "Geom", sans-serif !important;
+  /* font-family: "Nunito", sans-serif !important; */
 }
 .poin * {
   pointer-events: none;
@@ -239,7 +239,7 @@ input::-webkit-inner-spin-button {
   background: #F0F9FA !important;
   font-size:"13px" !important;
   color: #000000 !important;
-  font-family: "Geom", sans-serif !important;
+  font-family: "Nunito", sans-serif !important;
  
 
 }
@@ -248,7 +248,7 @@ input::-webkit-inner-spin-button {
   background: #FAE1E2 !important;
   font-size:"13px" !important;
   color: #000000 !important;
-  font-family: "Geom", sans-serif !important;
+  font-family: "Nunito", sans-serif !important;
 }
 
 tr:nth-child(even) {
