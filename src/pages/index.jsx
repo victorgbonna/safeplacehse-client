@@ -289,14 +289,14 @@ export default function Home() {
             </div>
             <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="p-8 bg-primary-container rounded-xl border-l-4 border-tertiary-fixed">
-                <p className="text-lg italic mb-6">"Their NIPEX audit support was unparalleled. We achieved pre-qualification in record time thanks to their systematic approach."</p>
+                <p className="text-lg italic mb-6">&quot;Their NIPEX audit support was unparalleled. We achieved pre-qualification in record time thanks to their systematic approach.&quot;</p>
                 <div>
                   <div className="font-bold">Emeka Nwosu</div>
                   <div className="text-sm text-on-primary-container">Operations Director, Energy Solutions</div>
                 </div>
               </div>
               <div className="p-8 bg-primary-container rounded-xl border-l-4 border-tertiary-fixed">
-                <p className="text-lg italic mb-6">"The training programs provided are not just lectures; they are practical sessions that actually stick with our field staff."</p>
+                <p className="text-lg italic mb-6">&quot;The training programs provided are not just lectures; they are practical sessions that actually stick with our field staff.&quot;</p>
                 <div>
                   <div className="font-bold">Sarah Jenkins</div>
                   <div className="text-sm text-on-primary-container">HSE Manager, Logistics Corp</div>

@@ -105,7 +105,7 @@ export default function ContactUs() {
               <div className="mb-8">
                 <h2 className="text-4xl font-extrabold text-primary mb-4">Send Us a Message</h2>
                 <p className="text-on-surface-variant text-lg">
-                  Have questions about our services? Need a consultation? Fill out the form below and we'll get back to you within 24 hours.
+                  Have questions about our services? Need a consultation? Fill out form below and we&apos;ll get back to you within 24 hours.
                 </p>
               </div>
               

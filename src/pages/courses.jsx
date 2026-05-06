@@ -167,7 +167,7 @@ export default function Courses() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-extrabold text-primary mb-4">Our Most Popular Courses</h2>
             <p className="text-on-surface-variant max-w-2xl mx-auto">
-              Join thousands of professionals who've transformed their careers with our industry-recognized certification programs
+              Join thousands of professionals who&apos;ve transformed their careers with our industry-recognized certification programs
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -356,7 +356,7 @@ export default function Courses() {
         <div className="max-w-7xl mx-auto px-8 text-center">
           <h2 className="text-4xl font-extrabold mb-6">Ready to Transform Your Career?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Join thousands of professionals who've chosen SafePlaceHSE for their HSE certification journey. Your future in safety starts here.
+            Join thousands of professionals who&apos;ve chosen SafePlaceHSE for their HSE certification journey. Your future in safety starts here.
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
             <button className="bg-tertiary-fixed text-tertiary-container px-10 py-5 rounded-md font-bold text-lg shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">

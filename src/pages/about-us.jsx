@@ -98,7 +98,7 @@ export default function AboutUs() {
             <div className="text-center p-8 bg-surface-container-lowest rounded-xl hover:shadow-lg transition-all border-t-4 border-tertiary-fixed">
               <img src="/svg/integrity.svg" alt="integrity" className="w-12 h-12 mx-auto mb-4 text-tertiary-fixed" />
               <h4 className="font-bold text-primary mb-2">Integrity</h4>
-              <p className="text-on-surface-variant text-sm">Doing what's right, not just what's required</p>
+              <p className="text-on-surface-variant text-sm">Doing what&apos;s right, not just what&apos;s required</p>
             </div>
             <div className="text-center p-8 bg-surface-container-lowest rounded-xl hover:shadow-lg transition-all border-t-4 border-primary">
               <img src="/svg/engineering.svg" alt="excellence" className="w-12 h-12 mx-auto mb-4 text-primary" />
