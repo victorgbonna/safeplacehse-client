@@ -1,11 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { PAGE_ROUTES } from '@/configs'
+import { API_ENDPOINTS } from '@/configs'
 
 export default function Courses() {
   return (
     <div className="bg-background text-on-background scroll-smooth">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
+      <section className="relative min-h-[90vh] flex pt-20 overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -18,7 +20,7 @@ export default function Courses() {
           />
           <div className="absolute inset-0 bg-primary/80"></div>
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
+        <div className="relative tablet:pt-20 pb-10 z-10 max-w-7xl mx-auto px-8 w-full">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary-fixed/20 border border-tertiary-fixed/30 text-tertiary-fixed text-xs font-bold uppercase tracking-widest mb-8">
               <span className="relative flex h-2 w-2">
@@ -34,13 +36,13 @@ export default function Courses() {
               Have you ever wondered what it takes to become a safety leader who truly makes a difference? At SafePlaceHSE, we don&apos;t just teach courses—we build confidence, competence, and careers that protect lives.
             </p>
             <div className="flex flex-col sm:flex-row gap-5">
-              <button className="bg-tertiary-fixed text-tertiary-container px-10 py-5 rounded-md font-bold text-lg shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
+              <Link href={'#main'} className="bg-tertiary-fixed text-tertiary-container px-10 py-5 rounded-md font-bold text-lg shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
                 Explore Courses
                 <img src="/svg/arrow-right.svg" alt="arrow forward" className="inline align-middle w-6 h-6" />
-              </button>
-              <button className="backdrop-blur-md bg-white/10 border border-white/20 text-white px-10 py-5 rounded-md font-bold text-lg hover:bg-white/20 transition-all duration-300">
+              </Link>
+              <Link href={PAGE_ROUTES.ABOUT} className="text-center backdrop-blur-md bg-white/10 border border-white/20 text-white px-10 py-5 rounded-md font-bold text-lg hover:bg-white/20 transition-all duration-300">
                 Why Learn With Us
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -84,13 +86,13 @@ export default function Courses() {
               </div>
             </div>
             <div className="relative group">
-              <Image
+              {/* <Image
                 alt="Training Session"
                 className="rounded-xl w-full h-[450px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                 src="/images/certifications/nebosh2.png"
                 width={600}
                 height={450}
-              />
+              /> */}
               <div className="absolute -bottom-8 -right-8 bg-tertiary-container p-8 rounded-xl hidden md:block">
                 <img src="/svg/school.svg" alt="education" className="text-tertiary-fixed mb-2 w-10 h-10" />
                 <p className="text-surface font-bold text-lg">5000+ Graduates</p>
@@ -142,10 +144,10 @@ export default function Courses() {
                     <span>LOTO (Lockout/Tagout) procedures in industrial settings</span>
                   </div>
                 </div>
-                <button className="bg-white text-gray-800 px-8 py-4 rounded-md font-bold text-lg shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-2">
+                <Link href={PAGE_ROUTES.CONTACT_LINK.WHATSAPP_LINK} className="bg-white text-gray-800 px-8 py-4 rounded-md font-bold text-lg shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-2">
                   Get Early Access
                   <img src="/svg/arrow-right.svg" alt="arrow forward" className="inline align-middle w-6 h-6" />
-                </button>
+                </Link>
               </div>
               <div className="relative">
                 <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20">
@@ -170,141 +172,57 @@ export default function Courses() {
               Join thousands of professionals who&apos;ve transformed their careers with our industry-recognized certification programs
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Course 1 */}
-            <div className="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all group">
-              <div className="relative">
-                <Image
-                  alt="NEBOSH Course"
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700"
-                  src="/images/certifications/nebosh.png"
-                  width={400}
-                  height={192}
-                />
-                <div className="absolute top-4 right-4">
-                  <span className="bg-tertiary-fixed text-tertiary-container px-3 py-1 rounded-full text-xs font-bold uppercase">Bestseller</span>
-                </div>
-              </div>
-              <div className="p-8">
-                <div className="flex justify-between items-center mb-4">
-                  <span className="text-sm font-semibold text-on-surface-variant flex items-center gap-1">
-                    <img src="/svg/calendar.svg" alt="duration" className="w-4 h-4" />
-                    4 Weeks
-                  </span>
-                  <span className="text-sm font-semibold text-on-surface-variant flex items-center gap-1">
-                    <img src="/svg/people.svg" alt="students" className="w-4 h-4" />
-                    2000+ Graduates
-                  </span>
-                </div>
-                <h4 className="text-xl font-bold text-primary mb-4">NEBOSH International General Certificate</h4>
-                <p className="text-on-surface-variant text-sm mb-6">The gold standard for health and safety professionals worldwide. Perfect for those serious about a career in HSE.</p>
-                <div className="mb-6">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="flex text-tertiary-fixed">
-                      <img src="/svg/star.svg" alt="star" className="inline align-middle w-4 h-4" />
-                      <img src="/svg/star.svg" alt="star" className="inline align-middle w-4 h-4" />
-                      <img src="/svg/star.svg" alt="star" className="inline align-middle w-4 h-4" />
-                      <img src="/svg/star.svg" alt="star" className="inline align-middle w-4 h-4" />
-                      <img src="/svg/star.svg" alt="star" className="inline align-middle w-4 h-4" />
-                    </div>
-                    <span className="text-sm text-on-surface-variant">(4.9/5 from 500+ reviews)</span>
+          <div id='main' className="grid grid-cols-3 tablet:grid-cols-1 gap-8">
+            {API_ENDPOINTS.COURSES.map((course, index) => (
+              <div key={index} className="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all group">
+                <div className="relative">
+                  <Image
+                    alt={course.title}
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700"
+                    src={`/images/course/${course.img}`}
+                    width={400}
+                    height={256}
+                  />
+                  <div className="absolute top-4 right-4">
+                    <span className="bg-tertiary-fixed text-tertiary-container px-3 py-1 rounded-full text-xs font-bold uppercase">
+                      {index === 0 ? 'Bestseller' : index === 1 ? 'Essential' : 'Popular'}
+                    </span>
                   </div>
                 </div>
-                <button className="w-full py-3 bg-tertiary-fixed text-tertiary-container font-bold rounded hover:bg-tertiary-fixed/90 transition-all">
-                  Enroll Now
-                </button>
-              </div>
-            </div>
-
-            {/* Course 2 */}
-            <div className="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all group">
-              <div className="relative">
-                <Image
-                  alt="IOSH Course"
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700"
-                  src="/images/certifications/iosh.jpg"
-                  width={400}
-                  height={192}
-                />
-                <div className="absolute top-4 right-4">
-                  <span className="bg-primary text-white px-3 py-1 rounded-full text-xs font-bold uppercase">Essential</span>
-                </div>
-              </div>
-              <div className="p-8">
-                <div className="flex justify-between items-center mb-4">
-                  <span className="text-sm font-semibold text-on-surface-variant flex items-center gap-1">
-                    <img src="/svg/calendar.svg" alt="duration" className="w-4 h-4" />
-                    3 Days
-                  </span>
-                  <span className="text-sm font-semibold text-on-surface-variant flex items-center gap-1">
-                    <img src="/svg/people.svg" alt="students" className="w-4 h-4" />
-                    1500+ Graduates
-                  </span>
-                </div>
-                <h4 className="text-xl font-bold text-primary mb-4">IOSH Managing Safely</h4>
-                <p className="text-on-surface-variant text-sm mb-6">Essential knowledge for every manager and supervisor. Learn practical safety management that you can apply immediately.</p>
-                <div className="mb-6">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="flex text-tertiary-fixed">
-                      <img src="/svg/star.svg" alt="star" className="inline align-middle w-4 h-4" />
-                      <img src="/svg/star.svg" alt="star" className="inline align-middle w-4 h-4" />
-                      <img src="/svg/star.svg" alt="star" className="inline align-middle w-4 h-4" />
-                      <img src="/svg/star.svg" alt="star" className="inline align-middle w-4 h-4" />
-                      <img src="/svg/star.svg" alt="star" className="inline align-middle w-4 h-4" />
-                    </div>
-                    <span className="text-sm text-on-surface-variant">(4.8/5 from 350+ reviews)</span>
+                <div className="p-8">
+                  <div className="flex justify-between items-center mb-4">
+                    <span className="text-sm font-semibold text-on-surface-variant flex items-center gap-1">
+                      <img src="/svg/calendar.svg" alt="duration" className="w-4 h-4" />
+                      {course.duration}
+                    </span>
+                    <span className="text-sm font-semibold text-on-surface-variant flex items-center gap-1">
+                      <img src="/svg/people.svg" alt="audience" className="w-4 h-4" />
+                      {course.audience[0]}
+                    </span>
                   </div>
-                </div>
-                <button className="w-full py-3 bg-tertiary-fixed text-tertiary-container font-bold rounded hover:bg-tertiary-fixed/90 transition-all">
-                  Enroll Now
-                </button>
-              </div>
-            </div>
-
-            {/* Course 3 */}
-            <div className="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all group">
-              <div className="relative">
-                <Image
-                  alt="Environmental Management"
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700"
-                  src="/images/certifications/iso.png"
-                  width={400}
-                  height={192}
-                />
-                <div className="absolute top-4 right-4">
-                  <span className="bg-secondary text-white px-3 py-1 rounded-full text-xs font-bold uppercase">Advanced</span>
-                </div>
-              </div>
-              <div className="p-8">
-                <div className="flex justify-between items-center mb-4">
-                  <span className="text-sm font-semibold text-on-surface-variant flex items-center gap-1">
-                    <img src="/svg/calendar.svg" alt="duration" className="w-4 h-4" />
-                    5 Days
-                  </span>
-                  <span className="text-sm font-semibold text-on-surface-variant flex items-center gap-1">
-                    <img src="/svg/people.svg" alt="students" className="w-4 h-4" />
-                    800+ Graduates
-                  </span>
-                </div>
-                <h4 className="text-xl font-bold text-primary mb-4">ISO 14001 Environmental Management</h4>
-                <p className="text-on-surface-variant text-sm mb-6">Master environmental management systems and lead your organization to sustainable excellence.</p>
-                <div className="mb-6">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="flex text-tertiary-fixed">
-                      <img src="/svg/star.svg" alt="star" className="inline align-middle w-4 h-4" />
-                      <img src="/svg/star.svg" alt="star" className="inline align-middle w-4 h-4" />
-                      <img src="/svg/star.svg" alt="star" className="inline align-middle w-4 h-4" />
-                      <img src="/svg/star.svg" alt="star" className="inline align-middle w-4 h-4" />
-                      <img src="/svg/star.svg" alt="star" className="inline align-middle w-4 h-4" />
+                  <h4 className="text-xl font-bold text-primary mb-4">{course.title}</h4>
+                  <p className="text-on-surface-variant text-sm mb-6 line-clamp-3">{course.desc}</p>
+                  <div className="mb-6">
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="flex text-tertiary-fixed">
+                        <img src="/svg/star.svg" alt="star" className="inline align-middle w-4 h-4" />
+                        <img src="/svg/star.svg" alt="star" className="inline align-middle w-4 h-4" />
+                        <img src="/svg/star.svg" alt="star" className="inline align-middle w-4 h-4" />
+                        <img src="/svg/star.svg" alt="star" className="inline align-middle w-4 h-4" />
+                        <img src="/svg/star.svg" alt="star" className="inline align-middle w-4 h-4" />
+                      </div>
+                      <span className="text-sm text-on-surface-variant">(4.{9 - index}/5 from {500 - index * 100}+ reviews)</span>
                     </div>
-                    <span className="text-sm text-on-surface-variant">(4.7/5 from 200+ reviews)</span>
                   </div>
+                  <Link 
+                    href={`${PAGE_ROUTES.CONTACT_LINK.WHATSAPP_LINK}?text=I want to talk about the ${course.title}`}
+                    className="w-full py-3 bg-tertiary-fixed text-tertiary-container font-bold rounded hover:bg-tertiary-fixed/90 transition-all text-center block"
+                  >
+                    Enroll Now
+                  </Link>
                 </div>
-                <button className="w-full py-3 bg-tertiary-fixed text-tertiary-container font-bold rounded hover:bg-tertiary-fixed/90 transition-all">
-                  Enroll Now
-                </button>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -320,30 +238,30 @@ export default function Courses() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center p-8 bg-surface-container-low rounded-xl hover:shadow-lg transition-all">
-              <div className="w-16 h-16 mx-auto mb-4 bg-tertiary-fixed/10 rounded-full flex items-center justify-center">
+              {/* <div className="w-16 h-16 mx-auto mb-4 bg-tertiary-fixed/10 rounded-full flex items-center justify-center">
                 <img src="/svg/trending_up.svg" alt="career growth" className="w-8 h-8 text-tertiary-fixed" />
-              </div>
+              </div> */}
               <h4 className="font-bold text-primary mb-2">Career Advancement</h4>
               <p className="text-on-surface-variant text-sm">85% of our graduates report promotions or salary increases within 6 months</p>
             </div>
             <div className="text-center p-8 bg-surface-container-low rounded-xl hover:shadow-lg transition-all">
-              <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
+              {/* <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
                 <img src="/svg/business.svg" alt="industry recognition" className="w-8 h-8 text-primary" />
-              </div>
+              </div> */}
               <h4 className="font-bold text-primary mb-2">Industry Recognition</h4>
               <p className="text-on-surface-variant text-sm">Our certifications are respected by leading employers across Africa and beyond</p>
             </div>
             <div className="text-center p-8 bg-surface-container-low rounded-xl hover:shadow-lg transition-all">
-              <div className="w-16 h-16 mx-auto mb-4 bg-secondary/10 rounded-full flex items-center justify-center">
+              {/* <div className="w-16 h-16 mx-auto mb-4 bg-secondary/10 rounded-full flex items-center justify-center">
                 <img src="/svg/psychology.svg" alt="practical skills" className="w-8 h-8 text-secondary" />
-              </div>
+              </div> */}
               <h4 className="font-bold text-primary mb-2">Practical Skills</h4>
               <p className="text-on-surface-variant text-sm">Hands-on training that prepares you for real workplace challenges</p>
             </div>
             <div className="text-center p-8 bg-surface-container-low rounded-xl hover:shadow-lg transition-all">
-              <div className="w-16 h-16 mx-auto mb-4 bg-tertiary/10 rounded-full flex items-center justify-center">
+              {/* <div className="w-16 h-16 mx-auto mb-4 bg-tertiary/10 rounded-full flex items-center justify-center">
                 <img src="/svg/support.svg" alt="ongoing support" className="w-8 h-8 text-tertiary" />
-              </div>
+              </div> */}
               <h4 className="font-bold text-primary mb-2">Lifelong Support</h4>
               <p className="text-on-surface-variant text-sm">Join our alumni network and get career support throughout your professional journey</p>
             </div>
@@ -359,13 +277,13 @@ export default function Courses() {
             Join thousands of professionals who&apos;ve chosen SafePlaceHSE for their HSE certification journey. Your future in safety starts here.
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
-            <button className="bg-tertiary-fixed text-tertiary-container px-10 py-5 rounded-md font-bold text-lg shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
+            <Link href={PAGE_ROUTES.CONTACT_LINK.WHATSAPP_LINK} className="bg-tertiary-fixed text-tertiary-container px-10 py-5 rounded-md font-bold text-lg shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
               Start Learning Today
               <img src="/svg/arrow-right.svg" alt="arrow forward" className="inline align-middle w-6 h-6" />
-            </button>
-            <button className="backdrop-blur-md bg-white/10 border border-white/20 text-white px-10 py-5 rounded-md font-bold text-lg hover:bg-white/20 transition-all duration-300">
+            </Link>
+            <Link href={PAGE_ROUTES.CONTACT} className="backdrop-blur-md bg-white/10 border border-white/20 text-white px-10 py-5 rounded-md font-bold text-lg hover:bg-white/20 transition-all duration-300">
               Download Course Catalog
-            </button>
+            </Link>
           </div>
         </div>
       </section>

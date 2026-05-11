@@ -69,7 +69,7 @@ export default function ContactUs() {
           />
           <div className="absolute inset-0 bg-primary/80"></div>
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
+        <div className="relative tablet:pt-20 pb-10 z-10 max-w-7xl mx-auto px-8 w-full">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary-fixed/20 border border-tertiary-fixed/30 text-tertiary-fixed text-xs font-bold uppercase tracking-widest mb-8">
               <span className="relative flex h-2 w-2">
@@ -111,7 +111,7 @@ export default function ContactUs() {
               </div>
               
               <form id="contactForm" className="space-y-6">
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                <div className='grid grid-cols-2 tablet:grid-cols-1 gap-6'>
                   {form_inputs_list.map(({label, type="text"},ind)=>
                     <div key={ind} className='w-full'>
                       <label className='block text-sm font-medium text-on-surface-variant mb-2'>Your {label}</label>
@@ -135,7 +135,7 @@ export default function ContactUs() {
                   )}
                 </div>
                 
-                <div className='flex flex-col sm:flex-row gap-4 mt-8'>
+                <div className='flex flex-col gap-4 mt-8'>
                   <LoadButton 
                     onClick={()=>subscribeFund()} 
                     isLoading={isLoading}
@@ -165,65 +165,64 @@ export default function ContactUs() {
                 </p>
               </div>
 
-              <div className="space-y-8">
-                {/* Email */}
-                <div className="flex items-start gap-4 p-6 bg-surface-container-low rounded-xl border-l-4 border-tertiary-fixed">
-                  <div className="bg-tertiary-fixed/10 p-3 rounded-lg">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" stroke-linejoin="round"/>
-                    </svg>
+              <div className="grid grid-cols-2 mt-12 tablet:grid-cols-1 gap-8">
+                <div className='flex flex-col gap-y-5'>
+                  {/* Email */}
+                  <div className="flex items-start gap-4 p-6 bg-surface-container-low rounded-xl border-l-4 border-tertiary-fixed">
+                    <div className="bg-tertiary-fixed/10 p-3 rounded-lg">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-primary mb-2">Email</h3>
+                      <p className="text-on-surface-variant">info@safeplacehse.com</p>
+                      <p className="text-sm text-on-surface-variant/70">We respond within 24 hours</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-primary mb-2">Email</h3>
-                    <p className="text-on-surface-variant">info@safeplacehse.com</p>
-                    <p className="text-sm text-on-surface-variant/70">We respond within 24 hours</p>
+
+                  {/* Phone */}
+                  <div className="flex items-start gap-4 p-6 bg-surface-container-low rounded-xl border-l-4 border-primary">
+                    <div className="bg-primary/10 p-3 rounded-lg">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 12a8.997 8.997 0 011.672-5.157L3 5z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-primary mb-2">Phone</h3>
+                      <p className="text-on-surface-variant">{API_ENDPOINTS.CONTACT.PHONE}</p>
+                      <p className="text-sm text-on-surface-variant/70">Mon-Fri 9AM-6PM WAT</p>
+                    </div>
+                  </div>
+
+                  {/* Location */}
+                  <div className="flex items-start gap-4 p-6 bg-surface-container-low rounded-xl border-l-4 border-secondary">
+                    <div className="bg-secondary/10 p-3 rounded-lg">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-primary mb-2">Office Location</h3>
+                      <p className="text-on-surface-variant">Nigeria</p>
+                      <p className="text-sm text-on-surface-variant/70">Available for on-site consultations</p>
+                    </div>
                   </div>
                 </div>
 
-                {/* Phone */}
-                <div className="flex items-start gap-4 p-6 bg-surface-container-low rounded-xl border-l-4 border-primary">
-                  <div className="bg-primary/10 p-3 rounded-lg">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 12a8.997 8.997 0 011.672-5.157L3 5z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-primary mb-2">Phone</h3>
-                    <p className="text-on-surface-variant">+234 8138948489</p>
-                    <p className="text-sm text-on-surface-variant/70">Mon-Fri 9AM-6PM WAT</p>
-                  </div>
-                </div>
-
-                {/* Location */}
-                <div className="flex items-start gap-4 p-6 bg-surface-container-low rounded-xl border-l-4 border-secondary">
-                  <div className="bg-secondary/10 p-3 rounded-lg">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" stroke-linejoin="round"/>
-                      <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-primary mb-2">Office Location</h3>
-                    <p className="text-on-surface-variant">Nigeria</p>
-                    <p className="text-sm text-on-surface-variant/70">Available for on-site consultations</p>
-                  </div>
+                {/* Image */}
+                <div className="tablet:hidden relative group">
+                  <Image
+                    alt="Contact SafePlaceHSE"
+                    className="rounded-xl shadow-xl w-full h-[300px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                    src="/images/projects/white/izzy-on-white10.jpg"
+                    width={600}
+                    height={500}
+                  />
                 </div>
               </div>
-
-              {/* Image */}
-              <div className="mt-12 relative group">
-                <Image
-                  alt="Contact SafePlaceHSE"
-                  className="rounded-xl shadow-xl w-full h-[300px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                  src="/images/safety-hse-israel.jpg"
-                  width={600}
-                  height={300}
-                />
-                <div className="absolute -bottom-8 -right-8 bg-tertiary-container p-8 rounded-xl shadow-2xl hidden md:block">
-                  <img src="/svg/verified_user.svg" alt="verified" className="text-tertiary-fixed mb-2 w-10 h-10" />
-                  <p className="text-surface font-bold text-lg">24/7 Support Available</p>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>

@@ -10,12 +10,10 @@ const PAGE_ROUTES = {
   A_BLOG:(id)=>{
     return '/blogs/hse/'+id
   },
-  A_COMP_EDIT:(id)=>{
-    return '/competition/edit/'+id
+  CONTACT_LINK:{
+    WHATSAPP_LINK:"https://wa.me/971592295379",
+    PHONE:'+971592295379'
   },
-  ONE_USER:(fId)=>{
-    return '/users/p/'+fId
-  }
   
 };
 

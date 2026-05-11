@@ -16,7 +16,7 @@ export default function Footer() {
     const [email, setEmail] = useState("");
 
     return (
-        <footer className="px-[70px] tablet:px-10 tablet:py-10 tablet:mt-10 mt-[80px] py-[40px] pb-10 bg-background border-t border-outline-variant/20 backdrop-blur-md">
+        <footer className="px-[70px] tablet:px-10 tablet:py-10 tablet:mt-10 mt-[80px] tablet:mt-5 py-[40px] pb-10 bg-background border-t border-outline-variant/20 backdrop-blur-md">
             <div className="gap-x-[150px] tablet:gap-x-10 flex tablet:flex-col tablet:gap-y-10">
                 <div className="max-w-[350px]">
                     <div className="flex items-end gap-x-2">
@@ -26,7 +26,9 @@ export default function Footer() {
                         {soc_links.map(({ icon, link }, ind) =>
                             <Link target="_blank" href={link || '/'} key={ind}>
                                 <div>
-                                    <ImageContainer src={iconSvgPath('socials/' + icon)} alt={icon} className="w-6 h-6 opacity-80 hover:opacity-100 transition" />
+                                    <ImageContainer src={iconSvgPath('socials/' + icon)} alt={icon}style={{
+                                        filter: 'brightness(0%)'
+                                    }} className="w-6 h-6 opacity-80 hover:opacity-100 transition" />
                                 </div>
                             </Link>
                         )}
@@ -36,7 +38,7 @@ export default function Footer() {
                     <div>
                         <p className="text-lg font-[500] mb-4 text-on-background">Contact</p>
                         <div className="max-w-[300px] text-base space-y-2 text-on-background/80">
-                            <p>Phone: <span className="font-medium">{API_ENDPOINTS?.CONTACT?.PHONE ?? '+971592295379'}</span></p>
+                            <p>Phone: <span className="font-medium">{API_ENDPOINTS?.CONTACT?.PHONE }</span></p>
                             <p>Email: <span className="font-medium">{API_ENDPOINTS?.CONTACT?.GMAIL ?? 'info.safeplacehse.com'}</span></p>
                         </div>
                     </div>
@@ -44,9 +46,9 @@ export default function Footer() {
                 <div>
                     <p className="text-lg font-[500] mb-4 text-on-background">Quick Links</p>
                     <div className="text-base flex flex-col gap-y-2">
-                        <Link href={PAGE_ROUTES?.ABOUT_US ?? '/'}><p className="hover:underline">About Us</p></Link>
-                        <Link href={PAGE_ROUTES?.PROPERTIES ?? '/'}><p className="hover:underline">Properties</p></Link>
-                        <Link href={PAGE_ROUTES?.CONTACT ?? '/'}><p className="hover:underline">Contact Us</p></Link>
+                        <Link href={PAGE_ROUTES.ABOUT}><p className="hover:underline">About Us</p></Link>
+                        <Link href={PAGE_ROUTES.PROJECTS}><p className="hover:underline">Projects</p></Link>
+                        <Link href={PAGE_ROUTES.CONTACT}><p className="hover:underline">Contact Us</p></Link>
                     </div>
                 </div>
             </div>

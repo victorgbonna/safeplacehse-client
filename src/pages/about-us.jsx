@@ -1,11 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { PAGE_ROUTES } from '@/configs'
 
 export default function AboutUs() {
   return (
     <div className="bg-background text-on-background scroll-smooth">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
+      <section className="relative min-h-[90vh] flex pt-20 overflow-hidden tablet:pt-0">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -19,7 +20,7 @@ export default function AboutUs() {
           <div className="absolute inset-0 bg-primary/80"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl tablet:pt-20 pb-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary-fixed/20 border border-tertiary-fixed/30 text-tertiary-fixed text-xs font-bold uppercase tracking-widest mb-8">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-fixed opacity-75"></span>
@@ -38,9 +39,9 @@ export default function AboutUs() {
                 Meet Our Team
                 <img src="/svg/arrow-right.svg" alt="arrow forward" className="inline align-middle w-6 h-6" />
               </button> */}
-              <button className="backdrop-blur-md bg-white/10 border border-white/20 text-white px-10 py-5 rounded-md font-bold text-lg hover:bg-white/20 transition-all duration-300">
+              {/* <button className="backdrop-blur-md bg-white/10 border border-white/20 text-white px-10 py-5 rounded-md font-bold text-lg hover:bg-white/20 transition-all duration-300">
                 Our Values
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
@@ -219,13 +220,13 @@ export default function AboutUs() {
             Join 250+ companies that have partnered with us to build safer, more productive workplaces.
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
-            <button className="bg-tertiary-fixed text-tertiary-container px-10 py-5 rounded-md font-bold text-lg shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
+            <Link href={PAGE_ROUTES.CONTACT} className="bg-tertiary-fixed text-tertiary-container px-10 py-5 rounded-md font-bold text-lg shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
               Book a Consultation
               <img src="/svg/arrow-right.svg" alt="arrow forward" className="inline align-middle w-6 h-6" />
-            </button>
-            <button className="backdrop-blur-md bg-white/10 border border-white/20 text-white px-10 py-5 rounded-md font-bold text-lg hover:bg-white/20 transition-all duration-300">
+            </Link>
+            <Link href={PAGE_ROUTES.PROJECTS} className="backdrop-blur-md bg-white/10 border border-white/20 text-white px-10 py-5 rounded-md font-bold text-lg hover:bg-white/20 transition-all duration-300">
               Learn More
-            </button>
+            </Link>
           </div>
         </div>
       </section>

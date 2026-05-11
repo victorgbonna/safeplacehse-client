@@ -1,11 +1,136 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
+import { PAGE_ROUTES } from '@/configs'
+import { ImageContainer } from '@/components';
 
 export default function Projects() {
+  const projects = [
+    {
+      img: "/images/projects/white/izzy-on-white7.jpg",
+      title: "EHS Officer — EPPCO Terminal 4 CCTV Installation",
+      desc: "Served as the EHS Officer during the CCTV installation at EPPCO Terminal 4. Responsible for pre-work risk assessments, issuing and validating permits-to-work, enforcing PPE and safe work procedures, conducting site inductions and toolbox talks, coordinating safe access for technicians, and overseeing final handover to operations. Ensured compliance with local regulations and client-specific HSE requirements, and documented all safety observations and corrective actions.",
+      slides: [
+        { img: "/images/projects/white/izzy-on-white7.jpg", caption: "CCTV Installation Site Overview" },
+        { img: "/images/projects/white/izzy-on-white2.jpg", caption: "Safety Assessment and Planning Phase" },
+        { img: "/images/projects/white/izzy-on-white10.jpg", caption: "Installation Progress and Monitoring" }
+      ],
+      date: "12th March 2024",
+      location: "EPPCO Terminal 4",
+      category: "Oil & Gas"
+    },
+    {
+      img: "/images/projects/new-folder/final-work.jpeg",
+      title: "Safety Inspector — FPSO Rosebank (petrol jar)",
+      desc: "Performed safety inspections on FPSO Rosebank related to the petrol jar operations. Tasks included routine inspections, hazard identification, monitoring confined-space and fuel handling controls, verifying isolation and permit-to-work systems, and raising non-conformance reports where required. Worked closely with operations and contractors to implement corrective actions and improve procedural compliance.",
+      slides: [
+        { img: "/images/projects/new-folder/night-shift.jpeg", caption: "Night Shift Vessel Inspection" },
+        { img: "/images/projects/new-folder/rope-access-material.jpeg", caption: "Rope Access Material Inspection" },
+        { img: "/images/projects/new-folder/lifting-gear.jpeg", caption: "Lifting Gear Inspection and Verification" },
+        { img: "/images/projects/new-folder/final-work.jpeg", caption: "Completion" }
+      ],
+      date: "20th June 2024",
+      location: "FPSO Rosebank",
+      category: "Marine"
+    },
+    {
+      img: "/images/projects/white/izzy-on-white10.jpg",
+      title: "EHS Lead — Almarai Kizad Plant Roof Modification",
+      desc: "Led EHS activities for the roof modification project at Almarai Kizad plant. Responsibilities covered fall-protection planning, scaffold and edge protection oversight, crane lift coordination, hot-work management and fire-watch arrangements, contractor safety management, and daily safety briefings. Focused on minimizing disruptions to plant operations while maintaining strict adherence to safety standards and ensuring timely incident reporting and mitigation.",
+      slides: [
+        { img: "/images/projects/new-folder/roof-modification-project.jpeg", caption: "Brief Tool Box Talk" },
+        { img: "/images/projects/new-folder/roof-modification2.jpeg", caption: "Tool Box Talk 2" },
+        { img: "/images/projects/new-folder/mobile-crane.jpeg", caption: "Crane Operations and Safety Coordination" },
+        { img: "/images/projects/new-folder/scissors-lift.jpeg", caption: "Scissors Lift Inspection" }
+      ],
+      date: "5th September 2024",
+      location: "Almarai Kizad Plant",
+      category: "Industrial"
+    }
+  ];
+
+  // Carousel component for project slides
+  const ProjectCarousel = ({ slides, title }) => {
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+    const nextSlide = () => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    };
+
+    const prevSlide = () => {
+      setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    };
+    
+    return (
+      <div className="relative w-full h-full">
+        <div className="relative w-full h-full tablet:h-[400px] overflow-hidden rounded-t-xl">
+          <div 
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+          >
+            {slides.map((slide, index) => (
+              <div
+                key={index}
+                className="w-full h-full flex-shrink-0"
+              >
+                <img
+                  src={slide.img}
+                  alt={slide.caption}
+                  className="object-cover tablet:h-[800px] w-full"
+                />
+              </div>
+            ))}
+          </div>
+          
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+          
+          {/* Carousel indicators */}
+          <div className="absolute z-10 bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-4 h-4 relative z-10 rounded-full border transition-colors ${
+                  index === currentSlide ? 'bg-gray-800' : 'bg-white/50'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Carousel navigation buttons */}
+          {/* <button
+            onClick={prevSlide}
+            className="absolute left-4 top-1/2 tablet:top-[80%] transform -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-2 rounded-full hover:bg-white/30 transition-colors z-10"
+            aria-label="Previous slide"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-4 top-1/2 tablet:top-[80%] transform -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-2 rounded-full hover:bg-white/30 transition-colors z-10"
+            aria-label="Next slide"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button> */}
+        </div>
+        
+        {/* Slide caption */}
+        {/* <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+          <p className="text-white text-sm">{slides[currentSlide].caption}</p>
+        </div> */}
+      </div>
+    );
+  };
+
   return (
     <div className="bg-background text-on-background scroll-smooth">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
+      <section className="relative min-h-[90vh] tablet:h-fit flex  pt-20 tablet:pt-0 toverflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -18,7 +143,7 @@ export default function Projects() {
           />
           <div className="absolute inset-0 bg-primary/80"></div>
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
+        <div className="tablet:pt-20 pb-10 relative z-10 max-w-7xl mx-auto px-8 w-full">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary-fixed/20 border border-tertiary-fixed/30 text-tertiary-fixed text-xs font-bold uppercase tracking-widest mb-8">
               <span className="relative flex h-2 w-2">
@@ -34,13 +159,13 @@ export default function Projects() {
               A showcase of our practical contributions to workplace safety and environmental management. Each project reflects our dedication to building safe, compliant, and efficient work environments.
             </p>
             <div className="flex flex-col sm:flex-row gap-5">
-              <button className="bg-tertiary-fixed text-tertiary-container px-10 py-5 rounded-md font-bold text-lg shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
+              <Link href={PAGE_ROUTES.PROJECTS} id='projects' className="bg-tertiary-fixed text-tertiary-container px-10 py-5 rounded-md font-bold text-lg shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
                 View All Projects
                 <img src="/svg/arrow-right.svg" alt="arrow forward" className="inline align-middle w-6 h-6" />
-              </button>
-              <button className="backdrop-blur-md bg-white/10 border border-white/20 text-white px-10 py-5 rounded-md font-bold text-lg hover:bg-white/20 transition-all duration-300">
+              </Link>
+              {/* <Link href={PAGE_ROUTES.CONTACT} className="backdrop-blur-md bg-white/10 border border-white/20 text-white px-10 py-5 rounded-md font-bold text-lg hover:bg-white/20 transition-all duration-300">
                 Case Studies
-              </button>
+              </Link> */}
             </div>
           </div>
         </div>
@@ -71,7 +196,7 @@ export default function Projects() {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-24 bg-surface-container-lowest">
+      <section id='projects' className="py-24 bg-surface-container-lowest">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-extrabold text-primary mb-4">Featured Projects</h2>
@@ -79,80 +204,39 @@ export default function Projects() {
               Discover how we&apos;ve helped organizations transform their safety culture and achieve remarkable results.
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Project 1 */}
-            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
-              <div className="aspect-video relative">
-                <Image
-                  alt="Major Oil & Gas Facility Audit"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  src="/images/projects/white/izzy-on-white.jpg"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="bg-tertiary-fixed text-tertiary-container px-2 py-1 rounded text-xs font-bold uppercase">Oil & Gas</span>
-                    <span className="bg-primary/80 text-white px-2 py-1 rounded text-xs font-bold uppercase">2024</span>
-                  </div>
-                  <h3 className="text-2xl font-bold mb-2">Major Oil & Gas Facility Audit</h3>
-                  <p className="text-slate-200 mb-4">Comprehensive HSE management system audit for a leading petroleum company, resulting in 40% improvement in compliance metrics.</p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4 text-sm">
-                      <span className="flex items-center gap-1">
-                        <img src="/svg/location.svg" alt="location" className="w-4 h-4" />
-                        Port Harcourt
+          <div className="grid grid-cols-2 tablet:items-center tablet:justify-center tablet:grid-cols-1 xl:grid-cols-3 gap-8 tablet:gap-y-[100px]">
+            {projects.map((project, index) => (
+              <div key={index} className=" relative rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className="aspect-video tablet:aspect-square relative  rounded-t-xl">
+                  <ProjectCarousel slides={project.slides} title={project.title} />
+                  <div className="absolute tablet:top-0 bg-black/25 h-full bottom-0 left-0 right-0 p-8 text-white px-14 tablet:px-5">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="bg-tertiary-fixed text-tertiary-container px-2 py-1 rounded text-xs font-bold uppercase">
+                        {project.category}
                       </span>
-                      <span className="flex items-center gap-1">
-                        <img src="/svg/calendar.svg" alt="duration" className="w-4 h-4" />
-                        3 Months
+                      <span className="flex gap-x-2 items-center bg-primary/80 text-white px-2 py-1 rounded text-xs font-bold uppercase">
+                        <img src="/svg/calendar.svg" alt="date" className="w-4 h-4" />
+                        <p>{project.date}</p>
                       </span>
                     </div>
-                    <button className="bg-tertiary-fixed text-tertiary-container px-4 py-2 rounded font-bold text-sm hover:bg-tertiary-fixed/90 transition-colors">
-                      View Details
-                    </button>
+                    <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+                    <p className="text-slate-200 mb-4 line-clamp-3">{project.desc}</p>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-4 text-sm">
+                        <span className="flex items-center gap-1">
+                          <img src="/svg/location.svg" alt="location" className="w-4 h-4" />
+                          {project.location}
+                        </span>
+                        {/* <span className="flex items-center gap-1">
+                          <img src="/svg/calendar.svg" alt="date" className="w-4 h-4" />
+                          {project.date}
+                        </span> */}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-
-            {/* Project 2 */}
-            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
-              <div className="aspect-video relative">
-                <Image
-                  alt="Construction Safety Management System"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  src="/images/projects/white/izzy-on-white2.jpg"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="bg-primary text-white px-2 py-1 rounded text-xs font-bold uppercase">Construction</span>
-                    <span className="bg-secondary/80 text-white px-2 py-1 rounded text-xs font-bold uppercase">2024</span>
-                  </div>
-                  <h3 className="text-2xl font-bold mb-2">Construction Safety Management System</h3>
-                  <p className="text-slate-200 mb-4">Implementation of integrated safety management for a large-scale infrastructure project, achieving zero lost-time incidents.</p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4 text-sm">
-                      <span className="flex items-center gap-1">
-                        <img src="/svg/location.svg" alt="location" className="w-4 h-4" />
-                        Lagos
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <img src="/svg/calendar.svg" alt="duration" className="w-4 h-4" />
-                        6 Months
-                      </span>
-                    </div>
-                    <button className="bg-tertiary-fixed text-tertiary-container px-4 py-2 rounded font-bold text-sm hover:bg-tertiary-fixed/90 transition-colors">
-                      View Details
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -265,13 +349,13 @@ export default function Projects() {
             Let us help you achieve your HSE goals with our proven expertise and customized solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
-            <button className="bg-tertiary-fixed text-tertiary-container px-10 py-5 rounded-md font-bold text-lg shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
-              Start a Project
+            <Link href={PAGE_ROUTES.CONTACT} className="bg-tertiary-fixed text-tertiary-container px-10 py-5 rounded-md font-bold text-lg shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
+              Contact Us
               <img src="/svg/arrow-right.svg" alt="arrow forward" className="inline align-middle w-6 h-6" />
-            </button>
-            <button className="border-2 border-primary text-primary px-10 py-5 rounded-md font-bold text-lg hover:bg-primary hover:text-white transition-all duration-300">
-              View Case Studies
-            </button>
+            </Link>
+            {/* <Link href={PAGE_ROUTES.PROJECTS} className="border-2 border-primary text-primary px-10 py-5 rounded-md font-bold text-lg hover:bg-primary hover:text-white transition-all duration-300">
+              
+            </Link> */}
           </div>
         </div>
       </section>

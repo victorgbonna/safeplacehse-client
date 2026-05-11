@@ -59,6 +59,143 @@ const API_ENDPOINTS = {
   }
 ],
 
+COURSES: [
+  {
+    img: "nebosh-igc.png",
+    title: "NEBOSH International General Certificate (IGC)",
+    desc: "A globally recognized safety qualification providing essential knowledge of health, safety, and risk management principles.",
+    duration: "6–8 weeks",
+    audience: ["Aspiring Safety Professionals", "HSE Officers", "Supervisors"],
+    price: "",
+    views: 0
+  },
+  {
+    img: "nebosh-idip.png",
+    title: "NEBOSH International Diploma (IDIP)",
+    desc: "Advanced NEBOSH diploma for experienced safety practitioners focusing on higher-level health and safety management skills.",
+    duration: "10–14 weeks",
+    audience: ["Senior HSE Officers", "Safety Managers"],
+    price: "",
+    views: 0
+  },
+  {
+    img: "nebosh-psm.png",
+    title: "NEBOSH HSE Certificate in Process Safety Management (PSM)",
+    desc: "Specialized NEBOSH qualification concentrating on major hazard and process safety risk management.",
+    duration: "Varies",
+    audience: ["Process Industry Professionals", "Safety Specialists"],
+    price: "",
+    views: 0
+  },
+  {
+    img: "nebosh-emc.png",
+    title: "NEBOSH Environmental Management Certificate (EMC)",
+    desc: "NEBOSH course focused on environmental risk control, sustainability practices and ISO 14001 principles.",
+    duration: "Varies",
+    audience: ["Environmental Officers", "HSE Practitioners"],
+    price: "",
+    views: 0
+  },
+  {
+    img: "nebosh-raw.png",
+    title: "NEBOSH Risk Assessment at Work (RAW)",
+    desc: "Practical NEBOSH award for improving risk assessment skills and workplace hazard recognition.",
+    duration: "Varies",
+    audience: ["Supervisors", "Team Leads"],
+    price: "",
+    views: 0
+  },
+  {
+    img: "nebosh-hsw.png",
+    title: "NEBOSH Health and Safety at Work Award (HSW)",
+    desc: "Entry-level NEBOSH award introducing core health and safety basics for workplace safety culture.",
+    duration: "Varies",
+    audience: ["New Safety Practitioners", "Employees"],
+    price: "",
+    views: 0
+  },
+  {
+    img: "nebosh-incident-investigation.png",
+    title: "NEBOSH Introduction to Incident Investigation",
+    desc: "Course designed to help learners investigate workplace incidents and apply corrective actions to prevent recurrence.",
+    duration: "Varies",
+    audience: ["Safety Officers", "Team Leads"],
+    price: "",
+    views: 0
+  },
+  {
+    img: "nebosh-environmental-awareness.png",
+    title: "NEBOSH Environmental Awareness",
+    desc: "An introductory NEBOSH course focused on environmental risk management and sustainability in the workplace.",
+    duration: "1 week",
+    audience: ["Safety Officers", "Environmental Assistants"],
+    price: "",
+    views: 0
+  },
+  {
+    img: "nebosh-working-with-wellbeing.png",
+    title: "NEBOSH Working With Wellbeing",
+    desc: "Course on wellbeing principles and creating healthier, more productive workplaces.",
+    duration: "1 week",
+    audience: ["HR Professionals", "Supervisors"],
+    price: "",
+    views: 0
+  },
+  {
+    img: "iosh-managing-safely.png",
+    title: "IOSH Managing Safely",
+    desc: "Core IOSH safety leadership training for managers to understand risk and legal responsibilities.",
+    duration: "3–5 days",
+    audience: ["Managers", "Supervisors"],
+    price: "",
+    views: 0
+  },
+  {
+    img: "iosh-level-3-certificate.png",
+    title: "IOSH Level 3 Certificate",
+    desc: "A formal IOSH Level 3 safety certificate covering broader safe working practices.",
+    duration: "2 weeks",
+    audience: ["Safety Practitioners", "Team Leads"],
+    price: "",
+    views: 0
+  },
+  {
+    img: "iosh-level-6-diploma.png",
+    title: "IOSH Level 6 Diploma – IOSH IDIP",
+    desc: "Advanced IOSH Diploma for occupational health and safety professionals aiming for senior roles.",
+    duration: "8–12 weeks",
+    audience: ["HSE Managers", "Lead Auditors"],
+    price: "",
+    views: 0
+  },
+  {
+    img: "proqual-nvq-assessing-vocational-achievement.png",
+    title: "ProQual Level 3 NVQ Certificate in Assessing Vocational Achievement",
+    desc: "NVQ qualification focused on assessing vocational achievements in workplace training.",
+    duration: "Varies",
+    audience: ["Assessors", "Trainers"],
+    price: "",
+    views: 0
+  },
+  {
+    img: "proqual-nvq-environmental-management.png",
+    title: "ProQual Level 3 NVQ Award in Environmental Management",
+    desc: "NVQ award centered on environmental management principles for operational safety.",
+    duration: "Varies",
+    audience: ["Environmental Officers", "Safety Officers"],
+    price: "",
+    views: 0
+  },
+  {
+    img: "proqual-nvq-occupational-health-safety.png",
+    title: "ProQual Level 3 NVQ Certificate in Occupational Health and Safety",
+    desc: "Practical NVQ safety certification focused on occupational OH&S standards.",
+    duration: "Varies",
+    audience: ["HSE Practitioners", "Safety Team Members"],
+    price: "",
+    views: 0
+  }],
+
   SIDELINKS:[
     // {
     //   label:"Dashboard", value:"DASHBOARD",icon:"dashboard", notActive:true
@@ -96,65 +233,7 @@ const API_ENDPOINTS = {
     FACEBOOK_LINK:"https://facebook.com",
     LINKEDIN_LINK:"https://linkedin.com"
   },
-  REGISTER:"api/admin/auth/create",
-  LOGIN:"api/admin/auth/login",
-  GET_ALL_ADMINS:'api/admin?limit=10',
 
-  EDIT_ADMIN:'api/admin/edit',
-  SUSPEND_ADMIN:'api/admin/suspend',
-  DELETE_ADMIN:'aagepi/admin/delete',
-
-  GET_ALL_TRANSACTIONS:"api/admin/transactions?limit=20",
-  DELETE_TRANSACTION:"api/admin/transactions/delete",
-  CONFIRM_TRANSACTION:"api/admin/transactions/confirm",
-
-  
-  GET_ALL_SUGGESTIONS:"api/admin/suggestion?limit=20",
-  DELETE_SUGG:"api/admin/suggestion/delete",
-
-  GET_ALL_REQUESTS:"api/admin/request?limit=20",
-  DELETE_REQ:"api/admin/request/delete",
-  FINALIZE_REQ:"api/admin/request/finalize",
-
-  GET_ALL_USERS:"api/admin/user?limit=50",
-  GET_USER_SUMMARY:"api/admin/user/summary",
-  GET_USER_SHORT_INFO:({info,_id})=>{
-    return "api/admin/user/get-one/"+_id+"/"+info
-  },
-  RESET_USER_POINTS:'api/admin/user/reset-points',
-  UPDATE_USER_POINTS:"api/admin/user/update-points",
-  UPDATE_USER_WALLET:"api/admin/user/update-user-wallet",
-  SUSPEND_USER:"api/admin/user/delete",
-  REVOKE_USER:"api/admin/user/revoke",
-
-  DELETE_NOTIFICATION:'api/admin/contact/delete',
-  READ_NOTIFICATION:"api/admin/contact/read",
-  GET_ALL_NOTIFICATIONS:"api/admin/contact?limit=20",
-  
-  UPDATE_COMP_STATUS:(id)=>{
-    return 'api/admin/competition/update-comp-status/'+id
-  },
-  END_COMPETITION:(id)=>{
-    return 'api/admin/competition/end-comp/'+id
-  },
-  GET_ALL_COMPS:"api/admin/competition/get-all?limit=50",
-
-  GET_COMPETITION_WINNERS:(id)=>{
-    return 'api/admin/competition/'+id+'/winners'
-  },
-  PAYOUT_USER_IN_COMP:"api/admin/competition/manager/payout",
-
-  SWITCH_TO_NEW_SEASON:'api/admin/user/toggle-new-season',
-  GET_NOTIF_COUNT:'api/admin/notification-summary',
-
-  READ_SUGGESTION:(id)=>{
-    return 'api/admin/suggestion/read/'+id
-  },
-  GET_CURRENT_SEASON:'api/admin/user/season-info', 
-
-  GET_ALL_USERS_WITHOUT_PAGINATION:'api/admin/user/get-all-users',
-  GET_ALL_EMAILS:'api/admin/mail/get',
-  SEND_EMAIL:'api/admin/mail/send'
 }
 
 export default API_ENDPOINTS

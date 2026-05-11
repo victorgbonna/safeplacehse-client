@@ -4,11 +4,13 @@ export default function ImageContainer({style={},src, imgClass="", className, al
     return(
         <div style={style} className={className+ ' relative overflow-hidden '+parentColor}>
             <Image fill={true} priority={true} 
-            sizes="(max-width: 768px) 100vw, 50vw"
+            
             className={"w-full h-full "+ imgClass}
                 placeholder = 'empty'  src={src} alt={alt || src || 'icon'}
             />
-            {/* <div className="shadow-md w-full h-full z-2 absolute"></div>
+            {/* <div cwork on the project carousel.
+
+i want to increase its tablet  height in a mobile view, but ist not working. it seems the picture is stuck with a fixed height lassName="shadow-md w-full h-full z-2 absolute"></div>
             <img src={src} alt={alt} className="w-full h-full absolute z-4 bg-inherit"/> */}
         </div>
     )

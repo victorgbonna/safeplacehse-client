@@ -1,7 +1,30 @@
+import { PAGE_ROUTES } from '@/configs';
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
+
 
 export default function Home() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  const carouselImages = [
+    "/images/photovoltaics.jpg",
+    "/images/projects/white/izzy-on-white.jpg",
+    "/images/izzy-vr.jpg",
+    "/images/projects/white/izzy-on-white12.jpg",
+    "/images/projects/white/izzy-on-white10.jpg"
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        (prevIndex + 1) % carouselImages.length
+      );
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [carouselImages.length]);
+
   return (
     <div className="bg-background text-on-background scroll-smooth">
       <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
@@ -10,7 +33,7 @@ export default function Home() {
           <Image
             alt="HSE Professionals"
             className="w-full h-full object-cover"
-            src="/images/projects/white/izzy-on-white2.jpg"
+            src="/images/hero-freepik.jpg"
             fill
             priority
             sizes="100vw"
@@ -34,13 +57,13 @@ export default function Home() {
               Delivering high-impact audit, specialized training, and compliance solutions that protect your personnel and optimize industrial performance globally.
             </p>
             <div className="flex flex-col sm:flex-row gap-5">
-              <button className="bg-tertiary-fixed text-tertiary-container px-10 py-5 rounded-md font-bold text-lg shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
+              <Link href={PAGE_ROUTES.CONTACT} className="bg-tertiary-fixed text-black px-10 py-5 rounded-md font-bold text-lg shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
                 Start a Project
                 <img src="/svg/arrow-right.svg" alt="arrow forward" className="inline align-middle w-6 h-6" />
-              </button>
-              <button className="backdrop-blur-md bg-white/10 border border-white/20 text-white px-10 py-5 rounded-md font-bold text-lg hover:bg-white/20 transition-all duration-300">
+              </Link>
+              <Link href={PAGE_ROUTES.SERVICES} className="text-center backdrop-blur-md bg-white/10 border border-white/20 text-white px-10 py-5 rounded-md font-bold text-lg hover:bg-white/20 transition-all duration-300">
                 Our Services
-              </button>
+              </Link>
             </div>
             <div className="mt-16 flex items-center gap-8 border-t border-white/10 pt-8 max-w-md">
               <div className="flex -space-x-4">
@@ -109,13 +132,37 @@ export default function Home() {
       <section className="py-24 bg-surface-container-lowest">
         <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div className="relative group">
-            <Image
-              alt="SafePlaceHSE Team"
-              className="rounded-xl shadow-xl w-full h-[450px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-              src="/images/projects/white/izzy-on-white.jpg"
-              width={600}
-              height={450}
-            />
+            <div className="relative w-full h-[450px] rounded-xl overflow-hidden">
+              {carouselImages.map((image, index) => (
+                <div
+                  key={index}
+                  className={`absolute inset-0 transition-opacity duration-1000 ${
+                    index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                  }`}
+                >
+                  <Image
+                    alt={`SafePlaceHSE Team ${index + 1}`}
+                    className="w-full h-full object-cover rounded-xl grayscale group-hover:grayscale-0 transition-all duration-700"
+                    src={image}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+              ))}
+            </div>
+            {/* Carousel indicators */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+              {carouselImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentImageIndex(index)}
+                  className={`w-4 h-4 rounded-full border transition-colors ${
+                    index === currentImageIndex ? 'bg-gray-800' : 'bg-white/50'
+                  }`}
+                  aria-label={`Go to image ${index + 1}`}
+                />
+              ))}
+            </div>
             <div className="absolute -bottom-8 -right-8 bg-primary-container p-8 rounded-xl shadow-2xl hidden md:block">
               <img src="/svg/verified_user.svg" alt="verified user" className="text-tertiary-fixed mb-2 w-10 h-10" />
               <p className="text-surface font-bold text-lg">ISO 45001 Certified Advisory</p>
@@ -152,7 +199,7 @@ export default function Home() {
               <h2 className="text-4xl font-extrabold text-primary tracking-tight mb-4">Core Consulting Services</h2>
               <p className="text-on-surface-variant">We move beyond check-box compliance to create operational value.</p>
             </div>
-            <Link className="text-primary font-bold border-b-2 border-tertiary-fixed pb-1 hover:text-on-tertiary-container transition-colors" href="#services">View All Services</Link>
+            <Link className="text-primary font-bold border-b-2 border-tertiary-fixed pb-1 hover:text-on-tertiary-container transition-colors" href={PAGE_ROUTES.SERVICES}>View All Services</Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[600px]">
             {/* Major Card */}
@@ -170,10 +217,10 @@ export default function Home() {
                 <p className="text-surface-container-low max-w-md">Systematic, independent, and documented evidence evaluation for your safety management systems.</p>
               </div>
               <div className="relative z-10">
-                <button className="flex items-center gap-2 text-tertiary-fixed font-bold">
+                <Link href={PAGE_ROUTES.SERVICES} className="flex items-center gap-2 text-tertiary-fixed font-bold">
                   Learn More 
                   {/* <img src="/svg/arrow-right.svg" alt="arrow forward" className="inline align-middle w-6 h-6" /> */}
-                </button>
+                </Link>
               </div>
             </div>
             {/* Small Card 1 */}
@@ -183,7 +230,7 @@ export default function Home() {
                 <h4 className="text-xl font-bold text-primary mb-2">Risk Assessment</h4>
                 <p className="text-on-surface-variant text-sm">JHA, HEMP, and HAZID studies tailored to complex operations.</p>
               </div>
-              <Link className="text-primary font-bold text-sm mt-4" href="#services">Details</Link>
+              <Link className="text-primary font-bold text-sm mt-4" href={PAGE_ROUTES.SERVICES}>Details</Link>
             </div>
             {/* Small Card 2 */}
             <div className="bg-surface-container-high rounded-xl p-8 flex flex-col justify-between hover:shadow-lg transition-shadow border-t-2 border-transparent hover:border-tertiary-fixed">
@@ -192,8 +239,141 @@ export default function Home() {
                 <h4 className="text-xl font-bold text-primary mb-2">Compliance Support</h4>
                 <p className="text-on-surface-variant text-sm">Navigating DPR, Federal, and State regulatory environments.</p>
               </div>
-              <Link className="text-primary font-bold text-sm mt-4" href="#services">Details</Link>
+              <Link className="text-primary font-bold text-sm mt-4" href={PAGE_ROUTES.SERVICES}>Details</Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* VR Safety Training */}
+      <section id="vr-training" className="py-24 bg-surface-container-lowest">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary-fixed/20 border border-tertiary-fixed/30 text-tertiary-fixed text-xs font-bold uppercase tracking-widest mb-8">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-fixed opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-tertiary-fixed"></span>
+              </span>
+              Cutting-Edge Training
+            </div>
+            <h2 className="text-4xl font-extrabold text-primary mb-4">VR Safety Training Programs</h2>
+            <p className="text-on-surface-variant max-w-2xl mx-auto text-lg">
+              Experience immersive safety training like never before. Our Virtual Reality programs provide realistic scenarios for comprehensive safety education.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Fire Safety VR */}
+            <div className="bg-surface-container-low rounded-xl p-8 hover:shadow-lg transition-all border-l-4 border-tertiary-fixed">
+              <div className="bg-tertiary-fixed/10 p-3 rounded-lg w-fit mb-4">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M12 8v4M12 16h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-primary mb-3">Fire Safety VR</h3>
+              <p className="text-on-surface-variant text-sm mb-4">Experience realistic fire scenarios and learn proper evacuation procedures in a safe, controlled virtual environment.</p>
+              <ul className="text-sm text-on-surface-variant space-y-2">
+                <li className="flex items-center gap-2"><span className="text-tertiary-fixed">✓</span> Fire extinguisher training</li>
+                <li className="flex items-center gap-2"><span className="text-tertiary-fixed">✓</span> Emergency evacuation drills</li>
+                <li className="flex items-center gap-2"><span className="text-tertiary-fixed">✓</span> Fire prevention techniques</li>
+              </ul>
+            </div>
+            
+            {/* First Aid VR */}
+            <div className="bg-surface-container-low rounded-xl p-8 hover:shadow-lg transition-all border-l-4 border-primary">
+              <div className="bg-primary/10 p-3 rounded-lg w-fit mb-4">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.5 1.5L8.5 3.5L10.5 5.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M13.5 1.5L15.5 3.5L13.5 5.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M12 8v8M8 12h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-primary mb-3">First Aid VR</h3>
+              <p className="text-on-surface-variant text-sm mb-4">Practice critical first aid procedures through interactive medical emergency simulations.</p>
+              <ul className="text-sm text-on-surface-variant space-y-2">
+                <li className="flex items-center gap-2"><span className="text-tertiary-fixed">✓</span> CPR training scenarios</li>
+                <li className="flex items-center gap-2"><span className="text-tertiary-fixed">✓</span> Wound care simulation</li>
+                <li className="flex items-center gap-2"><span className="text-tertiary-fixed">✓</span> Emergency response protocols</li>
+              </ul>
+            </div>
+            
+            {/* Confined Spaces VR */}
+            <div className="bg-surface-container-low rounded-xl p-8 hover:shadow-lg transition-all border-l-4 border-secondary">
+              <div className="bg-secondary/10 p-3 rounded-lg w-fit mb-4">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 3h18v18H3V3z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M8 12h8M12 8v8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-primary mb-3">Confined Spaces VR</h3>
+              <p className="text-on-surface-variant text-sm mb-4">Master confined space entry procedures and safety protocols in realistic virtual environments.</p>
+              <ul className="text-sm text-on-surface-variant space-y-2">
+                <li className="flex items-center gap-2"><span className="text-tertiary-fixed">✓</span> Entry/exit procedures</li>
+                <li className="flex items-center gap-2"><span className="text-tertiary-fixed">✓</span> Atmospheric monitoring</li>
+                <li className="flex items-center gap-2"><span className="text-tertiary-fixed">✓</span> Rescue operation training</li>
+              </ul>
+            </div>
+            
+            {/* Gas Testing VR */}
+            <div className="bg-surface-container-low rounded-xl p-8 hover:shadow-lg transition-all border-l-4 border-tertiary">
+              <div className="bg-tertiary/10 p-3 rounded-lg w-fit mb-4">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-primary mb-3">Authorized Gas Tester VR</h3>
+              <p className="text-on-surface-variant text-sm mb-4">Learn gas testing procedures and safety protocols through immersive virtual scenarios.</p>
+              <ul className="text-sm text-on-surface-variant space-y-2">
+                <li className="flex items-center gap-2"><span className="text-tertiary-fixed">✓</span> Gas detection techniques</li>
+                <li className="flex items-center gap-2"><span className="text-tertiary-fixed">✓</span> Equipment calibration</li>
+                <li className="flex items-center gap-2"><span className="text-tertiary-fixed">✓</span> Hazard identification</li>
+              </ul>
+            </div>
+            
+            {/* LOTO VR */}
+            <div className="bg-surface-container-low rounded-xl p-8 hover:shadow-lg transition-all border-l-4 border-on-tertiary-fixed-variant">
+              <div className="bg-on-tertiary-fixed-variant/10 p-3 rounded-lg w-fit mb-4">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 15V3M12 15l-3-3m3 3l3-3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M7 21h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-primary mb-3">LOTO (Lockout/Tagout) VR</h3>
+              <p className="text-on-surface-variant text-sm mb-4">Master energy isolation procedures through interactive virtual equipment scenarios.</p>
+              <ul className="text-sm text-on-surface-variant space-y-2">
+                <li className="flex items-center gap-2"><span className="text-tertiary-fixed">✓</span> Lockout procedures</li>
+                <li className="flex items-center gap-2"><span className="text-tertiary-fixed">✓</span> Tagout protocols</li>
+                <li className="flex items-center gap-2"><span className="text-tertiary-fixed">✓</span> Energy isolation verification</li>
+              </ul>
+            </div>
+            
+            {/* Benefits Card */}
+            <div className="bg-primary-container rounded-xl p-8 text-white lg:col-span-3">
+              <h3 className="text-2xl font-bold mb-4">Why Choose VR Safety Training?</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                  <h4 className="font-bold mb-2 text-tertiary-fixed">Realistic Scenarios</h4>
+                  <p className="text-sm text-on-primary-container">Experience hazardous situations in a completely safe, controlled environment without real-world risks.</p>
+                </div>
+                <div>
+                  <h4 className="font-bold mb-2 text-tertiary-fixed">Enhanced Retention</h4>
+                  <p className="text-sm text-on-primary-container">Immersive learning leads to 75% better knowledge retention compared to traditional training methods.</p>
+                </div>
+                <div>
+                  <h4 className="font-bold mb-2 text-tertiary-fixed">Cost-Effective</h4>
+                  <p className="text-sm text-on-primary-container">Reduce training costs by eliminating travel expenses and minimizing equipment requirements.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-center mt-12">
+            <Link href={PAGE_ROUTES.COURSES} className="bg-tertiary-fixed text-tertiary-container px-10 py-5 rounded-md font-bold text-lg shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 mx-auto">
+              Explore VR Training Programs
+              <img src="/svg/arrow-right.svg" alt="arrow forward" className="inline align-middle w-6 h-6" />
+            </Link>
           </div>
         </div>
       </section>
@@ -202,7 +382,7 @@ export default function Home() {
       <section id="courses" className="py-24 bg-surface-container-low">
         <div className="max-w-7xl mx-auto px-8">
           <h2 className="text-3xl font-extrabold text-primary mb-12 text-center">Upcoming Certification Courses</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 tablet:grid-cols-1 gap-8">
             {/* Course 1 */}
             <div className="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
               <Image
@@ -219,7 +399,7 @@ export default function Home() {
                 </div>
                 <h4 className="text-xl font-bold text-primary mb-4">NEBOSH International General Cert</h4>
                 <p className="text-on-surface-variant text-sm mb-6">The gold standard for health and safety professionals worldwide.</p>
-                <button className="w-full py-3 border border-primary text-primary font-bold rounded hover:bg-primary hover:text-white transition-all">Enroll Now</button>
+                <Link href={PAGE_ROUTES.COURSES} className="w-full py-3 border border-primary text-primary font-bold rounded hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2">Enroll Now</Link>
               </div>
             </div>
             {/* Course 2 */}
@@ -238,7 +418,7 @@ export default function Home() {
                 </div>
                 <h4 className="text-xl font-bold text-primary mb-4">IOSH Managing Safely</h4>
                 <p className="text-on-surface-variant text-sm mb-6">Essential knowledge for every manager and supervisor in high-risk zones.</p>
-                <button className="w-full py-3 border border-primary text-primary font-bold rounded hover:bg-primary hover:text-white transition-all">Enroll Now</button>
+                <Link href={PAGE_ROUTES.COURSES} className="w-full py-3 border border-primary text-primary font-bold rounded hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2">Enroll Now</Link>
               </div>
             </div>
             {/* Course 3 */}
@@ -257,7 +437,7 @@ export default function Home() {
                 </div>
                 <h4 className="text-xl font-bold text-primary mb-4">ISO 14001 Implementation</h4>
                 <p className="text-on-surface-variant text-sm mb-6">Expert-led training on building effective Environmental Management Systems.</p>
-                <button className="w-full py-3 border border-primary text-primary font-bold rounded hover:bg-primary hover:text-white transition-all">Enroll Now</button>
+                <Link href={PAGE_ROUTES.COURSES} className="w-full py-3 border border-primary text-primary font-bold rounded hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2">Enroll Now</Link>
               </div>
             </div>
           </div>
