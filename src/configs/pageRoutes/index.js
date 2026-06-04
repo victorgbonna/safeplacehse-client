@@ -1,12 +1,11 @@
 const PAGE_ROUTES = {
   HOME: "/",
   ABOUT: "/about-us",
-  SERVICES: "/services",
+  SERVICES: "/about-us",
   PROJECTS: "/projects",
   COURSES: "/courses",
   BLOGS: "/blogs",
   CONTACT: "/contact-us",
-
   A_BLOG:(id)=>{
     return '/blogs/hse/'+id
   },

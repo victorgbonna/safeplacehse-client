@@ -135,14 +135,14 @@ export default function Blog() {
               <div className='flex tablet:flex-col tablet:rounded-none items-center shadow-xl tablet:shadow-none rounded-xl'>
                 <Image
                   alt="Cyber Security Conference"
-                  className="rounded-l-xl tablet:rounded-none object-top object-cover w-full h-[450px] grayscale group-hover:grayscale-0 transition-all duration-700"
+                  className="rounded-l-xl tablet:rounded-none object-top object-cover w-full h-[450px]  transition-all duration-700"
                   src="/images/conference/izzy-cyber-conference4.jpeg"
                   width={600}
                   height={450}
                 />
                 <Image
                   alt="Cyber Security Conference"
-                  className="rounded-r-xl tabet:rounded-none object-top object-cover w-full h-[450px] grayscale group-hover:grayscale-0 transition-all duration-700"
+                  className="rounded-r-xl tabet:rounded-none object-top object-cover w-full h-[450px]  transition-all duration-700"
                   src="/images/projects/white/izzy-on-white5.jpg"
                   width={600}
                   height={450}

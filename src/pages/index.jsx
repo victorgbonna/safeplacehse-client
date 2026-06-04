@@ -142,7 +142,7 @@ export default function Home() {
                 >
                   <Image
                     alt={`SafePlaceHSE Team ${index + 1}`}
-                    className="w-full h-full object-cover rounded-xl grayscale group-hover:grayscale-0 transition-all duration-700"
+                    className="w-full h-full object-cover rounded-xl transition-all duration-700"
                     src={image}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -448,7 +448,7 @@ export default function Home() {
       <section className="py-16 border-y border-outline-variant/10">
         <div className="max-w-7xl mx-auto px-8 text-center">
           <p className="text-xs font-bold text-outline uppercase tracking-widest mb-10">Trusted by Global Industry Leaders</p>
-          <div className="flex flex-wrap justify-center items-center gap-16 opacity-50 grayscale hover:grayscale-0 transition-all">
+          <div className="flex flex-wrap justify-center items-center gap-16 opacity-50  transition-all">
             <span className="text-2xl font-black text-primary">ENI</span>
             <span className="text-2xl font-black text-primary">CHEVRON</span>
             <span className="text-2xl font-black text-primary">TOTAL</span>

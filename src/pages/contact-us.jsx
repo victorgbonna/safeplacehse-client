@@ -215,7 +215,7 @@ export default function ContactUs() {
                 <div className="tablet:hidden relative group">
                   <Image
                     alt="Contact SafePlaceHSE"
-                    className="rounded-xl shadow-xl w-full h-[300px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                    className="rounded-xl shadow-xl w-full h-[300px] object-cover transition-all duration-700"
                     src="/images/projects/white/izzy-on-white10.jpg"
                     width={600}
                     height={500}
