@@ -306,7 +306,7 @@ export default function Projects() {
               <p className="text-lg italic mb-6">&quot;SafePlaceHSE transformed our safety culture. Their systematic approach reduced incidents by 75% in just 6 months.&quot;</p>
               <div>
                 <div className="font-bold">Michael Okoro</div>
-                <div className="text-sm text-on-primary-container">Operations Director, Energy Corp</div>
+                <div className="text-sm text-on-primary-container">Operations Director</div>
               </div>
             </div>
             <div className="bg-primary-container p-8 rounded-xl">
@@ -320,7 +320,7 @@ export default function Projects() {
               <p className="text-lg italic mb-6">&quot;The NIPEX audit support was exceptional. We achieved pre-qualification in record time.&quot;</p>
               <div>
                 <div className="font-bold">Fatima Ahmed</div>
-                <div className="text-sm text-on-primary-container">HSE Manager, PetroTech Ltd</div>
+                <div className="text-sm text-on-primary-container">HSE Manager</div>
               </div>
             </div>
             <div className="bg-primary-container p-8 rounded-xl">
@@ -334,7 +334,7 @@ export default function Projects() {
               <p className="text-lg italic mb-6">&quot;Their training programs are practical and engaging. Our team&apos;s safety awareness has improved dramatically.&quot;</p>
               <div>
                 <div className="font-bold">David Chen</div>
-                <div className="text-sm text-on-primary-container">CEO, BuildRight Construction</div>
+                <div className="text-sm text-on-primary-container">Construction Manager</div>
               </div>
             </div>
           </div>

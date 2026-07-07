@@ -445,7 +445,7 @@ export default function Home() {
       </section>
 
       {/* Partners / Logos */}
-      <section className="py-16 border-y border-outline-variant/10">
+      {/* <section className="py-16 border-y border-outline-variant/10">
         <div className="max-w-7xl mx-auto px-8 text-center">
           <p className="text-xs font-bold text-outline uppercase tracking-widest mb-10">Trusted by Global Industry Leaders</p>
           <div className="flex flex-wrap justify-center items-center gap-16 opacity-50  transition-all">
@@ -457,7 +457,7 @@ export default function Home() {
             <span className="text-2xl font-black text-primary">NIPEX</span>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials */}
       <section className="py-24 bg-primary text-on-primary">
@@ -472,14 +472,14 @@ export default function Home() {
                 <p className="text-lg italic mb-6">&quot;Their NIPEX audit support was unparalleled. We achieved pre-qualification in record time thanks to their systematic approach.&quot;</p>
                 <div>
                   <div className="font-bold">Emeka Nwosu</div>
-                  <div className="text-sm text-on-primary-container">Operations Director, Energy Solutions</div>
+                  <div className="text-sm text-on-primary-container">Operations Director</div>
                 </div>
               </div>
               <div className="p-8 bg-primary-container rounded-xl border-l-4 border-tertiary-fixed">
                 <p className="text-lg italic mb-6">&quot;The training programs provided are not just lectures; they are practical sessions that actually stick with our field staff.&quot;</p>
                 <div>
                   <div className="font-bold">Sarah Jenkins</div>
-                  <div className="text-sm text-on-primary-container">HSE Manager, Logistics Corp</div>
+                  <div className="text-sm text-on-primary-container">HSE Manager</div>
                 </div>
               </div>
             </div>
